@@ -16,15 +16,23 @@ namespace Group_project_semester_1
         public Form1()
         {
             InitializeComponent();
+           
         }
 
+
+        //Creating each building
         Building buildingA = new Building("BuildingA");
         Building buildingB = new Building("BuildingB");
         Building buildingC = new Building("BuildingC");
 
+
+        //Const string of the username and password of administator
         const string adminUsername = "Admin123";
         const string adminPassword = "Admin123";
 
+
+
+        //Method to clear the textboxes after registration
         public void RegistrationFailedOrDone()
         {
             tbFirstName.Text = "";
@@ -38,14 +46,18 @@ namespace Group_project_semester_1
             
         }
 
-
+        //Registration
         private void btnRegister_Click(object sender, EventArgs e)
+
+            //Check if everything is field
         {
             if (tbFirstName.Text == "" || tbLastName.Text == "" || tbUsername.Text == "" || tbEmail.Text == "" || tbPassword.Text == "" || tbConfirmPassword.Text == "" || tbAge.Text == "")
             {
                 MessageBox.Show("You have a missing component! Please try again!");
                 RegistrationFailedOrDone();
             }
+
+            //checking if password is correctly written
             else if (tbPassword.Text != tbConfirmPassword.Text)
             {
                 tbPassword.Text = "";
@@ -54,9 +66,15 @@ namespace Group_project_semester_1
                 MessageBox.Show("Password does not match! Please check your password and try again!");
             }
 
+
+            //Registrate the student
             else
             {
+
+                //Check the current building
                 Building chosenBuilding=default;
+
+
                 string firstName = tbFirstName.Text;
                 string lastName = tbLastName.Text;
                 string username = tbUsername.Text;
@@ -103,7 +121,11 @@ namespace Group_project_semester_1
                 {
                     apartment = "Apartment5";
                 }
+
+                //Check if the apartment is full and if we can add another student or not
                 bool IsApartamentFull = chosenBuilding.AddStudentToApartament(firstName, lastName, username, email, age, password, apartment);
+
+
                 if (IsApartamentFull)
                 {
                     MessageBox.Show("Registered sucessfully");
@@ -157,7 +179,7 @@ namespace Group_project_semester_1
            bool checkLogin = CheckLogin(building, username, password);
            if (checkLogin)
            {
-                tabControl.SelectTab("StudentPage");
+                tabControl.SelectTab("StudentHomePage");
            }
            else
            {
@@ -184,6 +206,11 @@ namespace Group_project_semester_1
             }
             return check;
         }
+
+
+
+
+
 
         //Tab Control Buttons
 
@@ -249,6 +276,307 @@ namespace Group_project_semester_1
                 lbInfo.Items.Add(student.GetInfo());
             }
                 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentHomePage");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button56_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentCleaning");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button47_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button55_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGroceries");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button54_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentGarbage");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRules");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentAnouncments");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button51_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
         }
     }
 }

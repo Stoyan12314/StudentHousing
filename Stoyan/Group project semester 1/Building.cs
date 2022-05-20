@@ -9,13 +9,20 @@ namespace Group_project_semester_1
     public class Building
     {
         private string buildingName;
+
+        //Each building has a list of apartments (5 apartments per Building)
         List<Apartaments> apartamentsInBuilding;
         
         
+        //Constructor: Creating the building with the apartments in it
         public Building(string name)
         {
+
+            //The list is for the particular building
             apartamentsInBuilding = new List<Apartaments>();
             this.buildingName = name;
+
+            //To create the apartments in the building
             Apartaments apartament;
             apartamentsInBuilding.Add(apartament = new Apartaments("Apartment1",6));
             apartamentsInBuilding.Add(apartament = new Apartaments("Apartment2",6));
@@ -24,8 +31,12 @@ namespace Group_project_semester_1
             apartamentsInBuilding.Add(apartament = new Apartaments("Apartment5",2));
         }
 
+
+        //Chosing the building and the apartment in which the student should be added
         public bool AddStudentToApartament( string Firstname, string lastName, string username, string email, int age, string password, string selectedApartament)
         {
+
+            //Check if the student is added or not
             bool returnBool=default;
             foreach (Apartaments apartament in apartamentsInBuilding)
             {
@@ -37,8 +48,12 @@ namespace Group_project_semester_1
             }
             return returnBool;  
         }
+
+
+        //Returning the list of the students in each apartment
         public List<Student> ShowAllStudents()
         {
+
             List<Student> listWithStudents = new List<Student>();
             foreach (Apartaments apartament in apartamentsInBuilding)
             {
@@ -50,6 +65,9 @@ namespace Group_project_semester_1
             }
             return listWithStudents;
         }
+
+
+        //Checking if the login info is correct, checking username and password
         public bool CheckUserNameAndPassword(string username,string password)
         {
             foreach (Apartaments apartament in apartamentsInBuilding)
