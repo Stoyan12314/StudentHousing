@@ -67,8 +67,8 @@ namespace Group_project_semester_1
         }
 
 
-        //Checking if the login info is correct, checking username and password
-        public bool CheckUserNameAndPassword(string username,string password)
+        //Checking if the login info is correct, checking username and password and return the logged student
+        public Student CheckUserNameAndPassword(string username,string password)
         {
             foreach (Apartaments apartament in apartamentsInBuilding)
             {
@@ -76,14 +76,48 @@ namespace Group_project_semester_1
                 {
                     if (student.GetUsername() == username && student.GetPassword() == password)
                     {
-                        return true;
+                        return student;
                     }
                 }
 
             }
-            return false;
+            return null;
         }
-        
+        //return apartament by selected user
+        public Apartaments ReturnsChosenApartament(Student studentApartament)
+        {
+            foreach (Apartaments apartament in apartamentsInBuilding)
+            {
+                foreach (Student student in apartament.GetAllStudents())
+                {
+                    if (student == studentApartament)
+                    {
+                        return apartament;
+                    }  
+                } 
+            }
+            return null;
+        }
+
+
+
+        //Return logged user
+        //public bool CheckUserNameAndPassword(string username, string password)
+        //{
+        //    foreach (Apartaments apartament in apartamentsInBuilding)
+        //    {
+        //        foreach (Student student in apartament.GetAllStudents())
+        //        {
+        //            if (student.GetUsername() == username && student.GetPassword() == password)
+        //            {
+        //                return true;
+        //            }
+        //        }
+
+        //    }
+        //    return false;
+        //}
+
 
     }
 }

@@ -9,15 +9,29 @@ namespace Group_project_semester_1
     public class Garbage
     {
         private string garbage;
-
-        public Garbage(string newGarbage)
+        private string date;
+        private string thrower;
+        public Garbage(string newGarbage, string date, string thrower)
         {
             this.garbage = newGarbage;
+            this.date = date;
+            this.thrower = thrower;
         }
-
-        public string GetInfo()
+        public string GetGarbage()
         {
             return this.garbage;
+        }
+        public string GetDate()
+        {
+            return this.date;
+        }
+        public string GetThrower()
+        {
+            return this.thrower;
+        }
+        public string Info()
+        {
+            return $"{this.thrower}-{this.garbage}-{this.date}";
         }
     }
 }

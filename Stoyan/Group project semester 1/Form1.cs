@@ -24,8 +24,8 @@ namespace Group_project_semester_1
         Building buildingA = new Building("BuildingA");
         Building buildingB = new Building("BuildingB");
         Building buildingC = new Building("BuildingC");
-
-
+        Building chosenBuilding = default;
+        Student loggedUser = default; 
         //Const string of the username and password of administator
         const string adminUsername = "Admin123";
         const string adminPassword = "Admin123";
@@ -72,7 +72,7 @@ namespace Group_project_semester_1
             {
 
                 //Check the current building
-                Building chosenBuilding=default;
+                //Building chosenBuilding=default;
 
 
                 string firstName = tbFirstName.Text;
@@ -81,22 +81,17 @@ namespace Group_project_semester_1
                 string email = tbEmail.Text;
                 int age = int.Parse(tbAge.Text);
                 string password = tbPassword.Text;
-
-                string building = "";
                 string apartment = "";
                 if (rbBuildingA.Checked)
                 {
-                    building = "A";
                     chosenBuilding = buildingA;
                 }
                 else if (rbBuildingB.Checked)
                 {
-                    building = "B";
                     chosenBuilding = buildingB;
                 }
                 else if (rbBuildingC.Checked)
                 {
-                    building = "C";
                     chosenBuilding = buildingC;
                 }
 
@@ -176,10 +171,20 @@ namespace Group_project_semester_1
            string building = cbBuilding.Text;
            string username= tbStudentLoginUsername.Text;
            string password = tbStudentLoginPassword.Text;
-           bool checkLogin = CheckLogin(building, username, password);
-           if (checkLogin)
+           loggedUser = CheckLogin(building, username, password);
+            //label19
+            if (loggedUser != null)
            {
                 tabControl.SelectTab("StudentHomePage");
+                LoadText(building, loggedUser);
+                lbStudentRoommates.Items.Clear();
+                foreach (Student student in selectedBuilding(building).ShowAllStudents())
+                {
+                    if (student.GetUsername() != username)
+                    {
+                        lbStudentRoommates.Items.Add(student.GetName());
+                    }
+                }
            }
            else
            {
@@ -189,9 +194,9 @@ namespace Group_project_semester_1
                 
 
         }
-        public bool CheckLogin(string building, string username, string password)
+        public Student CheckLogin(string building, string username, string password)
         {
-            bool check = default;
+            Student check = null;
             if (building == "BuildingA")
             {
                check =  buildingA.CheckUserNameAndPassword(username, password);
@@ -206,8 +211,47 @@ namespace Group_project_semester_1
             }
             return check;
         }
+        public Building selectedBuilding(string buildingName)
+        {
+            Building selectedBuilding = default;
+            if (buildingName == "BuildingA")
+            {
+                selectedBuilding= buildingA;
+            }
+            else if (buildingName == "BuildingB")
+            {
+                selectedBuilding= buildingB;
 
+            }
+            else if (buildingName == "BuildingC")
+            {
+                selectedBuilding=  buildingC;
+            }
+            return selectedBuilding;
+        }
 
+        public void LoadText(string building, Student student)
+        {
+            lbLivingIn.Text = $"You are currently living in: {building}";
+            label23.Text = $"You are currently living in: {building}";
+            label26.Text = $"You are currently living in: {building}";
+            label32.Text = $"You are currently living in: {building}";
+            label29.Text = $"You are currently living in: {building}";
+            label34.Text = $"You are currently living in: {building}";
+            label37.Text = $"You are currently living in: {building}";
+            label35.Text = $"You are currently living in: {building}";
+            label38.Text = $"You are currently living in: {building}";
+            label28.Text = $"Hello {student.GetName()} !";
+            label19.Text = $"Hello {student.GetName()} !";
+            label22.Text = $"Hello {student.GetName()} !";
+            label25.Text = $"Hello {student.GetName()} !";
+            label31.Text = $"Hello {student.GetName()} !";
+            label32.Text = $"Hello {student.GetName()} !";
+            label34.Text = $"Hello {student.GetName()} !";
+            label35.Text = $"Hello {student.GetName()} !";
+            label37.Text = $"Hello {student.GetName()} !";
+            label38.Text = $"Hello {student.GetName()} !";
+        }
 
 
 
@@ -523,60 +567,156 @@ namespace Group_project_semester_1
             tabControl.SelectTab("StudentRent");
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
-        }
-
+      
         private void button10_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
              "Log out?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
                 tabControl.SelectTab("HomePage");
+            loggedUser = null;
         }
 
-        private void button18_Click(object sender, EventArgs e)
+       
+
+        private void btnShowB_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
+            foreach (Student student in buildingB.ShowAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+
         }
 
-        private void button26_Click(object sender, EventArgs e)
+        private void btnShowC_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
+            foreach (Student student in buildingC.ShowAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
         }
 
-        private void button34_Click(object sender, EventArgs e)
+        private void lbStudentRoommates_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
+
         }
 
-        private void button42_Click(object sender, EventArgs e)
+        private void StudentHomePage_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
+
+        }
+        public void RefreshCleaningTasks()
+        {
+            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbCleaningSchedule.Items.Clear();
+            foreach (CleaningSchedule schedule in apartamentToAddTaskTo.GetListCleaningSchedule())
+            {
+                lbCleaningSchedule.Items.Add(schedule.GetInfo());
+            }
+        }
+        private void btnAddTaskCleaning_Click(object sender, EventArgs e)
+        {
+
+            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+            string room = comboBox_tasks.Text;
+            apartamentToAddTaskTo.AddCleaningTask(loggedUser.GetUsername(), date, room);
+            RefreshCleaningTasks();
         }
 
-        private void button50_Click(object sender, EventArgs e)
+        private void btnRemoveTaskCleaning_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
+            Apartaments apartamentToRemoveTaskFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string selectedTask = "";
+            if (lbCleaningSchedule.SelectedIndex != -1)
+            {
+              selectedTask = lbCleaningSchedule.SelectedItem.ToString();   
+            }
+            if (selectedTask == "")
+            {
+                MessageBox.Show("Please select task to remove from");
+            }
+            else
+            {
+                apartamentToRemoveTaskFrom.RemoveCleaningShedule(selectedTask, loggedUser.GetUsername());
+                RefreshCleaningTasks();           
+            }
+        }
+        private void UpdateGroceries()
+        {
+            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbGroceriesStudent.Items.Clear();
+            foreach (Groceries groceries in chosenApartament.GetGroceries())
+            {
+                lbGroceriesStudent.Items.Add(groceries.Info());
+            }
+        }
+        private void btnAddTaskGroceries_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToAddGroceriesToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+            apartamentToAddGroceriesToo.AddGroceries(loggedUser.GetUsername(), date, "will buy groceries on this date");
+            
+            UpdateGroceries();
+
+
+        }
+
+        private void btnRemoveTaskGroceries_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToRemoveGroceriesFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+           
+            string selectedGrocerie = "";
+            if (lbGroceriesStudent.SelectedIndex != -1)
+            {
+                selectedGrocerie = lbGroceriesStudent.SelectedItem.ToString();
+            }
+            if (selectedGrocerie == "")
+            {
+                MessageBox.Show("Please select grocerie to remove from");
+            }
+            else
+            {
+                apartamentToRemoveGroceriesFrom.RemoveGrocerie(selectedGrocerie, loggedUser.GetUsername());
+                UpdateGroceries();
+            }
+        }
+
+        private void btnAddTaskGarbage_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToAddGarbageToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+
+            apartamentToAddGarbageToo.AddGarbage("will throw garbage on this date", date, loggedUser.GetUsername());
+            UpdateGarbage();
+        }
+        private void UpdateGarbage()
+        {
+            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbGarbage.Items.Clear();
+            foreach (Garbage garbage in chosenApartament.GetGarbages())
+            {
+                lbGarbage.Items.Add(garbage.Info());
+            }
+        }
+
+        private void btnRemoveTaskGarbage_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToRemoveGarbageFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string selectedGarbage = "";
+            if (lbGarbage.SelectedIndex != -1)
+            {
+                selectedGarbage = lbGarbage.SelectedItem.ToString();
+            }
+            if (selectedGarbage == "")
+            {
+                MessageBox.Show("Please select garbage to remove from");
+            }
+            else
+            {
+                apartamentToRemoveGarbageFrom.RemoveGarbage(selectedGarbage, loggedUser.GetUsername());
+                UpdateGarbage();
+            }
         }
     }
 }
