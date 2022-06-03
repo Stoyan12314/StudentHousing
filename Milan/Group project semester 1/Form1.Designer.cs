@@ -213,6 +213,16 @@ namespace Group_project_semester_1
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.StudentComplaints = new System.Windows.Forms.TabPage();
+            this.label48 = new System.Windows.Forms.Label();
+            this.tbDiffrentComplaint = new System.Windows.Forms.TextBox();
+            this.btnDiffrentComplaint = new System.Windows.Forms.Button();
+            this.btnComplaintAboutRoommate = new System.Windows.Forms.Button();
+            this.cbLowHygiene = new System.Windows.Forms.CheckBox();
+            this.cbComplaintsMakingNoise = new System.Windows.Forms.CheckBox();
+            this.cbComplaintsInvitingPeople = new System.Windows.Forms.CheckBox();
+            this.cbComplaintsDoesntClean = new System.Windows.Forms.CheckBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.cbRoommatesComplains = new System.Windows.Forms.ComboBox();
             this.button66 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -243,6 +253,7 @@ namespace Group_project_semester_1
             this.button83 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.AdminRules = new System.Windows.Forms.TabPage();
+            this.btnRemoveRequestedRuleAdmin = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.btnAddRule = new System.Windows.Forms.Button();
             this.tbAddRule = new System.Windows.Forms.TextBox();
@@ -278,17 +289,12 @@ namespace Group_project_semester_1
             this.panel14 = new System.Windows.Forms.Panel();
             this.button101 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
-            this.btnRemoveRequestedRuleAdmin = new System.Windows.Forms.Button();
-            this.cbRoommatesComplains = new System.Windows.Forms.ComboBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.cbComplaintsDoesntClean = new System.Windows.Forms.CheckBox();
-            this.cbComplaintsInvitingPeople = new System.Windows.Forms.CheckBox();
-            this.cbComplaintsMakingNoise = new System.Windows.Forms.CheckBox();
-            this.cbLowHygiene = new System.Windows.Forms.CheckBox();
-            this.btnComplaintAboutRoommate = new System.Windows.Forms.Button();
-            this.button102 = new System.Windows.Forms.Button();
-            this.tbDiffrentComplaint = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
+            this.lbAdminComplaints = new System.Windows.Forms.ListBox();
+            this.cbBrokenFacility = new System.Windows.Forms.ComboBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.btnComplaintBrokenFacility = new System.Windows.Forms.Button();
+            this.btnHighlightComplaint = new System.Windows.Forms.Button();
+            this.btnComplaintFixed = new System.Windows.Forms.Button();
             this.StudentRent.SuspendLayout();
             this.StudentAnouncments.SuspendLayout();
             this.StudentRules.SuspendLayout();
@@ -1207,9 +1213,9 @@ namespace Group_project_semester_1
             this.lbSelectTask.AutoSize = true;
             this.lbSelectTask.Location = new System.Drawing.Point(421, 454);
             this.lbSelectTask.Name = "lbSelectTask";
-            this.lbSelectTask.Size = new System.Drawing.Size(83, 17);
+            this.lbSelectTask.Size = new System.Drawing.Size(102, 17);
             this.lbSelectTask.TabIndex = 31;
-            this.lbSelectTask.Text = "Select room";
+            this.lbSelectTask.Text = "Select a facility";
             // 
             // comboBox_tasks
             // 
@@ -1218,10 +1224,13 @@ namespace Group_project_semester_1
             this.comboBox_tasks.Items.AddRange(new object[] {
             "Kitchen",
             "Toilet",
+            "Bathroom",
             "Living area",
             "Hallway",
-            "Dining",
-            "Closet"});
+            "Dining Room",
+            "Closet",
+            "Balcony",
+            "Backyard"});
             this.comboBox_tasks.Location = new System.Drawing.Point(424, 474);
             this.comboBox_tasks.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_tasks.Name = "comboBox_tasks";
@@ -2301,9 +2310,12 @@ namespace Group_project_semester_1
             // 
             // StudentComplaints
             // 
+            this.StudentComplaints.Controls.Add(this.btnComplaintBrokenFacility);
+            this.StudentComplaints.Controls.Add(this.label49);
+            this.StudentComplaints.Controls.Add(this.cbBrokenFacility);
             this.StudentComplaints.Controls.Add(this.label48);
             this.StudentComplaints.Controls.Add(this.tbDiffrentComplaint);
-            this.StudentComplaints.Controls.Add(this.button102);
+            this.StudentComplaints.Controls.Add(this.btnDiffrentComplaint);
             this.StudentComplaints.Controls.Add(this.btnComplaintAboutRoommate);
             this.StudentComplaints.Controls.Add(this.cbLowHygiene);
             this.StudentComplaints.Controls.Add(this.cbComplaintsMakingNoise);
@@ -2329,6 +2341,99 @@ namespace Group_project_semester_1
             this.StudentComplaints.TabIndex = 16;
             this.StudentComplaints.Text = "Student complaints";
             this.StudentComplaints.UseVisualStyleBackColor = true;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(711, 609);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(155, 17);
+            this.label48.TabIndex = 49;
+            this.label48.Text = "Describe your problem:";
+            // 
+            // tbDiffrentComplaint
+            // 
+            this.tbDiffrentComplaint.Location = new System.Drawing.Point(703, 641);
+            this.tbDiffrentComplaint.Name = "tbDiffrentComplaint";
+            this.tbDiffrentComplaint.Size = new System.Drawing.Size(522, 22);
+            this.tbDiffrentComplaint.TabIndex = 48;
+            // 
+            // btnDiffrentComplaint
+            // 
+            this.btnDiffrentComplaint.Location = new System.Drawing.Point(305, 609);
+            this.btnDiffrentComplaint.Name = "btnDiffrentComplaint";
+            this.btnDiffrentComplaint.Size = new System.Drawing.Size(314, 61);
+            this.btnDiffrentComplaint.TabIndex = 47;
+            this.btnDiffrentComplaint.Text = "Make a diffrent complaint!";
+            this.btnDiffrentComplaint.UseVisualStyleBackColor = true;
+            this.btnDiffrentComplaint.Click += new System.EventHandler(this.button102_Click);
+            // 
+            // btnComplaintAboutRoommate
+            // 
+            this.btnComplaintAboutRoommate.Location = new System.Drawing.Point(305, 275);
+            this.btnComplaintAboutRoommate.Name = "btnComplaintAboutRoommate";
+            this.btnComplaintAboutRoommate.Size = new System.Drawing.Size(314, 61);
+            this.btnComplaintAboutRoommate.TabIndex = 46;
+            this.btnComplaintAboutRoommate.Text = "Make a complaint about you roommate!";
+            this.btnComplaintAboutRoommate.UseVisualStyleBackColor = true;
+            this.btnComplaintAboutRoommate.Click += new System.EventHandler(this.btnComplaintAboutRoommate_Click);
+            // 
+            // cbLowHygiene
+            // 
+            this.cbLowHygiene.AutoSize = true;
+            this.cbLowHygiene.Location = new System.Drawing.Point(695, 305);
+            this.cbLowHygiene.Name = "cbLowHygiene";
+            this.cbLowHygiene.Size = new System.Drawing.Size(112, 21);
+            this.cbLowHygiene.TabIndex = 45;
+            this.cbLowHygiene.Text = "Low hygiene!";
+            this.cbLowHygiene.UseVisualStyleBackColor = true;
+            // 
+            // cbComplaintsMakingNoise
+            // 
+            this.cbComplaintsMakingNoise.AutoSize = true;
+            this.cbComplaintsMakingNoise.Location = new System.Drawing.Point(695, 260);
+            this.cbComplaintsMakingNoise.Name = "cbComplaintsMakingNoise";
+            this.cbComplaintsMakingNoise.Size = new System.Drawing.Size(236, 21);
+            this.cbComplaintsMakingNoise.TabIndex = 44;
+            this.cbComplaintsMakingNoise.Text = "Making a lot of noise after 23:00!";
+            this.cbComplaintsMakingNoise.UseVisualStyleBackColor = true;
+            // 
+            // cbComplaintsInvitingPeople
+            // 
+            this.cbComplaintsInvitingPeople.AutoSize = true;
+            this.cbComplaintsInvitingPeople.Location = new System.Drawing.Point(695, 215);
+            this.cbComplaintsInvitingPeople.Name = "cbComplaintsInvitingPeople";
+            this.cbComplaintsInvitingPeople.Size = new System.Drawing.Size(217, 21);
+            this.cbComplaintsInvitingPeople.TabIndex = 43;
+            this.cbComplaintsInvitingPeople.Text = "Inviting people without asking!";
+            this.cbComplaintsInvitingPeople.UseVisualStyleBackColor = true;
+            // 
+            // cbComplaintsDoesntClean
+            // 
+            this.cbComplaintsDoesntClean.AutoSize = true;
+            this.cbComplaintsDoesntClean.Location = new System.Drawing.Point(695, 170);
+            this.cbComplaintsDoesntClean.Name = "cbComplaintsDoesntClean";
+            this.cbComplaintsDoesntClean.Size = new System.Drawing.Size(128, 21);
+            this.cbComplaintsDoesntClean.TabIndex = 42;
+            this.cbComplaintsDoesntClean.Text = "Does not clean!";
+            this.cbComplaintsDoesntClean.UseVisualStyleBackColor = true;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(342, 197);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(87, 17);
+            this.label47.TabIndex = 41;
+            this.label47.Text = "Roommates:";
+            // 
+            // cbRoommatesComplains
+            // 
+            this.cbRoommatesComplains.FormattingEnabled = true;
+            this.cbRoommatesComplains.Location = new System.Drawing.Point(345, 217);
+            this.cbRoommatesComplains.Name = "cbRoommatesComplains";
+            this.cbRoommatesComplains.Size = new System.Drawing.Size(221, 24);
+            this.cbRoommatesComplains.TabIndex = 40;
             // 
             // button66
             // 
@@ -2661,6 +2766,16 @@ namespace Group_project_semester_1
             this.AdminRules.Text = "Admin Rules";
             this.AdminRules.UseVisualStyleBackColor = true;
             // 
+            // btnRemoveRequestedRuleAdmin
+            // 
+            this.btnRemoveRequestedRuleAdmin.Location = new System.Drawing.Point(548, 612);
+            this.btnRemoveRequestedRuleAdmin.Name = "btnRemoveRequestedRuleAdmin";
+            this.btnRemoveRequestedRuleAdmin.Size = new System.Drawing.Size(171, 39);
+            this.btnRemoveRequestedRuleAdmin.TabIndex = 46;
+            this.btnRemoveRequestedRuleAdmin.Text = "Remove requested rule";
+            this.btnRemoveRequestedRuleAdmin.UseVisualStyleBackColor = true;
+            this.btnRemoveRequestedRuleAdmin.Click += new System.EventHandler(this.btnRemoveRequestedRuleAdmin_Click);
+            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -2834,6 +2949,9 @@ namespace Group_project_semester_1
             // 
             // AdminComplaints
             // 
+            this.AdminComplaints.Controls.Add(this.btnComplaintFixed);
+            this.AdminComplaints.Controls.Add(this.btnHighlightComplaint);
+            this.AdminComplaints.Controls.Add(this.lbAdminComplaints);
             this.AdminComplaints.Controls.Add(this.button90);
             this.AdminComplaints.Controls.Add(this.button91);
             this.AdminComplaints.Controls.Add(this.button92);
@@ -3026,107 +3144,75 @@ namespace Group_project_semester_1
             this.label43.TabIndex = 29;
             this.label43.Text = "Hello, Administrator!";
             // 
-            // btnRemoveRequestedRuleAdmin
+            // lbAdminComplaints
             // 
-            this.btnRemoveRequestedRuleAdmin.Location = new System.Drawing.Point(548, 612);
-            this.btnRemoveRequestedRuleAdmin.Name = "btnRemoveRequestedRuleAdmin";
-            this.btnRemoveRequestedRuleAdmin.Size = new System.Drawing.Size(171, 39);
-            this.btnRemoveRequestedRuleAdmin.TabIndex = 46;
-            this.btnRemoveRequestedRuleAdmin.Text = "Remove requested rule";
-            this.btnRemoveRequestedRuleAdmin.UseVisualStyleBackColor = true;
-            this.btnRemoveRequestedRuleAdmin.Click += new System.EventHandler(this.btnRemoveRequestedRuleAdmin_Click);
+            this.lbAdminComplaints.FormattingEnabled = true;
+            this.lbAdminComplaints.ItemHeight = 16;
+            this.lbAdminComplaints.Location = new System.Drawing.Point(322, 169);
+            this.lbAdminComplaints.Name = "lbAdminComplaints";
+            this.lbAdminComplaints.Size = new System.Drawing.Size(829, 372);
+            this.lbAdminComplaints.TabIndex = 37;
             // 
-            // cbRoommatesComplains
+            // cbBrokenFacility
             // 
-            this.cbRoommatesComplains.FormattingEnabled = true;
-            this.cbRoommatesComplains.Location = new System.Drawing.Point(345, 238);
-            this.cbRoommatesComplains.Name = "cbRoommatesComplains";
-            this.cbRoommatesComplains.Size = new System.Drawing.Size(221, 24);
-            this.cbRoommatesComplains.TabIndex = 40;
+            this.cbBrokenFacility.FormattingEnabled = true;
+            this.cbBrokenFacility.Items.AddRange(new object[] {
+            "Kitchen sink",
+            "Toilet sink",
+            "Shower",
+            "Wasching mashine",
+            "Dishwasher",
+            "Table",
+            "Chair",
+            "Door",
+            "Lamp",
+            "Window",
+            "Keys",
+            "Internet",
+            "Electricity"});
+            this.cbBrokenFacility.Location = new System.Drawing.Point(311, 456);
+            this.cbBrokenFacility.Name = "cbBrokenFacility";
+            this.cbBrokenFacility.Size = new System.Drawing.Size(348, 24);
+            this.cbBrokenFacility.TabIndex = 50;
             // 
-            // label47
+            // label49
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(342, 218);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(87, 17);
-            this.label47.TabIndex = 41;
-            this.label47.Text = "Roommates:";
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(308, 436);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(115, 17);
+            this.label49.TabIndex = 51;
+            this.label49.Text = "Broken Facilities:";
             // 
-            // cbComplaintsDoesntClean
+            // btnComplaintBrokenFacility
             // 
-            this.cbComplaintsDoesntClean.AutoSize = true;
-            this.cbComplaintsDoesntClean.Location = new System.Drawing.Point(706, 196);
-            this.cbComplaintsDoesntClean.Name = "cbComplaintsDoesntClean";
-            this.cbComplaintsDoesntClean.Size = new System.Drawing.Size(128, 21);
-            this.cbComplaintsDoesntClean.TabIndex = 42;
-            this.cbComplaintsDoesntClean.Text = "Does not clean!";
-            this.cbComplaintsDoesntClean.UseVisualStyleBackColor = true;
+            this.btnComplaintBrokenFacility.Location = new System.Drawing.Point(759, 419);
+            this.btnComplaintBrokenFacility.Name = "btnComplaintBrokenFacility";
+            this.btnComplaintBrokenFacility.Size = new System.Drawing.Size(314, 61);
+            this.btnComplaintBrokenFacility.TabIndex = 52;
+            this.btnComplaintBrokenFacility.Text = "Make a complaint about broken facility!";
+            this.btnComplaintBrokenFacility.UseVisualStyleBackColor = true;
+            this.btnComplaintBrokenFacility.Click += new System.EventHandler(this.btnComplaintBrokenFacility_Click);
             // 
-            // cbComplaintsInvitingPeople
+            // btnHighlightComplaint
             // 
-            this.cbComplaintsInvitingPeople.AutoSize = true;
-            this.cbComplaintsInvitingPeople.Location = new System.Drawing.Point(706, 241);
-            this.cbComplaintsInvitingPeople.Name = "cbComplaintsInvitingPeople";
-            this.cbComplaintsInvitingPeople.Size = new System.Drawing.Size(217, 21);
-            this.cbComplaintsInvitingPeople.TabIndex = 43;
-            this.cbComplaintsInvitingPeople.Text = "Inviting people without asking!";
-            this.cbComplaintsInvitingPeople.UseVisualStyleBackColor = true;
+            this.btnHighlightComplaint.Location = new System.Drawing.Point(363, 592);
+            this.btnHighlightComplaint.Name = "btnHighlightComplaint";
+            this.btnHighlightComplaint.Size = new System.Drawing.Size(263, 68);
+            this.btnHighlightComplaint.TabIndex = 38;
+            this.btnHighlightComplaint.Text = "Highlight the complaint";
+            this.btnHighlightComplaint.UseVisualStyleBackColor = true;
+            this.btnHighlightComplaint.Click += new System.EventHandler(this.btnHighlightComplaint_Click);
             // 
-            // cbComplaintsMakingNoise
+            // btnComplaintFixed
             // 
-            this.cbComplaintsMakingNoise.AutoSize = true;
-            this.cbComplaintsMakingNoise.Location = new System.Drawing.Point(706, 286);
-            this.cbComplaintsMakingNoise.Name = "cbComplaintsMakingNoise";
-            this.cbComplaintsMakingNoise.Size = new System.Drawing.Size(236, 21);
-            this.cbComplaintsMakingNoise.TabIndex = 44;
-            this.cbComplaintsMakingNoise.Text = "Making a lot of noise after 23:00!";
-            this.cbComplaintsMakingNoise.UseVisualStyleBackColor = true;
-            // 
-            // cbLowHygiene
-            // 
-            this.cbLowHygiene.AutoSize = true;
-            this.cbLowHygiene.Location = new System.Drawing.Point(706, 331);
-            this.cbLowHygiene.Name = "cbLowHygiene";
-            this.cbLowHygiene.Size = new System.Drawing.Size(112, 21);
-            this.cbLowHygiene.TabIndex = 45;
-            this.cbLowHygiene.Text = "Low hygiene!";
-            this.cbLowHygiene.UseVisualStyleBackColor = true;
-            // 
-            // btnComplaintAboutRoommate
-            // 
-            this.btnComplaintAboutRoommate.Location = new System.Drawing.Point(305, 315);
-            this.btnComplaintAboutRoommate.Name = "btnComplaintAboutRoommate";
-            this.btnComplaintAboutRoommate.Size = new System.Drawing.Size(314, 61);
-            this.btnComplaintAboutRoommate.TabIndex = 46;
-            this.btnComplaintAboutRoommate.Text = "Make a complaint about you roommate!";
-            this.btnComplaintAboutRoommate.UseVisualStyleBackColor = true;
-            // 
-            // button102
-            // 
-            this.button102.Location = new System.Drawing.Point(305, 573);
-            this.button102.Name = "button102";
-            this.button102.Size = new System.Drawing.Size(314, 61);
-            this.button102.TabIndex = 47;
-            this.button102.Text = "Make a diffrent complaint!";
-            this.button102.UseVisualStyleBackColor = true;
-            this.button102.Click += new System.EventHandler(this.button102_Click);
-            // 
-            // tbDiffrentComplaint
-            // 
-            this.tbDiffrentComplaint.Location = new System.Drawing.Point(684, 592);
-            this.tbDiffrentComplaint.Name = "tbDiffrentComplaint";
-            this.tbDiffrentComplaint.Size = new System.Drawing.Size(522, 22);
-            this.tbDiffrentComplaint.TabIndex = 48;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(692, 560);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(155, 17);
-            this.label48.TabIndex = 49;
-            this.label48.Text = "Describe your problem:";
+            this.btnComplaintFixed.Location = new System.Drawing.Point(849, 592);
+            this.btnComplaintFixed.Name = "btnComplaintFixed";
+            this.btnComplaintFixed.Size = new System.Drawing.Size(263, 68);
+            this.btnComplaintFixed.TabIndex = 39;
+            this.btnComplaintFixed.Text = "Complaint is fixed and taken cared of";
+            this.btnComplaintFixed.UseVisualStyleBackColor = true;
+            this.btnComplaintFixed.Click += new System.EventHandler(this.btnComplaintFixed_Click);
             // 
             // Form1
             // 
@@ -3442,10 +3528,16 @@ namespace Group_project_semester_1
         private System.Windows.Forms.CheckBox cbComplaintsDoesntClean;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.ComboBox cbRoommatesComplains;
-        private System.Windows.Forms.Button button102;
+        private System.Windows.Forms.Button btnDiffrentComplaint;
         private System.Windows.Forms.Button btnComplaintAboutRoommate;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.TextBox tbDiffrentComplaint;
+        private System.Windows.Forms.Button btnComplaintBrokenFacility;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.ComboBox cbBrokenFacility;
+        private System.Windows.Forms.ListBox lbAdminComplaints;
+        private System.Windows.Forms.Button btnComplaintFixed;
+        private System.Windows.Forms.Button btnHighlightComplaint;
     }
 }
 

@@ -166,8 +166,27 @@ namespace Group_project_semester_1
                 tbAdminLoginUsername.Text = "";
             }
         }
+        
 
-
+        //Show all your roommates when you log in
+        private void ShowRoommates(string username, string building, Student loggedUser)
+        {
+            lbStudentRoommates.Items.Clear();
+            foreach (Student student in selectedBuilding(building).ShowAllStudents(loggedUser))
+            {
+                if (student.GetUsername() != username)
+                {
+                    lbStudentRoommates.Items.Add(student.GetName() + " " + student.GetLastName());
+                }
+            }
+            foreach (Student student in selectedBuilding(building).ShowAllStudents(loggedUser))
+            {
+                if (student.GetUsername() != username)
+                {
+                    cbRoommatesComplains.Items.Add(student.GetName() + " " + student.GetLastName());
+                }
+            }
+        }
 
 
         //Login Student
@@ -182,21 +201,8 @@ namespace Group_project_semester_1
             {
                 tabControl.SelectTab("StudentHomePage");
                 LoadText(building, loggedUser);
-                lbStudentRoommates.Items.Clear();
-                foreach (Student student in selectedBuilding(building).ShowAllStudents(loggedUser))
-                {
-                    if (student.GetUsername() != username)
-                    {
-                        lbStudentRoommates.Items.Add(student.GetName());
-                    }
-                }
-                foreach (Student student in selectedBuilding(building).ShowAllStudents(loggedUser))
-                {
-                    if (student.GetUsername() != username)
-                    {
-                        cbRoommatesComplains.Items.Add(student.GetName());
-                    }
-                }
+
+                ShowRoommates(username, building, loggedUser);
             }
 
 
@@ -204,8 +210,10 @@ namespace Group_project_semester_1
            {
                 MessageBox.Show("Account not found");
            }
-           
-                
+
+            tbStudentLoginUsername.Text = "";
+            tbStudentLoginPassword.Text = "";
+            cbBuilding.Text = "";
 
         }
         public Student CheckLogin(string building, string username, string password)
@@ -247,14 +255,14 @@ namespace Group_project_semester_1
         public void LoadText(string building, Student student)
         {
             
-            label19.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label22.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label25.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label28.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label31.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label34.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label37.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
-            label30.Text = $"Hello {student.GetName()} {student.GetLastName()}!";
+            label19.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label22.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label25.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label28.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label31.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label34.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label37.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            label30.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
 
 
 
@@ -434,6 +442,114 @@ namespace Group_project_semester_1
             }
         }
 
+
+        //START RULES
+
+        //Request a rule as a student
+        private void btnRuleRequest_Click(object sender, EventArgs e)
+        {
+            string requestedRule = tbRuleRequest.Text;
+            lbRequestedRules.Items.Add(requestedRule);
+            tbRuleRequest.Text = "";
+        }
+
+
+        //Add the requested rule as a general rule for everyone
+        private void btnAddRequestedRule_Click(object sender, EventArgs e)
+        {
+            if (lbRequestedRules.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select a rule!");
+            }
+            else
+            {
+                string requestedRule = lbRequestedRules.SelectedItem.ToString();
+
+                int index = lbRequestedRules.Items.IndexOf(requestedRule);
+                lbRequestedRules.Items.RemoveAt(index);
+
+
+                lbCurrentRulesAdmin.Items.Add(requestedRule);
+                lbRules.Items.Add(requestedRule);
+            }
+
+
+        }
+
+        //Remove requested rule from the admin page
+
+        private void btnRemoveRequestedRuleAdmin_Click(object sender, EventArgs e)
+        {
+            if (lbRequestedRules.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select a rule!");
+            }
+            else
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this requested rule?",
+                "Delete rule?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string requestedRule = lbRequestedRules.SelectedItem.ToString();
+                    int index = lbRequestedRules.Items.IndexOf(requestedRule);
+                    lbRequestedRules.Items.RemoveAt(index);
+                }
+
+            }
+        }
+
+
+        //Remove rule from general rules
+        private void btnRemoveRule_Click(object sender, EventArgs e)
+        {
+            if (lbCurrentRulesAdmin.SelectedItem == null)
+            {
+                MessageBox.Show("You need to select a rule!");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this rule?",
+                "Delete rule?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string rule = lbCurrentRulesAdmin.SelectedItem.ToString();
+                    int index = lbCurrentRulesAdmin.Items.IndexOf(rule);
+
+                    lbCurrentRulesAdmin.Items.RemoveAt(index);
+                    lbRules.Items.RemoveAt(index);
+
+                }
+
+
+            }
+        }
+        //Adding the written rule as an admin
+        private void btnAddRule_Click(object sender, EventArgs e)
+        {
+
+            if (tbAddRule.Text == "")
+            {
+                MessageBox.Show("Please write down the rule you want to add!");
+            }
+
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to add this rule?",
+                "Add rule?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string newRule = tbAddRule.Text;
+
+                    lbCurrentRulesAdmin.Items.Add(newRule);
+                    lbRules.Items.Add(newRule);
+                }
+            }
+
+            tbAddRule.Text = "";
+        }
+        
+        //END OF RULES
 
         //ALL THE TAB CONTROL BUTTONS !!!
 
@@ -1003,116 +1119,149 @@ namespace Group_project_semester_1
         ////////////////////////////////////////////////////////////////////////////////////
 
 
+        //START COMPLAINTS
+        
+        //STUDENT COMPLAINTS
 
-        //RULES
-
-        //Request a rule as a student
-        private void btnRuleRequest_Click(object sender, EventArgs e)
-        {
-            string requestedRule = tbRuleRequest.Text;
-            lbRequestedRules.Items.Add(requestedRule);
-            tbRuleRequest.Text = "";
-        }
-
-
-        //Add the requested rule as a general rule for everyone
-        private void btnAddRequestedRule_Click(object sender, EventArgs e)
-        {
-            if (lbRequestedRules.SelectedItem == null)
-            {
-                MessageBox.Show("You need to select a rule!");
-            }
-            else
-            {
-                string requestedRule = lbRequestedRules.SelectedItem.ToString();
-
-                int index = lbRequestedRules.Items.IndexOf(requestedRule);
-                lbRequestedRules.Items.RemoveAt(index);
-
-
-                lbCurrentRulesAdmin.Items.Add(requestedRule);
-                lbRules.Items.Add(requestedRule);
-            }
-            
-            
-        }
-
-        //Remove requested rule from the admin page
-
-        private void btnRemoveRequestedRuleAdmin_Click(object sender, EventArgs e)
-        {
-            if (lbRequestedRules.SelectedItem == null)
-            {
-                MessageBox.Show("You need to select a rule!");
-            }
-            else
-            {
-
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this requested rule?",
-                "Delete rule?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    string requestedRule = lbRequestedRules.SelectedItem.ToString();
-                    int index = lbRequestedRules.Items.IndexOf(requestedRule);
-                    lbRequestedRules.Items.RemoveAt(index);
-                }
-                    
-            }
-        }
-
-
-        //Remove rule from general rules
-        private void btnRemoveRule_Click(object sender, EventArgs e)
-        {
-            if (lbCurrentRulesAdmin.SelectedItem == null)
-            {
-                MessageBox.Show("You need to select a rule!");
-            }
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this rule?",
-                "Delete rule?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    string rule = lbCurrentRulesAdmin.SelectedItem.ToString();
-                    int index = lbCurrentRulesAdmin.Items.IndexOf(rule);
-
-                    lbCurrentRulesAdmin.Items.RemoveAt(index);
-                    lbRules.Items.RemoveAt(index);
-
-                }
-                
-
-            }
-        }
-        //Adding the written rule as an admin
-        private void btnAddRule_Click(object sender, EventArgs e)
-        {
-
-            if (tbAddRule.Text == "")
-            {
-                MessageBox.Show("Please write down the rule you want to add!");
-            }
-
-            else
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to add this rule?",
-                "Add rule?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    string newRule = tbAddRule.Text;
-
-                    lbCurrentRulesAdmin.Items.Add(newRule);
-                    lbRules.Items.Add(newRule);
-                }
-            }
-
-            tbAddRule.Text = "";
-        }
-
+        //Diffrent kind of a complaint
         private void button102_Click(object sender, EventArgs e)
         {
+            //Get the info of the student making the complaint
+            string[] splitedUsername = label30.Text.Split().ToArray();
 
+            string name = splitedUsername[1] + " " + splitedUsername[2];
+
+            string[] livingIn = label39.Text.Split().ToArray();
+
+            string address = livingIn[5] + " " + livingIn[6];
+
+
+            string complaint = tbDiffrentComplaint.Text;
+
+            //Send the complaint to Admin
+            lbAdminComplaints.Items.Add($"{name}, from {address} has a complaint about - {complaint}");
+
+
+            tbDiffrentComplaint.Text = "";
+
+        }
+
+
+        //Student making complaint about his roommates
+        private void btnComplaintAboutRoommate_Click(object sender, EventArgs e)
+        {
+            string roommate = cbRoommatesComplains.Text;
+
+            if (roommate == "")
+            {
+                MessageBox.Show("Please enter which roommate you want to make complaint about!");
+            }
+            else
+            {
+                if (cbComplaintsDoesntClean.Checked || cbComplaintsInvitingPeople.Checked || cbComplaintsMakingNoise.Checked || cbLowHygiene.Checked)
+                {
+                    string complaint = "";
+                    if (cbComplaintsDoesntClean.Checked)
+                    {
+                        complaint = "Does not clean!";
+                    }
+                    else if (cbComplaintsInvitingPeople.Checked)
+                    {
+                        complaint = "Inviting people without asking!";
+                    }
+                    else if (cbComplaintsMakingNoise.Checked)
+                    {
+                        complaint = "Making noise after 23:00 o'clock!";
+                    }
+                    else if (cbLowHygiene.Checked)
+                    {
+                        complaint = "Roomate has a very low hygiene!";
+                    }
+
+
+
+                    //Get the info of the student making the complaint
+                    string[] splitedUsername = label30.Text.Split().ToArray();
+
+                    string name = splitedUsername[1] + " " + splitedUsername[2];
+
+                    string[] livingIn = label39.Text.Split().ToArray();
+
+                    string address = livingIn[5] + " " + livingIn[6];
+
+
+                    //Send the complaint to Admin
+                    lbAdminComplaints.Items.Add($"{name}, from {address} - Complaint about {roommate} - {complaint}");
+
+
+                    cbRoommatesComplains.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Please select your complaint about the roommate!");
+                }
+            }
+        }
+
+        //Student make complaint about a broken facility
+        private void btnComplaintBrokenFacility_Click(object sender, EventArgs e)
+        {
+            if (cbBrokenFacility.Text == "")
+            {
+                MessageBox.Show("Please select the broken facility!");
+            }
+            else
+            {
+
+                //Get the info of the student making the complaint
+                string[] splitedUsername = label30.Text.Split().ToArray();
+
+                string name = splitedUsername[1] + " " + splitedUsername[2];
+
+                string[] livingIn = label39.Text.Split().ToArray();
+
+                string address = livingIn[5] + " " + livingIn[6];
+
+
+                string brokenFacility = cbBrokenFacility.Text;
+
+
+                //Send the complaint to Admin
+                lbAdminComplaints.Items.Add($"{name}, from {address} - Complaint about broken facility - {brokenFacility}");
+
+            }
+
+
+            cbBrokenFacility.Text = "";
+        }
+
+        private void btnHighlightComplaint_Click(object sender, EventArgs e)
+        {
+         
+
+            if (lbAdminComplaints.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a complaint!");
+            }
+            else
+            {
+                int index = lbAdminComplaints.Items.IndexOf(lbAdminComplaints.SelectedItem);
+                
+            }
+        }
+
+        private void btnComplaintFixed_Click(object sender, EventArgs e)
+        {
+            if (lbAdminComplaints.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a complaint!");
+            }
+            else
+            {
+                int index = lbAdminComplaints.Items.IndexOf(lbAdminComplaints.SelectedItem);
+                lbAdminComplaints.Items.RemoveAt(index);
+            }
+           
         }
     }
 }
