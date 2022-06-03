@@ -548,8 +548,163 @@ namespace Group_project_semester_1
 
             tbAddRule.Text = "";
         }
-        
+
         //END OF RULES
+
+
+
+        //START COMPLAINTS
+
+        //STUDENT COMPLAINTS
+
+        //Diffrent kind of a complaint
+        private void button102_Click(object sender, EventArgs e)
+        {
+            //Get the info of the student making the complaint
+            string[] splitedUsername = label30.Text.Split().ToArray();
+
+            string name = splitedUsername[1] + " " + splitedUsername[2];
+
+            string[] livingIn = label39.Text.Split().ToArray();
+
+            string address = livingIn[5] + " " + livingIn[6];
+
+
+            string complaint = tbDiffrentComplaint.Text;
+
+            //Send the complaint to Admin
+            lbAdminComplaints.Items.Add($"{name}, from {address} has a complaint about - {complaint}");
+
+
+            tbDiffrentComplaint.Text = "";
+
+        }
+
+
+        //Student making complaint about his roommates
+        private void btnComplaintAboutRoommate_Click(object sender, EventArgs e)
+        {
+            string roommate = cbRoommatesComplains.Text;
+
+            if (roommate == "")
+            {
+                MessageBox.Show("Please enter which roommate you want to make complaint about!");
+            }
+            else
+            {
+                if (cbComplaintsDoesntClean.Checked || cbComplaintsInvitingPeople.Checked || cbComplaintsMakingNoise.Checked || cbLowHygiene.Checked)
+                {
+                    string complaint = "";
+                    if (cbComplaintsDoesntClean.Checked)
+                    {
+                        complaint = "Does not clean!";
+                    }
+                    else if (cbComplaintsInvitingPeople.Checked)
+                    {
+                        complaint = "Inviting people without asking!";
+                    }
+                    else if (cbComplaintsMakingNoise.Checked)
+                    {
+                        complaint = "Making noise after 23:00 o'clock!";
+                    }
+                    else if (cbLowHygiene.Checked)
+                    {
+                        complaint = "Roomate has a very low hygiene!";
+                    }
+
+
+
+                    //Get the info of the student making the complaint
+                    string[] splitedUsername = label30.Text.Split().ToArray();
+
+                    string name = splitedUsername[1] + " " + splitedUsername[2];
+
+                    string[] livingIn = label39.Text.Split().ToArray();
+
+                    string address = livingIn[5] + " " + livingIn[6];
+
+
+                    //Send the complaint to Admin
+                    lbAdminComplaints.Items.Add($"{name}, from {address} - Complaint about {roommate} - {complaint}");
+
+
+                    cbRoommatesComplains.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Please select your complaint about the roommate!");
+                }
+            }
+        }
+
+        //Student make complaint about a broken facility
+        private void btnComplaintBrokenFacility_Click(object sender, EventArgs e)
+        {
+            if (cbBrokenFacility.Text == "")
+            {
+                MessageBox.Show("Please select the broken facility!");
+            }
+            else
+            {
+
+                //Get the info of the student making the complaint
+                string[] splitedUsername = label30.Text.Split().ToArray();
+
+                string name = splitedUsername[1] + " " + splitedUsername[2];
+
+                string[] livingIn = label39.Text.Split().ToArray();
+
+                string address = livingIn[5] + " " + livingIn[6];
+
+
+                string brokenFacility = cbBrokenFacility.Text;
+
+
+                //Send the complaint to Admin
+                lbAdminComplaints.Items.Add($"{name}, from {address} - Complaint about broken facility - {brokenFacility}");
+
+            }
+
+
+            cbBrokenFacility.Text = "";
+        }
+
+
+        //ADMIN COMPLAINTS
+
+        //Admin highlighting the complaint (Making it a diffrent color because it is important
+        private void btnHighlightComplaint_Click(object sender, EventArgs e)
+        {
+
+
+            if (lbAdminComplaints.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a complaint!");
+            }
+            else
+            {
+                int index = lbAdminComplaints.Items.IndexOf(lbAdminComplaints.SelectedItem);
+
+            }
+        }
+
+
+        //Admin taking care of the complaint
+        private void btnComplaintFixed_Click(object sender, EventArgs e)
+        {
+            if (lbAdminComplaints.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a complaint!");
+            }
+            else
+            {
+                int index = lbAdminComplaints.Items.IndexOf(lbAdminComplaints.SelectedItem);
+                lbAdminComplaints.Items.RemoveAt(index);
+            }
+
+        }
+
+        //END OF COMPLAINTS
 
         //ALL THE TAB CONTROL BUTTONS !!!
 
@@ -1235,6 +1390,10 @@ namespace Group_project_semester_1
             cbBrokenFacility.Text = "";
         }
 
+
+        //ADMIN COMPLAINTS
+
+        //Admin highlighting the complaint (Making it a diffrent color because it is important
         private void btnHighlightComplaint_Click(object sender, EventArgs e)
         {
          
@@ -1250,6 +1409,8 @@ namespace Group_project_semester_1
             }
         }
 
+
+        //Admin taking care of the complaint
         private void btnComplaintFixed_Click(object sender, EventArgs e)
         {
             if (lbAdminComplaints.SelectedItem == null)
@@ -1263,5 +1424,7 @@ namespace Group_project_semester_1
             }
            
         }
+
+        //END OF COMPLAINTS
     }
 }
