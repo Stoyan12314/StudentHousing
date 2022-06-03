@@ -31,7 +31,7 @@ namespace Group_project_semester_1
         {
             this.StudentRent = new System.Windows.Forms.TabPage();
             this.button65 = new System.Windows.Forms.Button();
-            this.btnPayRent = new System.Windows.Forms.Button();
+            this.btnGoToRentPayment = new System.Windows.Forms.Button();
             this.lblRentPayment = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -213,6 +213,9 @@ namespace Group_project_semester_1
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.StudentComplaints = new System.Windows.Forms.TabPage();
+            this.btnComplaintBrokenFacility = new System.Windows.Forms.Button();
+            this.label49 = new System.Windows.Forms.Label();
+            this.cbBrokenFacility = new System.Windows.Forms.ComboBox();
             this.label48 = new System.Windows.Forms.Label();
             this.tbDiffrentComplaint = new System.Windows.Forms.TextBox();
             this.btnDiffrentComplaint = new System.Windows.Forms.Button();
@@ -272,6 +275,9 @@ namespace Group_project_semester_1
             this.button89 = new System.Windows.Forms.Button();
             this.label41 = new System.Windows.Forms.Label();
             this.AdminComplaints = new System.Windows.Forms.TabPage();
+            this.btnComplaintFixed = new System.Windows.Forms.Button();
+            this.btnHighlightComplaint = new System.Windows.Forms.Button();
+            this.lbAdminComplaints = new System.Windows.Forms.ListBox();
             this.button90 = new System.Windows.Forms.Button();
             this.button91 = new System.Windows.Forms.Button();
             this.button92 = new System.Windows.Forms.Button();
@@ -281,6 +287,14 @@ namespace Group_project_semester_1
             this.button95 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.AdminRent = new System.Windows.Forms.TabPage();
+            this.btnAlreadyPaidAdmin = new System.Windows.Forms.Button();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.btnRequestPaymentAdmin = new System.Windows.Forms.Button();
+            this.btnShowStudentsForRent = new System.Windows.Forms.Button();
+            this.lbStudentsRent = new System.Windows.Forms.ListBox();
+            this.cbSelectedApartament = new System.Windows.Forms.ComboBox();
+            this.cbSelectedBuilding = new System.Windows.Forms.ComboBox();
             this.button96 = new System.Windows.Forms.Button();
             this.button97 = new System.Windows.Forms.Button();
             this.button98 = new System.Windows.Forms.Button();
@@ -289,12 +303,18 @@ namespace Group_project_semester_1
             this.panel14 = new System.Windows.Forms.Panel();
             this.button101 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
-            this.lbAdminComplaints = new System.Windows.Forms.ListBox();
-            this.cbBrokenFacility = new System.Windows.Forms.ComboBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.btnComplaintBrokenFacility = new System.Windows.Forms.Button();
-            this.btnHighlightComplaint = new System.Windows.Forms.Button();
-            this.btnComplaintFixed = new System.Windows.Forms.Button();
+            this.PayRent = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnPayYourRent = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             this.StudentRent.SuspendLayout();
             this.StudentAnouncments.SuspendLayout();
             this.StudentRules.SuspendLayout();
@@ -318,12 +338,13 @@ namespace Group_project_semester_1
             this.AdminRules.SuspendLayout();
             this.AdminComplaints.SuspendLayout();
             this.AdminRent.SuspendLayout();
+            this.PayRent.SuspendLayout();
             this.SuspendLayout();
             // 
             // StudentRent
             // 
             this.StudentRent.Controls.Add(this.button65);
-            this.StudentRent.Controls.Add(this.btnPayRent);
+            this.StudentRent.Controls.Add(this.btnGoToRentPayment);
             this.StudentRent.Controls.Add(this.lblRentPayment);
             this.StudentRent.Controls.Add(this.label36);
             this.StudentRent.Controls.Add(this.panel8);
@@ -354,20 +375,21 @@ namespace Group_project_semester_1
             this.button65.UseVisualStyleBackColor = true;
             this.button65.Click += new System.EventHandler(this.button65_Click);
             // 
-            // btnPayRent
+            // btnGoToRentPayment
             // 
-            this.btnPayRent.Location = new System.Drawing.Point(511, 384);
-            this.btnPayRent.Name = "btnPayRent";
-            this.btnPayRent.Size = new System.Drawing.Size(222, 58);
-            this.btnPayRent.TabIndex = 27;
-            this.btnPayRent.Text = "Pay Rent";
-            this.btnPayRent.UseVisualStyleBackColor = true;
+            this.btnGoToRentPayment.Location = new System.Drawing.Point(579, 384);
+            this.btnGoToRentPayment.Name = "btnGoToRentPayment";
+            this.btnGoToRentPayment.Size = new System.Drawing.Size(222, 58);
+            this.btnGoToRentPayment.TabIndex = 27;
+            this.btnGoToRentPayment.Text = "Pay Rent";
+            this.btnGoToRentPayment.UseVisualStyleBackColor = true;
+            this.btnGoToRentPayment.Click += new System.EventHandler(this.btnPayRent_Click);
             // 
             // lblRentPayment
             // 
             this.lblRentPayment.AutoSize = true;
             this.lblRentPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.lblRentPayment.Location = new System.Drawing.Point(678, 305);
+            this.lblRentPayment.Location = new System.Drawing.Point(750, 305);
             this.lblRentPayment.Name = "lblRentPayment";
             this.lblRentPayment.Size = new System.Drawing.Size(25, 24);
             this.lblRentPayment.TabIndex = 26;
@@ -377,7 +399,7 @@ namespace Group_project_semester_1
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label36.Location = new System.Drawing.Point(530, 305);
+            this.label36.Location = new System.Drawing.Point(590, 305);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(110, 24);
             this.label36.TabIndex = 24;
@@ -519,7 +541,7 @@ namespace Group_project_semester_1
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label33.Location = new System.Drawing.Point(545, 260);
+            this.label33.Location = new System.Drawing.Point(806, 211);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(290, 24);
             this.label33.TabIndex = 24;
@@ -529,9 +551,9 @@ namespace Group_project_semester_1
             // 
             this.lbAnouncments.FormattingEnabled = true;
             this.lbAnouncments.ItemHeight = 16;
-            this.lbAnouncments.Location = new System.Drawing.Point(480, 305);
+            this.lbAnouncments.Location = new System.Drawing.Point(340, 238);
             this.lbAnouncments.Name = "lbAnouncments";
-            this.lbAnouncments.Size = new System.Drawing.Size(433, 164);
+            this.lbAnouncments.Size = new System.Drawing.Size(756, 324);
             this.lbAnouncments.TabIndex = 23;
             // 
             // panel7
@@ -2302,6 +2324,7 @@ namespace Group_project_semester_1
             this.tabControl.Controls.Add(this.AdminRules);
             this.tabControl.Controls.Add(this.AdminComplaints);
             this.tabControl.Controls.Add(this.AdminRent);
+            this.tabControl.Controls.Add(this.PayRent);
             this.tabControl.Location = new System.Drawing.Point(0, -4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -2341,6 +2364,47 @@ namespace Group_project_semester_1
             this.StudentComplaints.TabIndex = 16;
             this.StudentComplaints.Text = "Student complaints";
             this.StudentComplaints.UseVisualStyleBackColor = true;
+            // 
+            // btnComplaintBrokenFacility
+            // 
+            this.btnComplaintBrokenFacility.Location = new System.Drawing.Point(759, 419);
+            this.btnComplaintBrokenFacility.Name = "btnComplaintBrokenFacility";
+            this.btnComplaintBrokenFacility.Size = new System.Drawing.Size(314, 61);
+            this.btnComplaintBrokenFacility.TabIndex = 52;
+            this.btnComplaintBrokenFacility.Text = "Make a complaint about broken facility!";
+            this.btnComplaintBrokenFacility.UseVisualStyleBackColor = true;
+            this.btnComplaintBrokenFacility.Click += new System.EventHandler(this.btnComplaintBrokenFacility_Click);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(308, 436);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(115, 17);
+            this.label49.TabIndex = 51;
+            this.label49.Text = "Broken Facilities:";
+            // 
+            // cbBrokenFacility
+            // 
+            this.cbBrokenFacility.FormattingEnabled = true;
+            this.cbBrokenFacility.Items.AddRange(new object[] {
+            "Kitchen sink",
+            "Toilet sink",
+            "Shower",
+            "Wasching mashine",
+            "Dishwasher",
+            "Table",
+            "Chair",
+            "Door",
+            "Lamp",
+            "Window",
+            "Keys",
+            "Internet",
+            "Electricity"});
+            this.cbBrokenFacility.Location = new System.Drawing.Point(311, 456);
+            this.cbBrokenFacility.Name = "cbBrokenFacility";
+            this.cbBrokenFacility.Size = new System.Drawing.Size(348, 24);
+            this.cbBrokenFacility.TabIndex = 50;
             // 
             // label48
             // 
@@ -2968,6 +3032,35 @@ namespace Group_project_semester_1
             this.AdminComplaints.Text = "Admin Complaints";
             this.AdminComplaints.UseVisualStyleBackColor = true;
             // 
+            // btnComplaintFixed
+            // 
+            this.btnComplaintFixed.Location = new System.Drawing.Point(849, 592);
+            this.btnComplaintFixed.Name = "btnComplaintFixed";
+            this.btnComplaintFixed.Size = new System.Drawing.Size(263, 68);
+            this.btnComplaintFixed.TabIndex = 39;
+            this.btnComplaintFixed.Text = "Complaint is fixed and taken cared of";
+            this.btnComplaintFixed.UseVisualStyleBackColor = true;
+            this.btnComplaintFixed.Click += new System.EventHandler(this.btnComplaintFixed_Click);
+            // 
+            // btnHighlightComplaint
+            // 
+            this.btnHighlightComplaint.Location = new System.Drawing.Point(363, 592);
+            this.btnHighlightComplaint.Name = "btnHighlightComplaint";
+            this.btnHighlightComplaint.Size = new System.Drawing.Size(263, 68);
+            this.btnHighlightComplaint.TabIndex = 38;
+            this.btnHighlightComplaint.Text = "Highlight the complaint";
+            this.btnHighlightComplaint.UseVisualStyleBackColor = true;
+            this.btnHighlightComplaint.Click += new System.EventHandler(this.btnHighlightComplaint_Click);
+            // 
+            // lbAdminComplaints
+            // 
+            this.lbAdminComplaints.FormattingEnabled = true;
+            this.lbAdminComplaints.ItemHeight = 16;
+            this.lbAdminComplaints.Location = new System.Drawing.Point(322, 169);
+            this.lbAdminComplaints.Name = "lbAdminComplaints";
+            this.lbAdminComplaints.Size = new System.Drawing.Size(829, 372);
+            this.lbAdminComplaints.TabIndex = 37;
+            // 
             // button90
             // 
             this.button90.Location = new System.Drawing.Point(6, 580);
@@ -3049,6 +3142,14 @@ namespace Group_project_semester_1
             // 
             // AdminRent
             // 
+            this.AdminRent.Controls.Add(this.btnAlreadyPaidAdmin);
+            this.AdminRent.Controls.Add(this.label51);
+            this.AdminRent.Controls.Add(this.label50);
+            this.AdminRent.Controls.Add(this.btnRequestPaymentAdmin);
+            this.AdminRent.Controls.Add(this.btnShowStudentsForRent);
+            this.AdminRent.Controls.Add(this.lbStudentsRent);
+            this.AdminRent.Controls.Add(this.cbSelectedApartament);
+            this.AdminRent.Controls.Add(this.cbSelectedBuilding);
             this.AdminRent.Controls.Add(this.button96);
             this.AdminRent.Controls.Add(this.button97);
             this.AdminRent.Controls.Add(this.button98);
@@ -3064,6 +3165,87 @@ namespace Group_project_semester_1
             this.AdminRent.TabIndex = 21;
             this.AdminRent.Text = "Admin Rent";
             this.AdminRent.UseVisualStyleBackColor = true;
+            // 
+            // btnAlreadyPaidAdmin
+            // 
+            this.btnAlreadyPaidAdmin.Location = new System.Drawing.Point(750, 484);
+            this.btnAlreadyPaidAdmin.Name = "btnAlreadyPaidAdmin";
+            this.btnAlreadyPaidAdmin.Size = new System.Drawing.Size(195, 60);
+            this.btnAlreadyPaidAdmin.TabIndex = 44;
+            this.btnAlreadyPaidAdmin.Text = "Already paid";
+            this.btnAlreadyPaidAdmin.UseVisualStyleBackColor = true;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(320, 241);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(77, 17);
+            this.label51.TabIndex = 43;
+            this.label51.Text = "Apartment:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(320, 184);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(62, 17);
+            this.label50.TabIndex = 42;
+            this.label50.Text = "Building:";
+            // 
+            // btnRequestPaymentAdmin
+            // 
+            this.btnRequestPaymentAdmin.Location = new System.Drawing.Point(1009, 484);
+            this.btnRequestPaymentAdmin.Name = "btnRequestPaymentAdmin";
+            this.btnRequestPaymentAdmin.Size = new System.Drawing.Size(195, 60);
+            this.btnRequestPaymentAdmin.TabIndex = 41;
+            this.btnRequestPaymentAdmin.Text = "Request payment";
+            this.btnRequestPaymentAdmin.UseVisualStyleBackColor = true;
+            // 
+            // btnShowStudentsForRent
+            // 
+            this.btnShowStudentsForRent.Location = new System.Drawing.Point(287, 323);
+            this.btnShowStudentsForRent.Name = "btnShowStudentsForRent";
+            this.btnShowStudentsForRent.Size = new System.Drawing.Size(221, 77);
+            this.btnShowStudentsForRent.TabIndex = 40;
+            this.btnShowStudentsForRent.Text = "Show the students living at this address";
+            this.btnShowStudentsForRent.UseVisualStyleBackColor = true;
+            this.btnShowStudentsForRent.Click += new System.EventHandler(this.btnShowStudents_Click);
+            // 
+            // lbStudentsRent
+            // 
+            this.lbStudentsRent.FormattingEnabled = true;
+            this.lbStudentsRent.ItemHeight = 16;
+            this.lbStudentsRent.Location = new System.Drawing.Point(538, 152);
+            this.lbStudentsRent.Name = "lbStudentsRent";
+            this.lbStudentsRent.Size = new System.Drawing.Size(676, 292);
+            this.lbStudentsRent.TabIndex = 39;
+            // 
+            // cbSelectedApartament
+            // 
+            this.cbSelectedApartament.FormattingEnabled = true;
+            this.cbSelectedApartament.Items.AddRange(new object[] {
+            "Apartment1",
+            "Apartment2",
+            "Apartment3",
+            "Apartment4",
+            "Apartment5"});
+            this.cbSelectedApartament.Location = new System.Drawing.Point(317, 261);
+            this.cbSelectedApartament.Name = "cbSelectedApartament";
+            this.cbSelectedApartament.Size = new System.Drawing.Size(164, 24);
+            this.cbSelectedApartament.TabIndex = 38;
+            // 
+            // cbSelectedBuilding
+            // 
+            this.cbSelectedBuilding.FormattingEnabled = true;
+            this.cbSelectedBuilding.Items.AddRange(new object[] {
+            "BuildingA",
+            "BuildingB",
+            "BuildingC"});
+            this.cbSelectedBuilding.Location = new System.Drawing.Point(317, 204);
+            this.cbSelectedBuilding.Name = "cbSelectedBuilding";
+            this.cbSelectedBuilding.Size = new System.Drawing.Size(164, 24);
+            this.cbSelectedBuilding.TabIndex = 37;
             // 
             // button96
             // 
@@ -3144,75 +3326,116 @@ namespace Group_project_semester_1
             this.label43.TabIndex = 29;
             this.label43.Text = "Hello, Administrator!";
             // 
-            // lbAdminComplaints
+            // PayRent
             // 
-            this.lbAdminComplaints.FormattingEnabled = true;
-            this.lbAdminComplaints.ItemHeight = 16;
-            this.lbAdminComplaints.Location = new System.Drawing.Point(322, 169);
-            this.lbAdminComplaints.Name = "lbAdminComplaints";
-            this.lbAdminComplaints.Size = new System.Drawing.Size(829, 372);
-            this.lbAdminComplaints.TabIndex = 37;
+            this.PayRent.Controls.Add(this.label56);
+            this.PayRent.Controls.Add(this.label55);
+            this.PayRent.Controls.Add(this.label54);
+            this.PayRent.Controls.Add(this.label53);
+            this.PayRent.Controls.Add(this.label52);
+            this.PayRent.Controls.Add(this.btnPayYourRent);
+            this.PayRent.Controls.Add(this.textBox4);
+            this.PayRent.Controls.Add(this.textBox3);
+            this.PayRent.Controls.Add(this.textBox2);
+            this.PayRent.Controls.Add(this.textBox1);
+            this.PayRent.Controls.Add(this.comboBox1);
+            this.PayRent.Location = new System.Drawing.Point(4, 25);
+            this.PayRent.Name = "PayRent";
+            this.PayRent.Padding = new System.Windows.Forms.Padding(3);
+            this.PayRent.Size = new System.Drawing.Size(1231, 748);
+            this.PayRent.TabIndex = 22;
+            this.PayRent.Text = "Pay Rent";
+            this.PayRent.UseVisualStyleBackColor = true;
             // 
-            // cbBrokenFacility
+            // comboBox1
             // 
-            this.cbBrokenFacility.FormattingEnabled = true;
-            this.cbBrokenFacility.Items.AddRange(new object[] {
-            "Kitchen sink",
-            "Toilet sink",
-            "Shower",
-            "Wasching mashine",
-            "Dishwasher",
-            "Table",
-            "Chair",
-            "Door",
-            "Lamp",
-            "Window",
-            "Keys",
-            "Internet",
-            "Electricity"});
-            this.cbBrokenFacility.Location = new System.Drawing.Point(311, 456);
-            this.cbBrokenFacility.Name = "cbBrokenFacility";
-            this.cbBrokenFacility.Size = new System.Drawing.Size(348, 24);
-            this.cbBrokenFacility.TabIndex = 50;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(399, 132);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(432, 24);
+            this.comboBox1.TabIndex = 0;
             // 
-            // label49
+            // textBox1
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(308, 436);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(115, 17);
-            this.label49.TabIndex = 51;
-            this.label49.Text = "Broken Facilities:";
+            this.textBox1.Location = new System.Drawing.Point(399, 264);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(432, 22);
+            this.textBox1.TabIndex = 1;
             // 
-            // btnComplaintBrokenFacility
+            // textBox2
             // 
-            this.btnComplaintBrokenFacility.Location = new System.Drawing.Point(759, 419);
-            this.btnComplaintBrokenFacility.Name = "btnComplaintBrokenFacility";
-            this.btnComplaintBrokenFacility.Size = new System.Drawing.Size(314, 61);
-            this.btnComplaintBrokenFacility.TabIndex = 52;
-            this.btnComplaintBrokenFacility.Text = "Make a complaint about broken facility!";
-            this.btnComplaintBrokenFacility.UseVisualStyleBackColor = true;
-            this.btnComplaintBrokenFacility.Click += new System.EventHandler(this.btnComplaintBrokenFacility_Click);
+            this.textBox2.Location = new System.Drawing.Point(399, 363);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(432, 22);
+            this.textBox2.TabIndex = 2;
             // 
-            // btnHighlightComplaint
+            // textBox3
             // 
-            this.btnHighlightComplaint.Location = new System.Drawing.Point(363, 592);
-            this.btnHighlightComplaint.Name = "btnHighlightComplaint";
-            this.btnHighlightComplaint.Size = new System.Drawing.Size(263, 68);
-            this.btnHighlightComplaint.TabIndex = 38;
-            this.btnHighlightComplaint.Text = "Highlight the complaint";
-            this.btnHighlightComplaint.UseVisualStyleBackColor = true;
-            this.btnHighlightComplaint.Click += new System.EventHandler(this.btnHighlightComplaint_Click);
+            this.textBox3.Location = new System.Drawing.Point(399, 500);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(174, 22);
+            this.textBox3.TabIndex = 3;
             // 
-            // btnComplaintFixed
+            // textBox4
             // 
-            this.btnComplaintFixed.Location = new System.Drawing.Point(849, 592);
-            this.btnComplaintFixed.Name = "btnComplaintFixed";
-            this.btnComplaintFixed.Size = new System.Drawing.Size(263, 68);
-            this.btnComplaintFixed.TabIndex = 39;
-            this.btnComplaintFixed.Text = "Complaint is fixed and taken cared of";
-            this.btnComplaintFixed.UseVisualStyleBackColor = true;
-            this.btnComplaintFixed.Click += new System.EventHandler(this.btnComplaintFixed_Click);
+            this.textBox4.Location = new System.Drawing.Point(657, 500);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(174, 22);
+            this.textBox4.TabIndex = 4;
+            // 
+            // btnPayYourRent
+            // 
+            this.btnPayYourRent.Location = new System.Drawing.Point(509, 589);
+            this.btnPayYourRent.Name = "btnPayYourRent";
+            this.btnPayYourRent.Size = new System.Drawing.Size(202, 68);
+            this.btnPayYourRent.TabIndex = 5;
+            this.btnPayYourRent.Text = "Pay rent!";
+            this.btnPayYourRent.UseVisualStyleBackColor = true;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(396, 112);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(73, 17);
+            this.label52.TabIndex = 6;
+            this.label52.Text = "Card type:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(396, 244);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(94, 17);
+            this.label53.TabIndex = 7;
+            this.label53.Text = "Card number:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(396, 343);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(101, 17);
+            this.label54.TabIndex = 8;
+            this.label54.Text = "Name on card:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(396, 480);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(82, 17);
+            this.label55.TabIndex = 9;
+            this.label55.Text = "Expiry date:";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(654, 480);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(39, 17);
+            this.label56.TabIndex = 10;
+            this.label56.Text = "CVV:";
             // 
             // Form1
             // 
@@ -3266,6 +3489,8 @@ namespace Group_project_semester_1
             this.AdminComplaints.PerformLayout();
             this.AdminRent.ResumeLayout(false);
             this.AdminRent.PerformLayout();
+            this.PayRent.ResumeLayout(false);
+            this.PayRent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3430,7 +3655,7 @@ namespace Group_project_semester_1
         private System.Windows.Forms.Button btnAddTaskCleaning;
         private System.Windows.Forms.Button btnRuleRequest;
         private System.Windows.Forms.TextBox tbRuleRequest;
-        private System.Windows.Forms.Button btnPayRent;
+        private System.Windows.Forms.Button btnGoToRentPayment;
         private System.Windows.Forms.Label lblRentPayment;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label20;
@@ -3538,6 +3763,26 @@ namespace Group_project_semester_1
         private System.Windows.Forms.ListBox lbAdminComplaints;
         private System.Windows.Forms.Button btnComplaintFixed;
         private System.Windows.Forms.Button btnHighlightComplaint;
+        private System.Windows.Forms.Button btnShowStudentsForRent;
+        private System.Windows.Forms.ListBox lbStudentsRent;
+        private System.Windows.Forms.ComboBox cbSelectedApartament;
+        private System.Windows.Forms.ComboBox cbSelectedBuilding;
+        private System.Windows.Forms.Button btnRequestPaymentAdmin;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Button btnAlreadyPaidAdmin;
+        private System.Windows.Forms.TabPage PayRent;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Button btnPayYourRent;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

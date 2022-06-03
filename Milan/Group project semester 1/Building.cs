@@ -12,6 +12,9 @@ namespace Group_project_semester_1
 
         //Each building has a list of apartments (5 apartments per Building)
         List<Apartaments> apartamentsInBuilding;
+
+
+        List<string> usernamesList = new List<string>();
         
         
         //Constructor: Creating the building with the apartments in it
@@ -31,9 +34,12 @@ namespace Group_project_semester_1
             apartamentsInBuilding.Add(apartament = new Apartaments("Apartment5",2));
         }
 
-
+        public void AddToListWithUserNames(string username)
+        {
+            usernamesList.Add(username);
+        }
         //Chosing the building and the apartment in which the student should be added
-        public bool AddStudentToApartament( string Firstname, string lastName, string username, string email, int age, string password, string selectedApartament)
+        public bool AddStudentToApartament( string Firstname, string lastName, string username, string email, int age, string password, string selectedApartament, bool rent)
         {
 
             //Check if the student is added or not
@@ -42,13 +48,17 @@ namespace Group_project_semester_1
             {
                 if (apartament.GetApartamentName() == selectedApartament)
                 {
-                    returnBool =  apartament.AddStudent(Firstname,lastName, username, email, age, password, buildingName, selectedApartament);
+                    returnBool =  apartament.AddStudent(Firstname,lastName, username, email, age, password, buildingName, selectedApartament, rent);
                     break;
                 }
             }
             return returnBool;  
         }
 
+        public List<string> ReturnListUsers()
+        {
+            return this.usernamesList;
+        }
 
         //Returning the list of the students in each apartment
         public List<Student> ShowAllStudents(Student loggedUser)
@@ -103,7 +113,18 @@ namespace Group_project_semester_1
             return null;
         }
 
-
+        public List<Student> ReturnStudentsByChosenApartament(string apartamentName)
+        {
+            List<Student> students= null;
+            foreach (Apartaments apartament in apartamentsInBuilding)
+            {
+                if (apartament.GetApartamentName() == apartamentName)
+                {
+                    students= apartament.GetAllStudents();
+                }
+            }
+            return students;
+        }
 
         //Return logged user
         //public bool CheckUserNameAndPassword(string username, string password)

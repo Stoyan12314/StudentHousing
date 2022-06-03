@@ -16,10 +16,11 @@ namespace Group_project_semester_1
         private string password;
         private string building;
         private string apartment;
+        private bool rent;
 
 
         public Student(string name, string lastName, string username, string email, int age,  string password,
-           string building, string apartment)
+           string building, string apartment, bool rent)
         {
             this.firstName = name;
             this.lastName = lastName;
@@ -29,11 +30,23 @@ namespace Group_project_semester_1
             this.password = password;
             this.building = building;
             this.apartment = apartment;
-            
+            this.rent = rent;
 
 
         }
+        public override string ToString()
+        {
 
+            if (rent)
+            {
+                return $"{username} - {building}, {apartment} - {firstName} {lastName} - Rent payed!";
+            }
+            else
+            {
+                return $"{username} - {building}, {apartment} - {firstName} {lastName} - Rent not payed!";
+            }
+
+        }
         public Student()
         {
 
@@ -75,7 +88,10 @@ namespace Group_project_semester_1
         {
             return this.apartment;
         }
-
+        public bool GetRent()
+        {
+            return this.rent;
+        }
 
         //Setters
 
@@ -114,7 +130,10 @@ namespace Group_project_semester_1
         {
             this.apartment = apartment;
         }
-
+        public void SetRent(bool rent)
+        {
+            this.rent = rent;
+        }
 
 
 

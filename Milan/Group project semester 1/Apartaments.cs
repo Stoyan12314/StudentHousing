@@ -75,11 +75,12 @@ namespace Group_project_semester_1
             listCleaningSchedules.Add(cleaning);
         }
         //Checking if it has place for the student if yes - adding student.
-        public bool AddStudent(string name, string lastName, string username, string email, int age, string password, string building, string apartment)
+        public bool AddStudent(string name, string lastName, string username, string email, int age, string password, string building, string apartment, bool rent)
         {
             if (listOfStudents.Count < ocupants)
             {
-                Student student = new Student(name, lastName, username, email, age, password, building, apartment);
+                Student student = new Student(name, lastName, username, email, age, password, building, apartment, rent);
+                
                 this.listOfStudents.Add(student);
                 return true;
             }
