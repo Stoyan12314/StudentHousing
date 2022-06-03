@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Building.cs" />
+    <Compile Include="CleaningSchedule.cs" />
+    <Compile Include="Garbage.cs" />
+    <Compile Include="Apartaments.cs" />
+    <Compile Include="Groceries.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

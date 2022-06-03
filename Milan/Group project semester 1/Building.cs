@@ -51,16 +51,20 @@ namespace Group_project_semester_1
 
 
         //Returning the list of the students in each apartment
-        public List<Student> ShowAllStudents()
+        public List<Student> ShowAllStudents(Student loggedUser)
         {
 
             List<Student> listWithStudents = new List<Student>();
             foreach (Apartaments apartament in apartamentsInBuilding)
             {
-                foreach (Student student in apartament.GetAllStudents())
+                if (loggedUser.GetApartment() == apartament.GetApartamentName())
                 {
-                    listWithStudents.Add(student);
+                    foreach (Student student in apartament.GetAllStudents())
+                    {
+                        listWithStudents.Add(student);
+                    }
                 }
+            
                 
             }
             return listWithStudents;

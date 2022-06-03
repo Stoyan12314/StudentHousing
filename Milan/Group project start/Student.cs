@@ -122,7 +122,7 @@ namespace Group_project_semester_1
 
         public string GetInfo()
         {
-            return $"{this.firstName} {this.lastName} is {this.age} years old. Email - {this.email}; Username - {this.username}; Password - {this.password}. Living in: Building {building} {apartment} \n";
+            return $"{this.firstName} {this.lastName} is {this.age} years old. Email - {this.email}; Username - {this.username}; Password - {this.password}. Living in: Building {building} {apartment}";
         }
 
 
