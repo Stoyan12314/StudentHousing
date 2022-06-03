@@ -161,8 +161,12 @@ namespace Group_project_semester_1
             else
             {
                 tabControl.SelectTab("AdminPage");
+                tbAdminLoginPassword.Text = "";
+                tbAdminLoginUsername.Text = "";
             }
         }
+
+
 
 
         //Login Student
@@ -174,7 +178,7 @@ namespace Group_project_semester_1
            loggedUser = CheckLogin(building, username, password);
             //label19
             if (loggedUser != null)
-           {
+            {
                 tabControl.SelectTab("StudentHomePage");
                 LoadText(building, loggedUser);
                 lbStudentRoommates.Items.Clear();
@@ -185,7 +189,9 @@ namespace Group_project_semester_1
                         lbStudentRoommates.Items.Add(student.GetName());
                     }
                 }
-           }
+            }
+
+
            else
            {
                 MessageBox.Show("Account not found");
@@ -256,7 +262,168 @@ namespace Group_project_semester_1
 
 
 
-        //Tab Control Buttons
+        
+
+        
+
+        private void btnShowA_Click(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingA.ShowAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+                
+        }
+
+        
+
+      
+        
+
+       
+
+        private void btnShowB_Click(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingB.ShowAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+
+        }
+
+        private void btnShowC_Click(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingC.ShowAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+        }
+
+        private void lbStudentRoommates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentHomePage_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void RefreshCleaningTasks()
+        {
+            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbCleaningSchedule.Items.Clear();
+            foreach (CleaningSchedule schedule in apartamentToAddTaskTo.GetListCleaningSchedule())
+            {
+                lbCleaningSchedule.Items.Add(schedule.GetInfo());
+            }
+        }
+        private void btnAddTaskCleaning_Click(object sender, EventArgs e)
+        {
+
+            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+            string room = comboBox_tasks.Text;
+            apartamentToAddTaskTo.AddCleaningTask(loggedUser.GetUsername(), date, room);
+            RefreshCleaningTasks();
+        }
+
+        private void btnRemoveTaskCleaning_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToRemoveTaskFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string selectedTask = "";
+            if (lbCleaningSchedule.SelectedIndex != -1)
+            {
+              selectedTask = lbCleaningSchedule.SelectedItem.ToString();   
+            }
+            if (selectedTask == "")
+            {
+                MessageBox.Show("Please select task to remove from");
+            }
+            else
+            {
+                apartamentToRemoveTaskFrom.RemoveCleaningShedule(selectedTask, loggedUser.GetUsername());
+                RefreshCleaningTasks();           
+            }
+        }
+        private void UpdateGroceries()
+        {
+            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbGroceriesStudent.Items.Clear();
+            foreach (Groceries groceries in chosenApartament.GetGroceries())
+            {
+                lbGroceriesStudent.Items.Add(groceries.Info());
+            }
+        }
+        private void btnAddTaskGroceries_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToAddGroceriesToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+            apartamentToAddGroceriesToo.AddGroceries(loggedUser.GetUsername(), date, "will buy groceries on this date");
+            
+            UpdateGroceries();
+
+
+        }
+
+        private void btnRemoveTaskGroceries_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToRemoveGroceriesFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+           
+            string selectedGrocerie = "";
+            if (lbGroceriesStudent.SelectedIndex != -1)
+            {
+                selectedGrocerie = lbGroceriesStudent.SelectedItem.ToString();
+            }
+            if (selectedGrocerie == "")
+            {
+                MessageBox.Show("Please select grocerie to remove from");
+            }
+            else
+            {
+                apartamentToRemoveGroceriesFrom.RemoveGrocerie(selectedGrocerie, loggedUser.GetUsername());
+                UpdateGroceries();
+            }
+        }
+
+        private void btnAddTaskGarbage_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToAddGarbageToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string date = dateTimePicker1.Value.ToShortDateString();
+
+            apartamentToAddGarbageToo.AddGarbage("will throw garbage on this date", date, loggedUser.GetUsername());
+            UpdateGarbage();
+        }
+        private void UpdateGarbage()
+        {
+            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            lbGarbage.Items.Clear();
+            foreach (Garbage garbage in chosenApartament.GetGarbages())
+            {
+                lbGarbage.Items.Add(garbage.Info());
+            }
+        }
+
+        private void btnRemoveTaskGarbage_Click(object sender, EventArgs e)
+        {
+            Apartaments apartamentToRemoveGarbageFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
+            string selectedGarbage = "";
+            if (lbGarbage.SelectedIndex != -1)
+            {
+                selectedGarbage = lbGarbage.SelectedItem.ToString();
+            }
+            if (selectedGarbage == "")
+            {
+                MessageBox.Show("Please select garbage to remove from");
+            }
+            else
+            {
+                apartamentToRemoveGarbageFrom.RemoveGarbage(selectedGarbage, loggedUser.GetUsername());
+                UpdateGarbage();
+            }
+        }
+
+
+        //ALL THE TAB CONTROL BUTTONS !!!
 
         private void btnHomePageRegister_Click(object sender, EventArgs e)
         {
@@ -296,30 +463,6 @@ namespace Group_project_semester_1
         private void btnAdminLoginBackToLoginAs_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("LoginAs");
-        }
-
-        private void Garbage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbApartment2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbBuildingA_CheckedChanged(object sender, EventArgs e)
-        {
-            //rbApartment1.Text = buildingA.;
-        }
-
-        private void btnShowA_Click(object sender, EventArgs e)
-        {
-            foreach (Student student in buildingA.ShowAllStudents())
-            {
-                lbInfo.Items.Add(student.GetInfo());
-            }
-                
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -567,8 +710,228 @@ namespace Group_project_semester_1
             tabControl.SelectTab("StudentRent");
         }
 
-      
-        private void button10_Click(object sender, EventArgs e)
+        private void button60_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button59_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button61_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button62_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button63_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button64_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button65_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button66_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentComplaints");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button77_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button83_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button89_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button95_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button101_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+        }
+
+        private void button67_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button76_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button82_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button88_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button94_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button100_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+        }
+
+        private void button68_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button75_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button81_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button87_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button93_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button99_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+        }
+
+        private void button69_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button74_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button80_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button86_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button92_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button98_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+        }
+
+        private void button70_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button73_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button79_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button85_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button91_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button97_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+        }
+
+        private void button71_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+        private void button72_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+        private void button78_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+        private void button84_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+        private void button90_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+        private void button96_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+        }
+
+
+        private void btnLogOutAdmin_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
              "Log out?", MessageBoxButtons.YesNo);
@@ -577,146 +940,13 @@ namespace Group_project_semester_1
             loggedUser = null;
         }
 
-       
-
-        private void btnShowB_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-            foreach (Student student in buildingB.ShowAllStudents())
-            {
-                lbInfo.Items.Add(student.GetInfo());
-            }
-
-        }
-
-        private void btnShowC_Click(object sender, EventArgs e)
-        {
-            foreach (Student student in buildingC.ShowAllStudents())
-            {
-                lbInfo.Items.Add(student.GetInfo());
-            }
-        }
-
-        private void lbStudentRoommates_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StudentHomePage_Click(object sender, EventArgs e)
-        {
-
-        }
-        public void RefreshCleaningTasks()
-        {
-            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            lbCleaningSchedule.Items.Clear();
-            foreach (CleaningSchedule schedule in apartamentToAddTaskTo.GetListCleaningSchedule())
-            {
-                lbCleaningSchedule.Items.Add(schedule.GetInfo());
-            }
-        }
-        private void btnAddTaskCleaning_Click(object sender, EventArgs e)
-        {
-
-            Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            string date = dateTimePicker1.Value.ToShortDateString();
-            string room = comboBox_tasks.Text;
-            apartamentToAddTaskTo.AddCleaningTask(loggedUser.GetUsername(), date, room);
-            RefreshCleaningTasks();
-        }
-
-        private void btnRemoveTaskCleaning_Click(object sender, EventArgs e)
-        {
-            Apartaments apartamentToRemoveTaskFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            string selectedTask = "";
-            if (lbCleaningSchedule.SelectedIndex != -1)
-            {
-              selectedTask = lbCleaningSchedule.SelectedItem.ToString();   
-            }
-            if (selectedTask == "")
-            {
-                MessageBox.Show("Please select task to remove from");
-            }
-            else
-            {
-                apartamentToRemoveTaskFrom.RemoveCleaningShedule(selectedTask, loggedUser.GetUsername());
-                RefreshCleaningTasks();           
-            }
-        }
-        private void UpdateGroceries()
-        {
-            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            lbGroceriesStudent.Items.Clear();
-            foreach (Groceries groceries in chosenApartament.GetGroceries())
-            {
-                lbGroceriesStudent.Items.Add(groceries.Info());
-            }
-        }
-        private void btnAddTaskGroceries_Click(object sender, EventArgs e)
-        {
-            Apartaments apartamentToAddGroceriesToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            string date = dateTimePicker1.Value.ToShortDateString();
-            apartamentToAddGroceriesToo.AddGroceries(loggedUser.GetUsername(), date, "will buy groceries on this date");
-            
-            UpdateGroceries();
-
-
-        }
-
-        private void btnRemoveTaskGroceries_Click(object sender, EventArgs e)
-        {
-            Apartaments apartamentToRemoveGroceriesFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
-           
-            string selectedGrocerie = "";
-            if (lbGroceriesStudent.SelectedIndex != -1)
-            {
-                selectedGrocerie = lbGroceriesStudent.SelectedItem.ToString();
-            }
-            if (selectedGrocerie == "")
-            {
-                MessageBox.Show("Please select grocerie to remove from");
-            }
-            else
-            {
-                apartamentToRemoveGroceriesFrom.RemoveGrocerie(selectedGrocerie, loggedUser.GetUsername());
-                UpdateGroceries();
-            }
-        }
-
-        private void btnAddTaskGarbage_Click(object sender, EventArgs e)
-        {
-            Apartaments apartamentToAddGarbageToo = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            string date = dateTimePicker1.Value.ToShortDateString();
-
-            apartamentToAddGarbageToo.AddGarbage("will throw garbage on this date", date, loggedUser.GetUsername());
-            UpdateGarbage();
-        }
-        private void UpdateGarbage()
-        {
-            Apartaments chosenApartament = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            lbGarbage.Items.Clear();
-            foreach (Garbage garbage in chosenApartament.GetGarbages())
-            {
-                lbGarbage.Items.Add(garbage.Info());
-            }
-        }
-
-        private void btnRemoveTaskGarbage_Click(object sender, EventArgs e)
-        {
-            Apartaments apartamentToRemoveGarbageFrom = chosenBuilding.ReturnsChosenApartament(loggedUser);
-            string selectedGarbage = "";
-            if (lbGarbage.SelectedIndex != -1)
-            {
-                selectedGarbage = lbGarbage.SelectedItem.ToString();
-            }
-            if (selectedGarbage == "")
-            {
-                MessageBox.Show("Please select garbage to remove from");
-            }
-            else
-            {
-                apartamentToRemoveGarbageFrom.RemoveGarbage(selectedGarbage, loggedUser.GetUsername());
-                UpdateGarbage();
-            }
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+             "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                tabControl.SelectTab("HomePage");
+            loggedUser = null;
         }
     }
 }

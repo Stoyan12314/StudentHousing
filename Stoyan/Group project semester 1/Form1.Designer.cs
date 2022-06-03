@@ -30,6 +30,7 @@ namespace Group_project_semester_1
         private void InitializeComponent()
         {
             this.StudentRent = new System.Windows.Forms.TabPage();
+            this.button65 = new System.Windows.Forms.Button();
             this.btnPayRent = new System.Windows.Forms.Button();
             this.lblRentPayment = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace Group_project_semester_1
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.StudentAnouncments = new System.Windows.Forms.TabPage();
+            this.button64 = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.lbAnouncments = new System.Windows.Forms.ListBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -57,6 +59,7 @@ namespace Group_project_semester_1
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.StudentRules = new System.Windows.Forms.TabPage();
+            this.button63 = new System.Windows.Forms.Button();
             this.btnRuleRequest = new System.Windows.Forms.Button();
             this.tbRuleRequest = new System.Windows.Forms.TextBox();
             this.lbRules = new System.Windows.Forms.ListBox();
@@ -71,6 +74,9 @@ namespace Group_project_semester_1
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.StudentGarbage = new System.Windows.Forms.TabPage();
+            this.button62 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.btnRemoveTaskGarbage = new System.Windows.Forms.Button();
             this.btnAddTaskGarbage = new System.Windows.Forms.Button();
             this.lbGarbage = new System.Windows.Forms.ListBox();
@@ -85,6 +91,7 @@ namespace Group_project_semester_1
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.StudentGroceries = new System.Windows.Forms.TabPage();
+            this.button61 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnRemoveTaskGroceries = new System.Windows.Forms.Button();
@@ -101,6 +108,7 @@ namespace Group_project_semester_1
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.StudentCleaning = new System.Windows.Forms.TabPage();
+            this.button59 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.lbSelectTask = new System.Windows.Forms.Label();
             this.comboBox_tasks = new System.Windows.Forms.ComboBox();
@@ -120,6 +128,7 @@ namespace Group_project_semester_1
             this.label23 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.StudentHomePage = new System.Windows.Forms.TabPage();
+            this.button60 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.lbStudentRoommates = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -133,6 +142,13 @@ namespace Group_project_semester_1
             this.label19 = new System.Windows.Forms.Label();
             this.lbLivingIn = new System.Windows.Forms.Label();
             this.AdminPage = new System.Windows.Forms.TabPage();
+            this.button71 = new System.Windows.Forms.Button();
+            this.button70 = new System.Windows.Forms.Button();
+            this.button69 = new System.Windows.Forms.Button();
+            this.button68 = new System.Windows.Forms.Button();
+            this.button67 = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.Info = new System.Windows.Forms.TabPage();
             this.btnShowC = new System.Windows.Forms.Button();
@@ -195,8 +211,64 @@ namespace Group_project_semester_1
             this.btnHomePageRegister = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.StudentComplaints = new System.Windows.Forms.TabPage();
+            this.button66 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.button58 = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.AdminAccount = new System.Windows.Forms.TabPage();
+            this.button72 = new System.Windows.Forms.Button();
+            this.button73 = new System.Windows.Forms.Button();
+            this.button74 = new System.Windows.Forms.Button();
+            this.button75 = new System.Windows.Forms.Button();
+            this.button76 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.button77 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.AdminAnouncments = new System.Windows.Forms.TabPage();
+            this.button78 = new System.Windows.Forms.Button();
+            this.button79 = new System.Windows.Forms.Button();
+            this.button80 = new System.Windows.Forms.Button();
+            this.button81 = new System.Windows.Forms.Button();
+            this.button82 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button83 = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
+            this.AdminRules = new System.Windows.Forms.TabPage();
+            this.button84 = new System.Windows.Forms.Button();
+            this.button85 = new System.Windows.Forms.Button();
+            this.button86 = new System.Windows.Forms.Button();
+            this.button87 = new System.Windows.Forms.Button();
+            this.button88 = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button89 = new System.Windows.Forms.Button();
+            this.label41 = new System.Windows.Forms.Label();
+            this.AdminComplaints = new System.Windows.Forms.TabPage();
+            this.button90 = new System.Windows.Forms.Button();
+            this.button91 = new System.Windows.Forms.Button();
+            this.button92 = new System.Windows.Forms.Button();
+            this.button93 = new System.Windows.Forms.Button();
+            this.button94 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button95 = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.AdminRent = new System.Windows.Forms.TabPage();
+            this.button96 = new System.Windows.Forms.Button();
+            this.button97 = new System.Windows.Forms.Button();
+            this.button98 = new System.Windows.Forms.Button();
+            this.button99 = new System.Windows.Forms.Button();
+            this.button100 = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.button101 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.btnLogOutAdmin = new System.Windows.Forms.Button();
             this.StudentRent.SuspendLayout();
             this.StudentAnouncments.SuspendLayout();
             this.StudentRules.SuspendLayout();
@@ -214,10 +286,17 @@ namespace Group_project_semester_1
             this.LoginAs.SuspendLayout();
             this.HomePage.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.StudentComplaints.SuspendLayout();
+            this.AdminAccount.SuspendLayout();
+            this.AdminAnouncments.SuspendLayout();
+            this.AdminRules.SuspendLayout();
+            this.AdminComplaints.SuspendLayout();
+            this.AdminRent.SuspendLayout();
             this.SuspendLayout();
             // 
             // StudentRent
             // 
+            this.StudentRent.Controls.Add(this.button65);
             this.StudentRent.Controls.Add(this.btnPayRent);
             this.StudentRent.Controls.Add(this.lblRentPayment);
             this.StudentRent.Controls.Add(this.label36);
@@ -234,10 +313,20 @@ namespace Group_project_semester_1
             this.StudentRent.Location = new System.Drawing.Point(4, 25);
             this.StudentRent.Name = "StudentRent";
             this.StudentRent.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentRent.Size = new System.Drawing.Size(1140, 656);
+            this.StudentRent.Size = new System.Drawing.Size(1231, 748);
             this.StudentRent.TabIndex = 15;
             this.StudentRent.Text = "StudentRent";
             this.StudentRent.UseVisualStyleBackColor = true;
+            // 
+            // button65
+            // 
+            this.button65.Location = new System.Drawing.Point(5, 642);
+            this.button65.Name = "button65";
+            this.button65.Size = new System.Drawing.Size(227, 71);
+            this.button65.TabIndex = 28;
+            this.button65.Text = "Complaints";
+            this.button65.UseVisualStyleBackColor = true;
+            this.button65.Click += new System.EventHandler(this.button65_Click);
             // 
             // btnPayRent
             // 
@@ -254,7 +343,7 @@ namespace Group_project_semester_1
             this.lblRentPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.lblRentPayment.Location = new System.Drawing.Point(678, 305);
             this.lblRentPayment.Name = "lblRentPayment";
-            this.lblRentPayment.Size = new System.Drawing.Size(25, 22);
+            this.lblRentPayment.Size = new System.Drawing.Size(25, 24);
             this.lblRentPayment.TabIndex = 26;
             this.lblRentPayment.Text = "...";
             // 
@@ -264,7 +353,7 @@ namespace Group_project_semester_1
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label36.Location = new System.Drawing.Point(530, 305);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(107, 22);
+            this.label36.Size = new System.Drawing.Size(110, 24);
             this.label36.TabIndex = 24;
             this.label36.Text = "Your rent is:";
             // 
@@ -369,6 +458,7 @@ namespace Group_project_semester_1
             // 
             // StudentAnouncments
             // 
+            this.StudentAnouncments.Controls.Add(this.button64);
             this.StudentAnouncments.Controls.Add(this.label33);
             this.StudentAnouncments.Controls.Add(this.lbAnouncments);
             this.StudentAnouncments.Controls.Add(this.panel7);
@@ -384,10 +474,20 @@ namespace Group_project_semester_1
             this.StudentAnouncments.Location = new System.Drawing.Point(4, 25);
             this.StudentAnouncments.Name = "StudentAnouncments";
             this.StudentAnouncments.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentAnouncments.Size = new System.Drawing.Size(1140, 656);
+            this.StudentAnouncments.Size = new System.Drawing.Size(1231, 748);
             this.StudentAnouncments.TabIndex = 14;
             this.StudentAnouncments.Text = "Student Anouncments";
             this.StudentAnouncments.UseVisualStyleBackColor = true;
+            // 
+            // button64
+            // 
+            this.button64.Location = new System.Drawing.Point(5, 642);
+            this.button64.Name = "button64";
+            this.button64.Size = new System.Drawing.Size(227, 71);
+            this.button64.TabIndex = 27;
+            this.button64.Text = "Complaints";
+            this.button64.UseVisualStyleBackColor = true;
+            this.button64.Click += new System.EventHandler(this.button64_Click);
             // 
             // label33
             // 
@@ -395,7 +495,7 @@ namespace Group_project_semester_1
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label33.Location = new System.Drawing.Point(545, 260);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(273, 22);
+            this.label33.Size = new System.Drawing.Size(290, 24);
             this.label33.TabIndex = 24;
             this.label33.Text = "Anouncments from your landlord:";
             // 
@@ -509,6 +609,7 @@ namespace Group_project_semester_1
             // 
             // StudentRules
             // 
+            this.StudentRules.Controls.Add(this.button63);
             this.StudentRules.Controls.Add(this.btnRuleRequest);
             this.StudentRules.Controls.Add(this.tbRuleRequest);
             this.StudentRules.Controls.Add(this.lbRules);
@@ -525,10 +626,20 @@ namespace Group_project_semester_1
             this.StudentRules.Location = new System.Drawing.Point(4, 25);
             this.StudentRules.Name = "StudentRules";
             this.StudentRules.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentRules.Size = new System.Drawing.Size(1140, 656);
+            this.StudentRules.Size = new System.Drawing.Size(1231, 748);
             this.StudentRules.TabIndex = 13;
             this.StudentRules.Text = "StudentRules";
             this.StudentRules.UseVisualStyleBackColor = true;
+            // 
+            // button63
+            // 
+            this.button63.Location = new System.Drawing.Point(5, 642);
+            this.button63.Name = "button63";
+            this.button63.Size = new System.Drawing.Size(227, 71);
+            this.button63.TabIndex = 28;
+            this.button63.Text = "Complaints";
+            this.button63.UseVisualStyleBackColor = true;
+            this.button63.Click += new System.EventHandler(this.button63_Click);
             // 
             // btnRuleRequest
             // 
@@ -656,6 +767,7 @@ namespace Group_project_semester_1
             // 
             // StudentGarbage
             // 
+            this.StudentGarbage.Controls.Add(this.button62);
             this.StudentGarbage.Controls.Add(this.label24);
             this.StudentGarbage.Controls.Add(this.dateTimePicker3);
             this.StudentGarbage.Controls.Add(this.btnRemoveTaskGarbage);
@@ -674,10 +786,37 @@ namespace Group_project_semester_1
             this.StudentGarbage.Location = new System.Drawing.Point(4, 25);
             this.StudentGarbage.Name = "StudentGarbage";
             this.StudentGarbage.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentGarbage.Size = new System.Drawing.Size(1140, 656);
+            this.StudentGarbage.Size = new System.Drawing.Size(1231, 748);
             this.StudentGarbage.TabIndex = 12;
             this.StudentGarbage.Text = "Student Garbage";
             this.StudentGarbage.UseVisualStyleBackColor = true;
+            // 
+            // button62
+            // 
+            this.button62.Location = new System.Drawing.Point(5, 641);
+            this.button62.Name = "button62";
+            this.button62.Size = new System.Drawing.Size(227, 71);
+            this.button62.TabIndex = 37;
+            this.button62.Text = "Complaints";
+            this.button62.UseVisualStyleBackColor = true;
+            this.button62.Click += new System.EventHandler(this.button62_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(434, 408);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(79, 17);
+            this.label24.TabIndex = 36;
+            this.label24.Text = "Select date";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Location = new System.Drawing.Point(437, 427);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(426, 36);
+            this.dateTimePicker3.TabIndex = 35;
             // 
             // btnRemoveTaskGarbage
             // 
@@ -809,6 +948,7 @@ namespace Group_project_semester_1
             // 
             // StudentGroceries
             // 
+            this.StudentGroceries.Controls.Add(this.button61);
             this.StudentGroceries.Controls.Add(this.label21);
             this.StudentGroceries.Controls.Add(this.dateTimePicker2);
             this.StudentGroceries.Controls.Add(this.btnRemoveTaskGroceries);
@@ -827,17 +967,27 @@ namespace Group_project_semester_1
             this.StudentGroceries.Location = new System.Drawing.Point(4, 25);
             this.StudentGroceries.Name = "StudentGroceries";
             this.StudentGroceries.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentGroceries.Size = new System.Drawing.Size(1140, 656);
+            this.StudentGroceries.Size = new System.Drawing.Size(1231, 748);
             this.StudentGroceries.TabIndex = 11;
             this.StudentGroceries.Text = "Student Groceries";
             this.StudentGroceries.UseVisualStyleBackColor = true;
+            // 
+            // button61
+            // 
+            this.button61.Location = new System.Drawing.Point(5, 642);
+            this.button61.Name = "button61";
+            this.button61.Size = new System.Drawing.Size(227, 71);
+            this.button61.TabIndex = 35;
+            this.button61.Text = "Complaints";
+            this.button61.UseVisualStyleBackColor = true;
+            this.button61.Click += new System.EventHandler(this.button61_Click);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(414, 474);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(75, 16);
+            this.label21.Size = new System.Drawing.Size(79, 17);
             this.label21.TabIndex = 34;
             this.label21.Text = "Select date";
             // 
@@ -979,6 +1129,7 @@ namespace Group_project_semester_1
             // 
             // StudentCleaning
             // 
+            this.StudentCleaning.Controls.Add(this.button59);
             this.StudentCleaning.Controls.Add(this.label20);
             this.StudentCleaning.Controls.Add(this.lbSelectTask);
             this.StudentCleaning.Controls.Add(this.comboBox_tasks);
@@ -999,17 +1150,27 @@ namespace Group_project_semester_1
             this.StudentCleaning.Location = new System.Drawing.Point(4, 25);
             this.StudentCleaning.Name = "StudentCleaning";
             this.StudentCleaning.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentCleaning.Size = new System.Drawing.Size(1140, 656);
+            this.StudentCleaning.Size = new System.Drawing.Size(1231, 748);
             this.StudentCleaning.TabIndex = 10;
             this.StudentCleaning.Text = "Student Cleaning";
             this.StudentCleaning.UseVisualStyleBackColor = true;
+            // 
+            // button59
+            // 
+            this.button59.Location = new System.Drawing.Point(5, 641);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(227, 71);
+            this.button59.TabIndex = 33;
+            this.button59.Text = "Complaints";
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.button59_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(421, 396);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(75, 16);
+            this.label20.Size = new System.Drawing.Size(79, 17);
             this.label20.TabIndex = 32;
             this.label20.Text = "Select date";
             // 
@@ -1018,7 +1179,7 @@ namespace Group_project_semester_1
             this.lbSelectTask.AutoSize = true;
             this.lbSelectTask.Location = new System.Drawing.Point(421, 454);
             this.lbSelectTask.Name = "lbSelectTask";
-            this.lbSelectTask.Size = new System.Drawing.Size(79, 16);
+            this.lbSelectTask.Size = new System.Drawing.Size(83, 17);
             this.lbSelectTask.TabIndex = 31;
             this.lbSelectTask.Text = "Select room";
             // 
@@ -1177,7 +1338,7 @@ namespace Group_project_semester_1
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(1006, 685);
+            this.button10.Location = new System.Drawing.Point(1067, 687);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(138, 29);
             this.button10.TabIndex = 25;
@@ -1187,7 +1348,9 @@ namespace Group_project_semester_1
             // 
             // StudentHomePage
             // 
+            this.StudentHomePage.Controls.Add(this.button60);
             this.StudentHomePage.Controls.Add(this.label18);
+            this.StudentHomePage.Controls.Add(this.button10);
             this.StudentHomePage.Controls.Add(this.lbStudentRoommates);
             this.StudentHomePage.Controls.Add(this.panel2);
             this.StudentHomePage.Controls.Add(this.button3);
@@ -1202,11 +1365,21 @@ namespace Group_project_semester_1
             this.StudentHomePage.Location = new System.Drawing.Point(4, 25);
             this.StudentHomePage.Name = "StudentHomePage";
             this.StudentHomePage.Padding = new System.Windows.Forms.Padding(3);
-            this.StudentHomePage.Size = new System.Drawing.Size(1140, 656);
+            this.StudentHomePage.Size = new System.Drawing.Size(1231, 748);
             this.StudentHomePage.TabIndex = 9;
             this.StudentHomePage.Text = "Student Home Page";
             this.StudentHomePage.UseVisualStyleBackColor = true;
             this.StudentHomePage.Click += new System.EventHandler(this.StudentHomePage_Click);
+            // 
+            // button60
+            // 
+            this.button60.Location = new System.Drawing.Point(6, 642);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(227, 71);
+            this.button60.TabIndex = 26;
+            this.button60.Text = "Complaints";
+            this.button60.UseVisualStyleBackColor = true;
+            this.button60.Click += new System.EventHandler(this.button60_Click);
             // 
             // label18
             // 
@@ -1214,7 +1387,7 @@ namespace Group_project_semester_1
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.Location = new System.Drawing.Point(545, 260);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(177, 22);
+            this.label18.Size = new System.Drawing.Size(186, 24);
             this.label18.TabIndex = 24;
             this.label18.Text = "Your roommates are:";
             // 
@@ -1329,20 +1502,98 @@ namespace Group_project_semester_1
             // 
             // AdminPage
             // 
+            this.AdminPage.Controls.Add(this.btnLogOutAdmin);
+            this.AdminPage.Controls.Add(this.button71);
+            this.AdminPage.Controls.Add(this.button70);
+            this.AdminPage.Controls.Add(this.button69);
+            this.AdminPage.Controls.Add(this.button68);
+            this.AdminPage.Controls.Add(this.button67);
+            this.AdminPage.Controls.Add(this.panel9);
+            this.AdminPage.Controls.Add(this.button1);
             this.AdminPage.Controls.Add(this.label17);
             this.AdminPage.Location = new System.Drawing.Point(4, 25);
             this.AdminPage.Name = "AdminPage";
             this.AdminPage.Padding = new System.Windows.Forms.Padding(3);
-            this.AdminPage.Size = new System.Drawing.Size(1140, 656);
+            this.AdminPage.Size = new System.Drawing.Size(1231, 748);
             this.AdminPage.TabIndex = 6;
             this.AdminPage.Text = "Admin Page";
             this.AdminPage.UseVisualStyleBackColor = true;
+           
+            // 
+            // button71
+            // 
+            this.button71.Location = new System.Drawing.Point(8, 500);
+            this.button71.Name = "button71";
+            this.button71.Size = new System.Drawing.Size(227, 71);
+            this.button71.TabIndex = 28;
+            this.button71.Text = "Rent";
+            this.button71.UseVisualStyleBackColor = true;
+            this.button71.Click += new System.EventHandler(this.button71_Click);
+            // 
+            // button70
+            // 
+            this.button70.Location = new System.Drawing.Point(8, 431);
+            this.button70.Name = "button70";
+            this.button70.Size = new System.Drawing.Size(227, 71);
+            this.button70.TabIndex = 27;
+            this.button70.Text = "Complaints";
+            this.button70.UseVisualStyleBackColor = true;
+            this.button70.Click += new System.EventHandler(this.button70_Click);
+            // 
+            // button69
+            // 
+            this.button69.Location = new System.Drawing.Point(8, 362);
+            this.button69.Name = "button69";
+            this.button69.Size = new System.Drawing.Size(227, 71);
+            this.button69.TabIndex = 26;
+            this.button69.Text = "Rules";
+            this.button69.UseVisualStyleBackColor = true;
+            this.button69.Click += new System.EventHandler(this.button69_Click);
+            // 
+            // button68
+            // 
+            this.button68.Location = new System.Drawing.Point(8, 293);
+            this.button68.Name = "button68";
+            this.button68.Size = new System.Drawing.Size(227, 71);
+            this.button68.TabIndex = 25;
+            this.button68.Text = "Anouncments";
+            this.button68.UseVisualStyleBackColor = true;
+            this.button68.Click += new System.EventHandler(this.button68_Click);
+            // 
+            // button67
+            // 
+            this.button67.Location = new System.Drawing.Point(8, 225);
+            this.button67.Name = "button67";
+            this.button67.Size = new System.Drawing.Size(227, 71);
+            this.button67.TabIndex = 24;
+            this.button67.Text = "Accounts";
+            this.button67.UseVisualStyleBackColor = true;
+            this.button67.Click += new System.EventHandler(this.button67_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel9.Location = new System.Drawing.Point(6, 125);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1222, 10);
+            this.panel9.TabIndex = 23;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(227, 71);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(93, 73);
+            this.label17.Location = new System.Drawing.Point(20, 17);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(418, 69);
             this.label17.TabIndex = 0;
@@ -1357,7 +1608,7 @@ namespace Group_project_semester_1
             this.Info.Location = new System.Drawing.Point(4, 25);
             this.Info.Name = "Info";
             this.Info.Padding = new System.Windows.Forms.Padding(3);
-            this.Info.Size = new System.Drawing.Size(1140, 656);
+            this.Info.Size = new System.Drawing.Size(1231, 748);
             this.Info.TabIndex = 1;
             this.Info.Text = "INFO";
             this.Info.UseVisualStyleBackColor = true;
@@ -1425,7 +1676,7 @@ namespace Group_project_semester_1
             this.Register.Location = new System.Drawing.Point(4, 25);
             this.Register.Name = "Register";
             this.Register.Padding = new System.Windows.Forms.Padding(3);
-            this.Register.Size = new System.Drawing.Size(1140, 656);
+            this.Register.Size = new System.Drawing.Size(1231, 748);
             this.Register.TabIndex = 0;
             this.Register.Text = "Register";
             this.Register.UseVisualStyleBackColor = true;
@@ -1461,7 +1712,7 @@ namespace Group_project_semester_1
             this.rbApartment1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbApartment1.Location = new System.Drawing.Point(28, 50);
             this.rbApartment1.Name = "rbApartment1";
-            this.rbApartment1.Size = new System.Drawing.Size(203, 20);
+            this.rbApartment1.Size = new System.Drawing.Size(223, 21);
             this.rbApartment1.TabIndex = 26;
             this.rbApartment1.TabStop = true;
             this.rbApartment1.Text = "Apartment 1 - 6 people - 300 €";
@@ -1473,7 +1724,7 @@ namespace Group_project_semester_1
             this.rbApartment5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbApartment5.Location = new System.Drawing.Point(28, 276);
             this.rbApartment5.Name = "rbApartment5";
-            this.rbApartment5.Size = new System.Drawing.Size(203, 20);
+            this.rbApartment5.Size = new System.Drawing.Size(223, 21);
             this.rbApartment5.TabIndex = 30;
             this.rbApartment5.TabStop = true;
             this.rbApartment5.Text = "Apartment 5 - 2 people - 500 €";
@@ -1485,12 +1736,11 @@ namespace Group_project_semester_1
             this.rbApartment2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbApartment2.Location = new System.Drawing.Point(28, 107);
             this.rbApartment2.Name = "rbApartment2";
-            this.rbApartment2.Size = new System.Drawing.Size(203, 20);
+            this.rbApartment2.Size = new System.Drawing.Size(223, 21);
             this.rbApartment2.TabIndex = 27;
             this.rbApartment2.TabStop = true;
             this.rbApartment2.Text = "Apartment 2 - 5 people - 350 €";
             this.rbApartment2.UseVisualStyleBackColor = true;
-            this.rbApartment2.CheckedChanged += new System.EventHandler(this.rbApartment2_CheckedChanged);
             // 
             // rbApartment4
             // 
@@ -1498,7 +1748,7 @@ namespace Group_project_semester_1
             this.rbApartment4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbApartment4.Location = new System.Drawing.Point(28, 222);
             this.rbApartment4.Name = "rbApartment4";
-            this.rbApartment4.Size = new System.Drawing.Size(203, 20);
+            this.rbApartment4.Size = new System.Drawing.Size(223, 21);
             this.rbApartment4.TabIndex = 29;
             this.rbApartment4.TabStop = true;
             this.rbApartment4.Text = "Apartment 4 - 3 people - 450 €";
@@ -1510,7 +1760,7 @@ namespace Group_project_semester_1
             this.rbApartment3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbApartment3.Location = new System.Drawing.Point(28, 164);
             this.rbApartment3.Name = "rbApartment3";
-            this.rbApartment3.Size = new System.Drawing.Size(203, 20);
+            this.rbApartment3.Size = new System.Drawing.Size(223, 21);
             this.rbApartment3.TabIndex = 28;
             this.rbApartment3.TabStop = true;
             this.rbApartment3.Text = "Apartment 3 - 4 people - 400 €";
@@ -1535,7 +1785,7 @@ namespace Group_project_semester_1
             this.rbBuildingC.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbBuildingC.Location = new System.Drawing.Point(304, 36);
             this.rbBuildingC.Name = "rbBuildingC";
-            this.rbBuildingC.Size = new System.Drawing.Size(88, 20);
+            this.rbBuildingC.Size = new System.Drawing.Size(92, 21);
             this.rbBuildingC.TabIndex = 19;
             this.rbBuildingC.TabStop = true;
             this.rbBuildingC.Text = "Building C";
@@ -1547,7 +1797,7 @@ namespace Group_project_semester_1
             this.rbBuildingB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbBuildingB.Location = new System.Drawing.Point(156, 36);
             this.rbBuildingB.Name = "rbBuildingB";
-            this.rbBuildingB.Size = new System.Drawing.Size(88, 20);
+            this.rbBuildingB.Size = new System.Drawing.Size(92, 21);
             this.rbBuildingB.TabIndex = 20;
             this.rbBuildingB.TabStop = true;
             this.rbBuildingB.Text = "Building B";
@@ -1559,12 +1809,11 @@ namespace Group_project_semester_1
             this.rbBuildingA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbBuildingA.Location = new System.Drawing.Point(9, 36);
             this.rbBuildingA.Name = "rbBuildingA";
-            this.rbBuildingA.Size = new System.Drawing.Size(88, 20);
+            this.rbBuildingA.Size = new System.Drawing.Size(92, 21);
             this.rbBuildingA.TabIndex = 21;
             this.rbBuildingA.TabStop = true;
             this.rbBuildingA.Text = "Building A";
             this.rbBuildingA.UseVisualStyleBackColor = true;
-            this.rbBuildingA.CheckedChanged += new System.EventHandler(this.rbBuildingA_CheckedChanged);
             // 
             // btnRegister
             // 
@@ -1632,7 +1881,7 @@ namespace Group_project_semester_1
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(66, 556);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(117, 16);
+            this.label8.Size = new System.Drawing.Size(124, 17);
             this.label8.TabIndex = 7;
             this.label8.Text = "Confirm password:";
             // 
@@ -1641,7 +1890,7 @@ namespace Group_project_semester_1
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(66, 495);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Password:";
             // 
@@ -1650,7 +1899,7 @@ namespace Group_project_semester_1
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(65, 427);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 16);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "E-mail:";
             // 
@@ -1659,7 +1908,7 @@ namespace Group_project_semester_1
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(61, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 16);
+            this.label5.Size = new System.Drawing.Size(78, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Last name:";
             // 
@@ -1668,7 +1917,7 @@ namespace Group_project_semester_1
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(66, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 16);
+            this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Age:";
             // 
@@ -1677,7 +1926,7 @@ namespace Group_project_semester_1
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(65, 364);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Username:";
             // 
@@ -1686,7 +1935,7 @@ namespace Group_project_semester_1
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(65, 169);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 16);
+            this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "First name:";
             // 
@@ -1696,7 +1945,7 @@ namespace Group_project_semester_1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(479, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 42);
+            this.label1.Size = new System.Drawing.Size(170, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "Register";
             // 
@@ -1712,7 +1961,7 @@ namespace Group_project_semester_1
             this.LoginAdmin.Location = new System.Drawing.Point(4, 25);
             this.LoginAdmin.Name = "LoginAdmin";
             this.LoginAdmin.Padding = new System.Windows.Forms.Padding(3);
-            this.LoginAdmin.Size = new System.Drawing.Size(1140, 656);
+            this.LoginAdmin.Size = new System.Drawing.Size(1231, 748);
             this.LoginAdmin.TabIndex = 5;
             this.LoginAdmin.Text = "Login Admin";
             this.LoginAdmin.UseVisualStyleBackColor = true;
@@ -1796,7 +2045,7 @@ namespace Group_project_semester_1
             this.LoginStudent.Location = new System.Drawing.Point(4, 25);
             this.LoginStudent.Name = "LoginStudent";
             this.LoginStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.LoginStudent.Size = new System.Drawing.Size(1140, 656);
+            this.LoginStudent.Size = new System.Drawing.Size(1231, 748);
             this.LoginStudent.TabIndex = 4;
             this.LoginStudent.Text = "Login Student";
             this.LoginStudent.UseVisualStyleBackColor = true;
@@ -1897,7 +2146,7 @@ namespace Group_project_semester_1
             this.LoginAs.Location = new System.Drawing.Point(4, 25);
             this.LoginAs.Name = "LoginAs";
             this.LoginAs.Padding = new System.Windows.Forms.Padding(3);
-            this.LoginAs.Size = new System.Drawing.Size(1140, 656);
+            this.LoginAs.Size = new System.Drawing.Size(1231, 748);
             this.LoginAs.TabIndex = 3;
             this.LoginAs.Text = "Login AS";
             this.LoginAs.UseVisualStyleBackColor = true;
@@ -1950,7 +2199,7 @@ namespace Group_project_semester_1
             this.HomePage.Location = new System.Drawing.Point(4, 25);
             this.HomePage.Name = "HomePage";
             this.HomePage.Padding = new System.Windows.Forms.Padding(3);
-            this.HomePage.Size = new System.Drawing.Size(1140, 656);
+            this.HomePage.Size = new System.Drawing.Size(1231, 748);
             this.HomePage.TabIndex = 2;
             this.HomePage.Text = "Home Page";
             this.HomePage.UseVisualStyleBackColor = true;
@@ -1993,7 +2242,6 @@ namespace Group_project_semester_1
             this.tabControl.Controls.Add(this.LoginAdmin);
             this.tabControl.Controls.Add(this.Register);
             this.tabControl.Controls.Add(this.Info);
-            this.tabControl.Controls.Add(this.AdminPage);
             this.tabControl.Controls.Add(this.StudentHomePage);
             this.tabControl.Controls.Add(this.StudentCleaning);
             this.tabControl.Controls.Add(this.StudentGroceries);
@@ -2001,36 +2249,643 @@ namespace Group_project_semester_1
             this.tabControl.Controls.Add(this.StudentRules);
             this.tabControl.Controls.Add(this.StudentAnouncments);
             this.tabControl.Controls.Add(this.StudentRent);
-            this.tabControl.Location = new System.Drawing.Point(0, -2);
+            this.tabControl.Controls.Add(this.StudentComplaints);
+            this.tabControl.Controls.Add(this.AdminPage);
+            this.tabControl.Controls.Add(this.AdminAccount);
+            this.tabControl.Controls.Add(this.AdminAnouncments);
+            this.tabControl.Controls.Add(this.AdminRules);
+            this.tabControl.Controls.Add(this.AdminComplaints);
+            this.tabControl.Controls.Add(this.AdminRent);
+            this.tabControl.Location = new System.Drawing.Point(0, -4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1148, 685);
+            this.tabControl.Size = new System.Drawing.Size(1239, 777);
             this.tabControl.TabIndex = 0;
             // 
-            // label24
+            // StudentComplaints
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(434, 408);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(75, 16);
-            this.label24.TabIndex = 36;
-            this.label24.Text = "Select date";
+            this.StudentComplaints.Controls.Add(this.button66);
+            this.StudentComplaints.Controls.Add(this.panel1);
+            this.StudentComplaints.Controls.Add(this.button2);
+            this.StudentComplaints.Controls.Add(this.button18);
+            this.StudentComplaints.Controls.Add(this.button26);
+            this.StudentComplaints.Controls.Add(this.button34);
+            this.StudentComplaints.Controls.Add(this.button42);
+            this.StudentComplaints.Controls.Add(this.button50);
+            this.StudentComplaints.Controls.Add(this.button58);
+            this.StudentComplaints.Controls.Add(this.label30);
+            this.StudentComplaints.Controls.Add(this.label39);
+            this.StudentComplaints.Location = new System.Drawing.Point(4, 25);
+            this.StudentComplaints.Name = "StudentComplaints";
+            this.StudentComplaints.Padding = new System.Windows.Forms.Padding(3);
+            this.StudentComplaints.Size = new System.Drawing.Size(1231, 748);
+            this.StudentComplaints.TabIndex = 16;
+            this.StudentComplaints.Text = "Student complaints";
+            this.StudentComplaints.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // button66
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(437, 427);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(426, 36);
-            this.dateTimePicker3.TabIndex = 35;
+            this.button66.Location = new System.Drawing.Point(11, 641);
+            this.button66.Name = "button66";
+            this.button66.Size = new System.Drawing.Size(227, 71);
+            this.button66.TabIndex = 39;
+            this.button66.Text = "Complaints";
+            this.button66.UseVisualStyleBackColor = true;
+            this.button66.Click += new System.EventHandler(this.button66_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(16, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1126, 10);
+            this.panel1.TabIndex = 35;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(11, 573);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(227, 71);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Rent";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(11, 506);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(227, 71);
+            this.button18.TabIndex = 33;
+            this.button18.Text = "Anouncments";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // button26
+            // 
+            this.button26.Location = new System.Drawing.Point(11, 439);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(227, 71);
+            this.button26.TabIndex = 32;
+            this.button26.Text = "Rules";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(11, 371);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(227, 71);
+            this.button34.TabIndex = 31;
+            this.button34.Text = "Garbage";
+            this.button34.UseVisualStyleBackColor = true;
+            // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(11, 305);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(227, 71);
+            this.button42.TabIndex = 30;
+            this.button42.Text = "Groceries";
+            this.button42.UseVisualStyleBackColor = true;
+            // 
+            // button50
+            // 
+            this.button50.Location = new System.Drawing.Point(11, 238);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(227, 71);
+            this.button50.TabIndex = 29;
+            this.button50.Text = "Cleaning Schedule";
+            this.button50.UseVisualStyleBackColor = true;
+            // 
+            // button58
+            // 
+            this.button58.Location = new System.Drawing.Point(11, 170);
+            this.button58.Name = "button58";
+            this.button58.Size = new System.Drawing.Size(227, 71);
+            this.button58.TabIndex = 28;
+            this.button58.Text = "Home";
+            this.button58.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(29, 18);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(220, 69);
+            this.label30.TabIndex = 27;
+            this.label30.Text = "Hello, ...!";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label39.Location = new System.Drawing.Point(36, 103);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(234, 25);
+            this.label39.TabIndex = 26;
+            this.label39.Text = "You are currently living in:";
+            // 
+            // AdminAccount
+            // 
+            this.AdminAccount.Controls.Add(this.button72);
+            this.AdminAccount.Controls.Add(this.button73);
+            this.AdminAccount.Controls.Add(this.button74);
+            this.AdminAccount.Controls.Add(this.button75);
+            this.AdminAccount.Controls.Add(this.button76);
+            this.AdminAccount.Controls.Add(this.panel10);
+            this.AdminAccount.Controls.Add(this.button77);
+            this.AdminAccount.Controls.Add(this.label27);
+            this.AdminAccount.Location = new System.Drawing.Point(4, 25);
+            this.AdminAccount.Name = "AdminAccount";
+            this.AdminAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.AdminAccount.Size = new System.Drawing.Size(1231, 748);
+            this.AdminAccount.TabIndex = 17;
+            this.AdminAccount.Text = "Admin Accounts";
+            this.AdminAccount.UseVisualStyleBackColor = true;
+            // 
+            // button72
+            // 
+            this.button72.Location = new System.Drawing.Point(6, 510);
+            this.button72.Name = "button72";
+            this.button72.Size = new System.Drawing.Size(227, 71);
+            this.button72.TabIndex = 36;
+            this.button72.Text = "Rent";
+            this.button72.UseVisualStyleBackColor = true;
+            this.button72.Click += new System.EventHandler(this.button72_Click);
+            // 
+            // button73
+            // 
+            this.button73.Location = new System.Drawing.Point(6, 441);
+            this.button73.Name = "button73";
+            this.button73.Size = new System.Drawing.Size(227, 71);
+            this.button73.TabIndex = 35;
+            this.button73.Text = "Complaints";
+            this.button73.UseVisualStyleBackColor = true;
+            this.button73.Click += new System.EventHandler(this.button73_Click);
+            // 
+            // button74
+            // 
+            this.button74.Location = new System.Drawing.Point(6, 372);
+            this.button74.Name = "button74";
+            this.button74.Size = new System.Drawing.Size(227, 71);
+            this.button74.TabIndex = 34;
+            this.button74.Text = "Rules";
+            this.button74.UseVisualStyleBackColor = true;
+            this.button74.Click += new System.EventHandler(this.button74_Click);
+            // 
+            // button75
+            // 
+            this.button75.Location = new System.Drawing.Point(6, 303);
+            this.button75.Name = "button75";
+            this.button75.Size = new System.Drawing.Size(227, 71);
+            this.button75.TabIndex = 33;
+            this.button75.Text = "Anouncments";
+            this.button75.UseVisualStyleBackColor = true;
+            this.button75.Click += new System.EventHandler(this.button75_Click);
+            // 
+            // button76
+            // 
+            this.button76.Location = new System.Drawing.Point(6, 235);
+            this.button76.Name = "button76";
+            this.button76.Size = new System.Drawing.Size(227, 71);
+            this.button76.TabIndex = 32;
+            this.button76.Text = "Accounts";
+            this.button76.UseVisualStyleBackColor = true;
+            this.button76.Click += new System.EventHandler(this.button76_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Black;
+            this.panel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.Location = new System.Drawing.Point(6, 125);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(1222, 10);
+            this.panel10.TabIndex = 31;
+            // 
+            // button77
+            // 
+            this.button77.Location = new System.Drawing.Point(6, 166);
+            this.button77.Name = "button77";
+            this.button77.Size = new System.Drawing.Size(227, 71);
+            this.button77.TabIndex = 30;
+            this.button77.Text = "Home";
+            this.button77.UseVisualStyleBackColor = true;
+            this.button77.Click += new System.EventHandler(this.button77_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(20, 17);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(418, 69);
+            this.label27.TabIndex = 29;
+            this.label27.Text = "Hello, Administrator!";
+            // 
+            // AdminAnouncments
+            // 
+            this.AdminAnouncments.Controls.Add(this.button78);
+            this.AdminAnouncments.Controls.Add(this.button79);
+            this.AdminAnouncments.Controls.Add(this.button80);
+            this.AdminAnouncments.Controls.Add(this.button81);
+            this.AdminAnouncments.Controls.Add(this.button82);
+            this.AdminAnouncments.Controls.Add(this.panel11);
+            this.AdminAnouncments.Controls.Add(this.button83);
+            this.AdminAnouncments.Controls.Add(this.label40);
+            this.AdminAnouncments.Location = new System.Drawing.Point(4, 25);
+            this.AdminAnouncments.Name = "AdminAnouncments";
+            this.AdminAnouncments.Padding = new System.Windows.Forms.Padding(3);
+            this.AdminAnouncments.Size = new System.Drawing.Size(1231, 748);
+            this.AdminAnouncments.TabIndex = 18;
+            this.AdminAnouncments.Text = "Admin Anouncments";
+            this.AdminAnouncments.UseVisualStyleBackColor = true;
+            // 
+            // button78
+            // 
+            this.button78.Location = new System.Drawing.Point(6, 580);
+            this.button78.Name = "button78";
+            this.button78.Size = new System.Drawing.Size(227, 71);
+            this.button78.TabIndex = 36;
+            this.button78.Text = "Rent";
+            this.button78.UseVisualStyleBackColor = true;
+            this.button78.Click += new System.EventHandler(this.button78_Click);
+            // 
+            // button79
+            // 
+            this.button79.Location = new System.Drawing.Point(6, 511);
+            this.button79.Name = "button79";
+            this.button79.Size = new System.Drawing.Size(227, 71);
+            this.button79.TabIndex = 35;
+            this.button79.Text = "Complaints";
+            this.button79.UseVisualStyleBackColor = true;
+            this.button79.Click += new System.EventHandler(this.button79_Click);
+            // 
+            // button80
+            // 
+            this.button80.Location = new System.Drawing.Point(6, 442);
+            this.button80.Name = "button80";
+            this.button80.Size = new System.Drawing.Size(227, 71);
+            this.button80.TabIndex = 34;
+            this.button80.Text = "Rules";
+            this.button80.UseVisualStyleBackColor = true;
+            this.button80.Click += new System.EventHandler(this.button80_Click);
+            // 
+            // button81
+            // 
+            this.button81.Location = new System.Drawing.Point(6, 373);
+            this.button81.Name = "button81";
+            this.button81.Size = new System.Drawing.Size(227, 71);
+            this.button81.TabIndex = 33;
+            this.button81.Text = "Anouncments";
+            this.button81.UseVisualStyleBackColor = true;
+            this.button81.Click += new System.EventHandler(this.button81_Click);
+            // 
+            // button82
+            // 
+            this.button82.Location = new System.Drawing.Point(6, 305);
+            this.button82.Name = "button82";
+            this.button82.Size = new System.Drawing.Size(227, 71);
+            this.button82.TabIndex = 32;
+            this.button82.Text = "Accounts";
+            this.button82.UseVisualStyleBackColor = true;
+            this.button82.Click += new System.EventHandler(this.button82_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Black;
+            this.panel11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel11.Location = new System.Drawing.Point(6, 125);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(1222, 10);
+            this.panel11.TabIndex = 31;
+            // 
+            // button83
+            // 
+            this.button83.Location = new System.Drawing.Point(6, 236);
+            this.button83.Name = "button83";
+            this.button83.Size = new System.Drawing.Size(227, 71);
+            this.button83.TabIndex = 30;
+            this.button83.Text = "Home";
+            this.button83.UseVisualStyleBackColor = true;
+            this.button83.Click += new System.EventHandler(this.button83_Click);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(20, 17);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(418, 69);
+            this.label40.TabIndex = 29;
+            this.label40.Text = "Hello, Administrator!";
+            // 
+            // AdminRules
+            // 
+            this.AdminRules.Controls.Add(this.button84);
+            this.AdminRules.Controls.Add(this.button85);
+            this.AdminRules.Controls.Add(this.button86);
+            this.AdminRules.Controls.Add(this.button87);
+            this.AdminRules.Controls.Add(this.button88);
+            this.AdminRules.Controls.Add(this.panel12);
+            this.AdminRules.Controls.Add(this.button89);
+            this.AdminRules.Controls.Add(this.label41);
+            this.AdminRules.Location = new System.Drawing.Point(4, 25);
+            this.AdminRules.Name = "AdminRules";
+            this.AdminRules.Padding = new System.Windows.Forms.Padding(3);
+            this.AdminRules.Size = new System.Drawing.Size(1231, 748);
+            this.AdminRules.TabIndex = 19;
+            this.AdminRules.Text = "Admin Rules";
+            this.AdminRules.UseVisualStyleBackColor = true;
+            // 
+            // button84
+            // 
+            this.button84.Location = new System.Drawing.Point(6, 580);
+            this.button84.Name = "button84";
+            this.button84.Size = new System.Drawing.Size(227, 71);
+            this.button84.TabIndex = 36;
+            this.button84.Text = "Rent";
+            this.button84.UseVisualStyleBackColor = true;
+            this.button84.Click += new System.EventHandler(this.button84_Click);
+            // 
+            // button85
+            // 
+            this.button85.Location = new System.Drawing.Point(6, 511);
+            this.button85.Name = "button85";
+            this.button85.Size = new System.Drawing.Size(227, 71);
+            this.button85.TabIndex = 35;
+            this.button85.Text = "Complaints";
+            this.button85.UseVisualStyleBackColor = true;
+            this.button85.Click += new System.EventHandler(this.button85_Click);
+            // 
+            // button86
+            // 
+            this.button86.Location = new System.Drawing.Point(6, 442);
+            this.button86.Name = "button86";
+            this.button86.Size = new System.Drawing.Size(227, 71);
+            this.button86.TabIndex = 34;
+            this.button86.Text = "Rules";
+            this.button86.UseVisualStyleBackColor = true;
+            this.button86.Click += new System.EventHandler(this.button86_Click);
+            // 
+            // button87
+            // 
+            this.button87.Location = new System.Drawing.Point(6, 373);
+            this.button87.Name = "button87";
+            this.button87.Size = new System.Drawing.Size(227, 71);
+            this.button87.TabIndex = 33;
+            this.button87.Text = "Anouncments";
+            this.button87.UseVisualStyleBackColor = true;
+            this.button87.Click += new System.EventHandler(this.button87_Click);
+            // 
+            // button88
+            // 
+            this.button88.Location = new System.Drawing.Point(6, 305);
+            this.button88.Name = "button88";
+            this.button88.Size = new System.Drawing.Size(227, 71);
+            this.button88.TabIndex = 32;
+            this.button88.Text = "Accounts";
+            this.button88.UseVisualStyleBackColor = true;
+            this.button88.Click += new System.EventHandler(this.button88_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Black;
+            this.panel12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel12.Location = new System.Drawing.Point(6, 125);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(1222, 10);
+            this.panel12.TabIndex = 31;
+            // 
+            // button89
+            // 
+            this.button89.Location = new System.Drawing.Point(6, 236);
+            this.button89.Name = "button89";
+            this.button89.Size = new System.Drawing.Size(227, 71);
+            this.button89.TabIndex = 30;
+            this.button89.Text = "Home";
+            this.button89.UseVisualStyleBackColor = true;
+            this.button89.Click += new System.EventHandler(this.button89_Click);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(20, 17);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(418, 69);
+            this.label41.TabIndex = 29;
+            this.label41.Text = "Hello, Administrator!";
+            // 
+            // AdminComplaints
+            // 
+            this.AdminComplaints.Controls.Add(this.button90);
+            this.AdminComplaints.Controls.Add(this.button91);
+            this.AdminComplaints.Controls.Add(this.button92);
+            this.AdminComplaints.Controls.Add(this.button93);
+            this.AdminComplaints.Controls.Add(this.button94);
+            this.AdminComplaints.Controls.Add(this.panel13);
+            this.AdminComplaints.Controls.Add(this.button95);
+            this.AdminComplaints.Controls.Add(this.label42);
+            this.AdminComplaints.Location = new System.Drawing.Point(4, 25);
+            this.AdminComplaints.Name = "AdminComplaints";
+            this.AdminComplaints.Padding = new System.Windows.Forms.Padding(3);
+            this.AdminComplaints.Size = new System.Drawing.Size(1231, 748);
+            this.AdminComplaints.TabIndex = 20;
+            this.AdminComplaints.Text = "Admin Complaints";
+            this.AdminComplaints.UseVisualStyleBackColor = true;
+            // 
+            // button90
+            // 
+            this.button90.Location = new System.Drawing.Point(6, 580);
+            this.button90.Name = "button90";
+            this.button90.Size = new System.Drawing.Size(227, 71);
+            this.button90.TabIndex = 36;
+            this.button90.Text = "Rent";
+            this.button90.UseVisualStyleBackColor = true;
+            this.button90.Click += new System.EventHandler(this.button90_Click);
+            // 
+            // button91
+            // 
+            this.button91.Location = new System.Drawing.Point(6, 511);
+            this.button91.Name = "button91";
+            this.button91.Size = new System.Drawing.Size(227, 71);
+            this.button91.TabIndex = 35;
+            this.button91.Text = "Complaints";
+            this.button91.UseVisualStyleBackColor = true;
+            this.button91.Click += new System.EventHandler(this.button91_Click);
+            // 
+            // button92
+            // 
+            this.button92.Location = new System.Drawing.Point(6, 442);
+            this.button92.Name = "button92";
+            this.button92.Size = new System.Drawing.Size(227, 71);
+            this.button92.TabIndex = 34;
+            this.button92.Text = "Rules";
+            this.button92.UseVisualStyleBackColor = true;
+            this.button92.Click += new System.EventHandler(this.button92_Click);
+            // 
+            // button93
+            // 
+            this.button93.Location = new System.Drawing.Point(6, 373);
+            this.button93.Name = "button93";
+            this.button93.Size = new System.Drawing.Size(227, 71);
+            this.button93.TabIndex = 33;
+            this.button93.Text = "Anouncments";
+            this.button93.UseVisualStyleBackColor = true;
+            this.button93.Click += new System.EventHandler(this.button93_Click);
+            // 
+            // button94
+            // 
+            this.button94.Location = new System.Drawing.Point(6, 305);
+            this.button94.Name = "button94";
+            this.button94.Size = new System.Drawing.Size(227, 71);
+            this.button94.TabIndex = 32;
+            this.button94.Text = "Accounts";
+            this.button94.UseVisualStyleBackColor = true;
+            this.button94.Click += new System.EventHandler(this.button94_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.Black;
+            this.panel13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel13.Location = new System.Drawing.Point(6, 125);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(1222, 10);
+            this.panel13.TabIndex = 31;
+            // 
+            // button95
+            // 
+            this.button95.Location = new System.Drawing.Point(6, 236);
+            this.button95.Name = "button95";
+            this.button95.Size = new System.Drawing.Size(227, 71);
+            this.button95.TabIndex = 30;
+            this.button95.Text = "Home";
+            this.button95.UseVisualStyleBackColor = true;
+            this.button95.Click += new System.EventHandler(this.button95_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(20, 17);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(418, 69);
+            this.label42.TabIndex = 29;
+            this.label42.Text = "Hello, Administrator!";
+            // 
+            // AdminRent
+            // 
+            this.AdminRent.Controls.Add(this.button96);
+            this.AdminRent.Controls.Add(this.button97);
+            this.AdminRent.Controls.Add(this.button98);
+            this.AdminRent.Controls.Add(this.button99);
+            this.AdminRent.Controls.Add(this.button100);
+            this.AdminRent.Controls.Add(this.panel14);
+            this.AdminRent.Controls.Add(this.button101);
+            this.AdminRent.Controls.Add(this.label43);
+            this.AdminRent.Location = new System.Drawing.Point(4, 25);
+            this.AdminRent.Name = "AdminRent";
+            this.AdminRent.Padding = new System.Windows.Forms.Padding(3);
+            this.AdminRent.Size = new System.Drawing.Size(1231, 748);
+            this.AdminRent.TabIndex = 21;
+            this.AdminRent.Text = "Admin Rent";
+            this.AdminRent.UseVisualStyleBackColor = true;
+            // 
+            // button96
+            // 
+            this.button96.Location = new System.Drawing.Point(6, 580);
+            this.button96.Name = "button96";
+            this.button96.Size = new System.Drawing.Size(227, 71);
+            this.button96.TabIndex = 36;
+            this.button96.Text = "Rent";
+            this.button96.UseVisualStyleBackColor = true;
+            this.button96.Click += new System.EventHandler(this.button96_Click);
+            // 
+            // button97
+            // 
+            this.button97.Location = new System.Drawing.Point(6, 511);
+            this.button97.Name = "button97";
+            this.button97.Size = new System.Drawing.Size(227, 71);
+            this.button97.TabIndex = 35;
+            this.button97.Text = "Complaints";
+            this.button97.UseVisualStyleBackColor = true;
+            this.button97.Click += new System.EventHandler(this.button97_Click);
+            // 
+            // button98
+            // 
+            this.button98.Location = new System.Drawing.Point(6, 442);
+            this.button98.Name = "button98";
+            this.button98.Size = new System.Drawing.Size(227, 71);
+            this.button98.TabIndex = 34;
+            this.button98.Text = "Rules";
+            this.button98.UseVisualStyleBackColor = true;
+            this.button98.Click += new System.EventHandler(this.button98_Click);
+            // 
+            // button99
+            // 
+            this.button99.Location = new System.Drawing.Point(6, 373);
+            this.button99.Name = "button99";
+            this.button99.Size = new System.Drawing.Size(227, 71);
+            this.button99.TabIndex = 33;
+            this.button99.Text = "Anouncments";
+            this.button99.UseVisualStyleBackColor = true;
+            this.button99.Click += new System.EventHandler(this.button99_Click);
+            // 
+            // button100
+            // 
+            this.button100.Location = new System.Drawing.Point(6, 305);
+            this.button100.Name = "button100";
+            this.button100.Size = new System.Drawing.Size(227, 71);
+            this.button100.TabIndex = 32;
+            this.button100.Text = "Accounts";
+            this.button100.UseVisualStyleBackColor = true;
+            this.button100.Click += new System.EventHandler(this.button100_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Black;
+            this.panel14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel14.Location = new System.Drawing.Point(6, 125);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(1222, 10);
+            this.panel14.TabIndex = 31;
+            // 
+            // button101
+            // 
+            this.button101.Location = new System.Drawing.Point(6, 236);
+            this.button101.Name = "button101";
+            this.button101.Size = new System.Drawing.Size(227, 71);
+            this.button101.TabIndex = 30;
+            this.button101.Text = "Home";
+            this.button101.UseVisualStyleBackColor = true;
+            this.button101.Click += new System.EventHandler(this.button101_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Chiller", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(20, 17);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(418, 69);
+            this.label43.TabIndex = 29;
+            this.label43.Text = "Hello, Administrator!";
+            // 
+            // btnLogOutAdmin
+            // 
+            this.btnLogOutAdmin.Location = new System.Drawing.Point(1062, 699);
+            this.btnLogOutAdmin.Name = "btnLogOutAdmin";
+            this.btnLogOutAdmin.Size = new System.Drawing.Size(131, 32);
+            this.btnLogOutAdmin.TabIndex = 29;
+            this.btnLogOutAdmin.Text = "Log out";
+            this.btnLogOutAdmin.UseVisualStyleBackColor = true;
+            this.btnLogOutAdmin.Click += new System.EventHandler(this.btnLogOutAdmin_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 717);
+            this.ClientSize = new System.Drawing.Size(1242, 773);
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.button10);
             this.Name = "Form1";
             this.Text = "Form1";
             this.StudentRent.ResumeLayout(false);
@@ -2065,6 +2920,18 @@ namespace Group_project_semester_1
             this.HomePage.ResumeLayout(false);
             this.HomePage.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.StudentComplaints.ResumeLayout(false);
+            this.StudentComplaints.PerformLayout();
+            this.AdminAccount.ResumeLayout(false);
+            this.AdminAccount.PerformLayout();
+            this.AdminAnouncments.ResumeLayout(false);
+            this.AdminAnouncments.PerformLayout();
+            this.AdminRules.ResumeLayout(false);
+            this.AdminRules.PerformLayout();
+            this.AdminComplaints.ResumeLayout(false);
+            this.AdminComplaints.PerformLayout();
+            this.AdminRent.ResumeLayout(false);
+            this.AdminRent.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2239,6 +3106,78 @@ namespace Group_project_semester_1
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Button button65;
+        private System.Windows.Forms.Button button64;
+        private System.Windows.Forms.Button button63;
+        private System.Windows.Forms.Button button62;
+        private System.Windows.Forms.Button button61;
+        private System.Windows.Forms.Button button59;
+        private System.Windows.Forms.Button button60;
+        private System.Windows.Forms.TabPage StudentComplaints;
+        private System.Windows.Forms.Button button66;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button button58;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button button71;
+        private System.Windows.Forms.Button button70;
+        private System.Windows.Forms.Button button69;
+        private System.Windows.Forms.Button button68;
+        private System.Windows.Forms.Button button67;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage AdminAccount;
+        private System.Windows.Forms.TabPage AdminAnouncments;
+        private System.Windows.Forms.TabPage AdminRules;
+        private System.Windows.Forms.TabPage AdminComplaints;
+        private System.Windows.Forms.TabPage AdminRent;
+        private System.Windows.Forms.Button button72;
+        private System.Windows.Forms.Button button73;
+        private System.Windows.Forms.Button button74;
+        private System.Windows.Forms.Button button75;
+        private System.Windows.Forms.Button button76;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button button77;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button78;
+        private System.Windows.Forms.Button button79;
+        private System.Windows.Forms.Button button80;
+        private System.Windows.Forms.Button button81;
+        private System.Windows.Forms.Button button82;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button button83;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button button84;
+        private System.Windows.Forms.Button button85;
+        private System.Windows.Forms.Button button86;
+        private System.Windows.Forms.Button button87;
+        private System.Windows.Forms.Button button88;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button button89;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button button90;
+        private System.Windows.Forms.Button button91;
+        private System.Windows.Forms.Button button92;
+        private System.Windows.Forms.Button button93;
+        private System.Windows.Forms.Button button94;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button95;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Button button96;
+        private System.Windows.Forms.Button button97;
+        private System.Windows.Forms.Button button98;
+        private System.Windows.Forms.Button button99;
+        private System.Windows.Forms.Button button100;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Button button101;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Button btnLogOutAdmin;
     }
 }
 
