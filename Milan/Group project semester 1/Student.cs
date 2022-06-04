@@ -39,14 +39,23 @@ namespace Group_project_semester_1
 
             if (rent)
             {
-                return $"{username} - {building}, {apartment} - {firstName} {lastName} - Rent payed!";
+                return $"{username} - {building} - {apartment} - {firstName} {lastName} - Rent payed!";
             }
             else
             {
-                return $"{username} - {building}, {apartment} - {firstName} {lastName} - Rent not payed!";
+                return $"{username} - {building} - {apartment} - {firstName} {lastName} - Rent not payed!";
             }
 
         }
+
+
+        //String which is returned fo the listbox on the Admin Home Page
+        public string AdminInfo()
+        {
+            return $"{firstName} {lastName} - Living in {building}, {apartment}";
+        }
+
+
         public Student()
         {
 

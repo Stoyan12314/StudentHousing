@@ -142,6 +142,13 @@ namespace Group_project_semester_1
             this.label19 = new System.Windows.Forms.Label();
             this.lbLivingIn = new System.Windows.Forms.Label();
             this.AdminPage = new System.Windows.Forms.TabPage();
+            this.btnCheckTenants = new System.Windows.Forms.Button();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.cbApartmentAdminMainPage = new System.Windows.Forms.ComboBox();
+            this.cbBuildingAdminMainPage = new System.Windows.Forms.ComboBox();
             this.btnLogOutAdmin = new System.Windows.Forms.Button();
             this.button71 = new System.Windows.Forms.Button();
             this.button70 = new System.Windows.Forms.Button();
@@ -304,17 +311,19 @@ namespace Group_project_semester_1
             this.button101 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
             this.PayRent = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.btnPayYourRent = new System.Windows.Forms.Button();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
+            this.btnBackFromRentPayment = new System.Windows.Forms.Button();
             this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.btnPayYourRent = new System.Windows.Forms.Button();
+            this.tbCVV = new System.Windows.Forms.TextBox();
+            this.tbExpiryDate = new System.Windows.Forms.TextBox();
+            this.tbNameOnCard = new System.Windows.Forms.TextBox();
+            this.tbCardNumber = new System.Windows.Forms.TextBox();
+            this.cbSelectCardType = new System.Windows.Forms.ComboBox();
+            this.lbTenantsAdmin = new System.Windows.Forms.ListBox();
             this.StudentRent.SuspendLayout();
             this.StudentAnouncments.SuspendLayout();
             this.StudentRules.SuspendLayout();
@@ -377,7 +386,7 @@ namespace Group_project_semester_1
             // 
             // btnGoToRentPayment
             // 
-            this.btnGoToRentPayment.Location = new System.Drawing.Point(579, 384);
+            this.btnGoToRentPayment.Location = new System.Drawing.Point(661, 377);
             this.btnGoToRentPayment.Name = "btnGoToRentPayment";
             this.btnGoToRentPayment.Size = new System.Drawing.Size(222, 58);
             this.btnGoToRentPayment.TabIndex = 27;
@@ -549,11 +558,12 @@ namespace Group_project_semester_1
             // 
             // lbAnouncments
             // 
+            this.lbAnouncments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbAnouncments.FormattingEnabled = true;
-            this.lbAnouncments.ItemHeight = 16;
+            this.lbAnouncments.ItemHeight = 25;
             this.lbAnouncments.Location = new System.Drawing.Point(340, 238);
             this.lbAnouncments.Name = "lbAnouncments";
-            this.lbAnouncments.Size = new System.Drawing.Size(756, 324);
+            this.lbAnouncments.Size = new System.Drawing.Size(756, 304);
             this.lbAnouncments.TabIndex = 23;
             // 
             // panel7
@@ -896,11 +906,12 @@ namespace Group_project_semester_1
             // 
             // lbGarbage
             // 
+            this.lbGarbage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbGarbage.FormattingEnabled = true;
-            this.lbGarbage.ItemHeight = 16;
+            this.lbGarbage.ItemHeight = 20;
             this.lbGarbage.Location = new System.Drawing.Point(437, 185);
             this.lbGarbage.Name = "lbGarbage";
-            this.lbGarbage.Size = new System.Drawing.Size(506, 212);
+            this.lbGarbage.Size = new System.Drawing.Size(506, 204);
             this.lbGarbage.TabIndex = 28;
             // 
             // panel5
@@ -1077,11 +1088,12 @@ namespace Group_project_semester_1
             // 
             // lbGroceriesStudent
             // 
+            this.lbGroceriesStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbGroceriesStudent.FormattingEnabled = true;
-            this.lbGroceriesStudent.ItemHeight = 16;
+            this.lbGroceriesStudent.ItemHeight = 20;
             this.lbGroceriesStudent.Location = new System.Drawing.Point(417, 252);
             this.lbGroceriesStudent.Name = "lbGroceriesStudent";
-            this.lbGroceriesStudent.Size = new System.Drawing.Size(506, 212);
+            this.lbGroceriesStudent.Size = new System.Drawing.Size(506, 204);
             this.lbGroceriesStudent.TabIndex = 28;
             // 
             // panel4
@@ -1289,11 +1301,12 @@ namespace Group_project_semester_1
             // 
             // lbCleaningSchedule
             // 
+            this.lbCleaningSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbCleaningSchedule.FormattingEnabled = true;
-            this.lbCleaningSchedule.ItemHeight = 16;
+            this.lbCleaningSchedule.ItemHeight = 20;
             this.lbCleaningSchedule.Location = new System.Drawing.Point(424, 170);
             this.lbCleaningSchedule.Name = "lbCleaningSchedule";
-            this.lbCleaningSchedule.Size = new System.Drawing.Size(613, 212);
+            this.lbCleaningSchedule.Size = new System.Drawing.Size(613, 204);
             this.lbCleaningSchedule.TabIndex = 23;
             // 
             // panel3
@@ -1428,7 +1441,6 @@ namespace Group_project_semester_1
             this.StudentHomePage.TabIndex = 9;
             this.StudentHomePage.Text = "Student Home Page";
             this.StudentHomePage.UseVisualStyleBackColor = true;
-            this.StudentHomePage.Click += new System.EventHandler(this.StudentHomePage_Click);
             // 
             // button60
             // 
@@ -1444,7 +1456,7 @@ namespace Group_project_semester_1
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(545, 260);
+            this.label18.Location = new System.Drawing.Point(421, 260);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(186, 24);
             this.label18.TabIndex = 24;
@@ -1452,13 +1464,13 @@ namespace Group_project_semester_1
             // 
             // lbStudentRoommates
             // 
+            this.lbStudentRoommates.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbStudentRoommates.FormattingEnabled = true;
-            this.lbStudentRoommates.ItemHeight = 16;
-            this.lbStudentRoommates.Location = new System.Drawing.Point(540, 305);
+            this.lbStudentRoommates.ItemHeight = 25;
+            this.lbStudentRoommates.Location = new System.Drawing.Point(425, 305);
             this.lbStudentRoommates.Name = "lbStudentRoommates";
-            this.lbStudentRoommates.Size = new System.Drawing.Size(529, 244);
+            this.lbStudentRoommates.Size = new System.Drawing.Size(641, 279);
             this.lbStudentRoommates.TabIndex = 23;
-            this.lbStudentRoommates.SelectedIndexChanged += new System.EventHandler(this.lbStudentRoommates_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -1561,6 +1573,14 @@ namespace Group_project_semester_1
             // 
             // AdminPage
             // 
+            this.AdminPage.Controls.Add(this.lbTenantsAdmin);
+            this.AdminPage.Controls.Add(this.btnCheckTenants);
+            this.AdminPage.Controls.Add(this.label60);
+            this.AdminPage.Controls.Add(this.label59);
+            this.AdminPage.Controls.Add(this.label58);
+            this.AdminPage.Controls.Add(this.label57);
+            this.AdminPage.Controls.Add(this.cbApartmentAdminMainPage);
+            this.AdminPage.Controls.Add(this.cbBuildingAdminMainPage);
             this.AdminPage.Controls.Add(this.btnLogOutAdmin);
             this.AdminPage.Controls.Add(this.button71);
             this.AdminPage.Controls.Add(this.button70);
@@ -1578,9 +1598,82 @@ namespace Group_project_semester_1
             this.AdminPage.Text = "Admin Page";
             this.AdminPage.UseVisualStyleBackColor = true;
             // 
+            // btnCheckTenants
+            // 
+            this.btnCheckTenants.Location = new System.Drawing.Point(360, 500);
+            this.btnCheckTenants.Name = "btnCheckTenants";
+            this.btnCheckTenants.Size = new System.Drawing.Size(220, 60);
+            this.btnCheckTenants.TabIndex = 37;
+            this.btnCheckTenants.Text = "Check tenants";
+            this.btnCheckTenants.UseVisualStyleBackColor = true;
+            this.btnCheckTenants.Click += new System.EventHandler(this.btnCheckTenants_Click);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(357, 366);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(77, 17);
+            this.label60.TabIndex = 36;
+            this.label60.Text = "Apartment:";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(357, 273);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(62, 17);
+            this.label59.TabIndex = 35;
+            this.label59.Text = "Building:";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(678, 236);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(64, 17);
+            this.label58.TabIndex = 34;
+            this.label58.Text = "Tenants:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.Location = new System.Drawing.Point(479, 156);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(410, 29);
+            this.label57.TabIndex = 33;
+            this.label57.Text = "Which apartment do you want to see?";
+            // 
+            // cbApartmentAdminMainPage
+            // 
+            this.cbApartmentAdminMainPage.FormattingEnabled = true;
+            this.cbApartmentAdminMainPage.Items.AddRange(new object[] {
+            "Apartment1",
+            "Apartment2",
+            "Apartment3",
+            "Apartment4",
+            "Apartment5"});
+            this.cbApartmentAdminMainPage.Location = new System.Drawing.Point(360, 386);
+            this.cbApartmentAdminMainPage.Name = "cbApartmentAdminMainPage";
+            this.cbApartmentAdminMainPage.Size = new System.Drawing.Size(220, 24);
+            this.cbApartmentAdminMainPage.TabIndex = 32;
+            // 
+            // cbBuildingAdminMainPage
+            // 
+            this.cbBuildingAdminMainPage.FormattingEnabled = true;
+            this.cbBuildingAdminMainPage.Items.AddRange(new object[] {
+            "BuildingA",
+            "BuildingB",
+            "BuildingC"});
+            this.cbBuildingAdminMainPage.Location = new System.Drawing.Point(360, 293);
+            this.cbBuildingAdminMainPage.Name = "cbBuildingAdminMainPage";
+            this.cbBuildingAdminMainPage.Size = new System.Drawing.Size(220, 24);
+            this.cbBuildingAdminMainPage.TabIndex = 31;
+            // 
             // btnLogOutAdmin
             // 
-            this.btnLogOutAdmin.Location = new System.Drawing.Point(1062, 699);
+            this.btnLogOutAdmin.Location = new System.Drawing.Point(1058, 643);
             this.btnLogOutAdmin.Name = "btnLogOutAdmin";
             this.btnLogOutAdmin.Size = new System.Drawing.Size(131, 32);
             this.btnLogOutAdmin.TabIndex = 29;
@@ -2843,7 +2936,7 @@ namespace Group_project_semester_1
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(347, 673);
+            this.label46.Location = new System.Drawing.Point(344, 661);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(129, 17);
             this.label46.TabIndex = 45;
@@ -2851,7 +2944,7 @@ namespace Group_project_semester_1
             // 
             // btnAddRule
             // 
-            this.btnAddRule.Location = new System.Drawing.Point(939, 681);
+            this.btnAddRule.Location = new System.Drawing.Point(936, 669);
             this.btnAddRule.Name = "btnAddRule";
             this.btnAddRule.Size = new System.Drawing.Size(171, 39);
             this.btnAddRule.TabIndex = 44;
@@ -2861,7 +2954,7 @@ namespace Group_project_semester_1
             // 
             // tbAddRule
             // 
-            this.tbAddRule.Location = new System.Drawing.Point(341, 693);
+            this.tbAddRule.Location = new System.Drawing.Point(338, 681);
             this.tbAddRule.Name = "tbAddRule";
             this.tbAddRule.Size = new System.Drawing.Size(524, 22);
             this.tbAddRule.TabIndex = 43;
@@ -2910,7 +3003,7 @@ namespace Group_project_semester_1
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label44.Location = new System.Drawing.Point(781, 147);
+            this.label44.Location = new System.Drawing.Point(770, 151);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(81, 29);
             this.label44.TabIndex = 38;
@@ -2927,7 +3020,7 @@ namespace Group_project_semester_1
             "Keep common areas clean!",
             "No noise after 23:00 o\'clock!",
             "Don\'t lose your keys!"});
-            this.lbCurrentRulesAdmin.Location = new System.Drawing.Point(786, 183);
+            this.lbCurrentRulesAdmin.Location = new System.Drawing.Point(775, 183);
             this.lbCurrentRulesAdmin.Name = "lbCurrentRulesAdmin";
             this.lbCurrentRulesAdmin.Size = new System.Drawing.Size(439, 404);
             this.lbCurrentRulesAdmin.TabIndex = 37;
@@ -3054,11 +3147,12 @@ namespace Group_project_semester_1
             // 
             // lbAdminComplaints
             // 
+            this.lbAdminComplaints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbAdminComplaints.FormattingEnabled = true;
-            this.lbAdminComplaints.ItemHeight = 16;
-            this.lbAdminComplaints.Location = new System.Drawing.Point(322, 169);
+            this.lbAdminComplaints.ItemHeight = 25;
+            this.lbAdminComplaints.Location = new System.Drawing.Point(264, 172);
             this.lbAdminComplaints.Name = "lbAdminComplaints";
-            this.lbAdminComplaints.Size = new System.Drawing.Size(829, 372);
+            this.lbAdminComplaints.Size = new System.Drawing.Size(943, 379);
             this.lbAdminComplaints.TabIndex = 37;
             // 
             // button90
@@ -3168,12 +3262,13 @@ namespace Group_project_semester_1
             // 
             // btnAlreadyPaidAdmin
             // 
-            this.btnAlreadyPaidAdmin.Location = new System.Drawing.Point(750, 484);
+            this.btnAlreadyPaidAdmin.Location = new System.Drawing.Point(697, 617);
             this.btnAlreadyPaidAdmin.Name = "btnAlreadyPaidAdmin";
             this.btnAlreadyPaidAdmin.Size = new System.Drawing.Size(195, 60);
             this.btnAlreadyPaidAdmin.TabIndex = 44;
             this.btnAlreadyPaidAdmin.Text = "Already paid";
             this.btnAlreadyPaidAdmin.UseVisualStyleBackColor = true;
+            this.btnAlreadyPaidAdmin.Click += new System.EventHandler(this.btnAlreadyPaidAdmin_Click);
             // 
             // label51
             // 
@@ -3195,12 +3290,13 @@ namespace Group_project_semester_1
             // 
             // btnRequestPaymentAdmin
             // 
-            this.btnRequestPaymentAdmin.Location = new System.Drawing.Point(1009, 484);
+            this.btnRequestPaymentAdmin.Location = new System.Drawing.Point(1019, 617);
             this.btnRequestPaymentAdmin.Name = "btnRequestPaymentAdmin";
             this.btnRequestPaymentAdmin.Size = new System.Drawing.Size(195, 60);
             this.btnRequestPaymentAdmin.TabIndex = 41;
             this.btnRequestPaymentAdmin.Text = "Request payment";
             this.btnRequestPaymentAdmin.UseVisualStyleBackColor = true;
+            this.btnRequestPaymentAdmin.Click += new System.EventHandler(this.btnRequestPaymentAdmin_Click);
             // 
             // btnShowStudentsForRent
             // 
@@ -3214,11 +3310,12 @@ namespace Group_project_semester_1
             // 
             // lbStudentsRent
             // 
+            this.lbStudentsRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbStudentsRent.FormattingEnabled = true;
-            this.lbStudentsRent.ItemHeight = 16;
+            this.lbStudentsRent.ItemHeight = 25;
             this.lbStudentsRent.Location = new System.Drawing.Point(538, 152);
             this.lbStudentsRent.Name = "lbStudentsRent";
-            this.lbStudentsRent.Size = new System.Drawing.Size(676, 292);
+            this.lbStudentsRent.Size = new System.Drawing.Size(676, 429);
             this.lbStudentsRent.TabIndex = 39;
             // 
             // cbSelectedApartament
@@ -3328,17 +3425,18 @@ namespace Group_project_semester_1
             // 
             // PayRent
             // 
+            this.PayRent.Controls.Add(this.btnBackFromRentPayment);
             this.PayRent.Controls.Add(this.label56);
             this.PayRent.Controls.Add(this.label55);
             this.PayRent.Controls.Add(this.label54);
             this.PayRent.Controls.Add(this.label53);
             this.PayRent.Controls.Add(this.label52);
             this.PayRent.Controls.Add(this.btnPayYourRent);
-            this.PayRent.Controls.Add(this.textBox4);
-            this.PayRent.Controls.Add(this.textBox3);
-            this.PayRent.Controls.Add(this.textBox2);
-            this.PayRent.Controls.Add(this.textBox1);
-            this.PayRent.Controls.Add(this.comboBox1);
+            this.PayRent.Controls.Add(this.tbCVV);
+            this.PayRent.Controls.Add(this.tbExpiryDate);
+            this.PayRent.Controls.Add(this.tbNameOnCard);
+            this.PayRent.Controls.Add(this.tbCardNumber);
+            this.PayRent.Controls.Add(this.cbSelectCardType);
             this.PayRent.Location = new System.Drawing.Point(4, 25);
             this.PayRent.Name = "PayRent";
             this.PayRent.Padding = new System.Windows.Forms.Padding(3);
@@ -3347,86 +3445,15 @@ namespace Group_project_semester_1
             this.PayRent.Text = "Pay Rent";
             this.PayRent.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // btnBackFromRentPayment
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(399, 132);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(432, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(399, 264);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 22);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(399, 363);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(432, 22);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(399, 500);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 22);
-            this.textBox3.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(657, 500);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(174, 22);
-            this.textBox4.TabIndex = 4;
-            // 
-            // btnPayYourRent
-            // 
-            this.btnPayYourRent.Location = new System.Drawing.Point(509, 589);
-            this.btnPayYourRent.Name = "btnPayYourRent";
-            this.btnPayYourRent.Size = new System.Drawing.Size(202, 68);
-            this.btnPayYourRent.TabIndex = 5;
-            this.btnPayYourRent.Text = "Pay rent!";
-            this.btnPayYourRent.UseVisualStyleBackColor = true;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(396, 112);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(73, 17);
-            this.label52.TabIndex = 6;
-            this.label52.Text = "Card type:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(396, 244);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(94, 17);
-            this.label53.TabIndex = 7;
-            this.label53.Text = "Card number:";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(396, 343);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(101, 17);
-            this.label54.TabIndex = 8;
-            this.label54.Text = "Name on card:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(396, 480);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(82, 17);
-            this.label55.TabIndex = 9;
-            this.label55.Text = "Expiry date:";
+            this.btnBackFromRentPayment.Location = new System.Drawing.Point(1076, 662);
+            this.btnBackFromRentPayment.Name = "btnBackFromRentPayment";
+            this.btnBackFromRentPayment.Size = new System.Drawing.Size(138, 29);
+            this.btnBackFromRentPayment.TabIndex = 26;
+            this.btnBackFromRentPayment.Text = "Go back";
+            this.btnBackFromRentPayment.UseVisualStyleBackColor = true;
+            this.btnBackFromRentPayment.Click += new System.EventHandler(this.btnBackFromRentPayment_Click);
             // 
             // label56
             // 
@@ -3437,11 +3464,108 @@ namespace Group_project_semester_1
             this.label56.TabIndex = 10;
             this.label56.Text = "CVV:";
             // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(396, 480);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(82, 17);
+            this.label55.TabIndex = 9;
+            this.label55.Text = "Expiry date:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(396, 343);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(101, 17);
+            this.label54.TabIndex = 8;
+            this.label54.Text = "Name on card:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(396, 244);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(94, 17);
+            this.label53.TabIndex = 7;
+            this.label53.Text = "Card number:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(396, 112);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(73, 17);
+            this.label52.TabIndex = 6;
+            this.label52.Text = "Card type:";
+            // 
+            // btnPayYourRent
+            // 
+            this.btnPayYourRent.Location = new System.Drawing.Point(509, 589);
+            this.btnPayYourRent.Name = "btnPayYourRent";
+            this.btnPayYourRent.Size = new System.Drawing.Size(202, 68);
+            this.btnPayYourRent.TabIndex = 5;
+            this.btnPayYourRent.Text = "Pay rent!";
+            this.btnPayYourRent.UseVisualStyleBackColor = true;
+            this.btnPayYourRent.Click += new System.EventHandler(this.btnPayYourRent_Click);
+            // 
+            // tbCVV
+            // 
+            this.tbCVV.Location = new System.Drawing.Point(657, 500);
+            this.tbCVV.Name = "tbCVV";
+            this.tbCVV.Size = new System.Drawing.Size(174, 22);
+            this.tbCVV.TabIndex = 4;
+            // 
+            // tbExpiryDate
+            // 
+            this.tbExpiryDate.Location = new System.Drawing.Point(399, 500);
+            this.tbExpiryDate.Name = "tbExpiryDate";
+            this.tbExpiryDate.Size = new System.Drawing.Size(174, 22);
+            this.tbExpiryDate.TabIndex = 3;
+            // 
+            // tbNameOnCard
+            // 
+            this.tbNameOnCard.Location = new System.Drawing.Point(399, 363);
+            this.tbNameOnCard.Name = "tbNameOnCard";
+            this.tbNameOnCard.Size = new System.Drawing.Size(432, 22);
+            this.tbNameOnCard.TabIndex = 2;
+            // 
+            // tbCardNumber
+            // 
+            this.tbCardNumber.Location = new System.Drawing.Point(399, 264);
+            this.tbCardNumber.Name = "tbCardNumber";
+            this.tbCardNumber.Size = new System.Drawing.Size(432, 22);
+            this.tbCardNumber.TabIndex = 1;
+            // 
+            // cbSelectCardType
+            // 
+            this.cbSelectCardType.FormattingEnabled = true;
+            this.cbSelectCardType.Items.AddRange(new object[] {
+            "Visa",
+            "MasterCard",
+            "VPay",
+            "Ideal"});
+            this.cbSelectCardType.Location = new System.Drawing.Point(399, 132);
+            this.cbSelectCardType.Name = "cbSelectCardType";
+            this.cbSelectCardType.Size = new System.Drawing.Size(432, 24);
+            this.cbSelectCardType.TabIndex = 0;
+            // 
+            // lbTenantsAdmin
+            // 
+            this.lbTenantsAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbTenantsAdmin.FormattingEnabled = true;
+            this.lbTenantsAdmin.ItemHeight = 20;
+            this.lbTenantsAdmin.Location = new System.Drawing.Point(681, 256);
+            this.lbTenantsAdmin.Name = "lbTenantsAdmin";
+            this.lbTenantsAdmin.Size = new System.Drawing.Size(508, 344);
+            this.lbTenantsAdmin.TabIndex = 38;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 773);
+            this.ClientSize = new System.Drawing.Size(1230, 736);
             this.Controls.Add(this.tabControl);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -3778,11 +3902,20 @@ namespace Group_project_semester_1
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Button btnPayYourRent;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tbCVV;
+        private System.Windows.Forms.TextBox tbExpiryDate;
+        private System.Windows.Forms.TextBox tbNameOnCard;
+        private System.Windows.Forms.TextBox tbCardNumber;
+        private System.Windows.Forms.ComboBox cbSelectCardType;
+        private System.Windows.Forms.Button btnBackFromRentPayment;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.ComboBox cbApartmentAdminMainPage;
+        private System.Windows.Forms.ComboBox cbBuildingAdminMainPage;
+        private System.Windows.Forms.Button btnCheckTenants;
+        private System.Windows.Forms.ListBox lbTenantsAdmin;
     }
 }
 

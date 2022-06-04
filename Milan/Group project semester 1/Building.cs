@@ -60,6 +60,23 @@ namespace Group_project_semester_1
             return this.usernamesList;
         }
 
+        //Return all Students from that Building
+        public List<Student> GetAllStudents()
+        {
+            List<Student> students = new List<Student>();
+            foreach (Apartaments apartament in apartamentsInBuilding)
+            {
+
+                foreach (Student student in apartament.GetAllStudents())
+                {
+                    students.Add(student);
+                }
+            }
+            return students;
+        }
+
+
+
         //Returning the list of the students in each apartment
         public List<Student> ShowAllStudents(Student loggedUser)
         {
@@ -113,6 +130,8 @@ namespace Group_project_semester_1
             return null;
         }
 
+
+        //Return all the registrated students in this particular apartment
         public List<Student> ReturnStudentsByChosenApartament(string apartamentName)
         {
             List<Student> students= null;

@@ -269,19 +269,19 @@ namespace Group_project_semester_1
 
         public void LoadText(string building, Student student)
         {
-            
-            label19.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label22.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label25.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label28.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label31.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label34.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label37.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
-            label30.Text = $"Hello {student.GetName()} {student.GetLastName()} ";
+            //Loading the top text of each STUDENT PAGE
+            label19.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label22.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label25.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label28.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label31.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label34.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label37.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
+            label30.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
 
 
 
-
+            //Loading the bottom text of each STUDENT PAGE
             lbLivingIn.Text = $"You are currently living in: {building}, {student.GetApartment()}";
             label23.Text = $"You are currently living in: {building}, {student.GetApartment()}";
             label26.Text = $"You are currently living in: {building}, {student.GetApartment()}";
@@ -292,14 +292,69 @@ namespace Group_project_semester_1
             label39.Text = $"You are currently living in: {building}, {student.GetApartment()}";
 
 
+            //Depending on which apartment you are living you have diffrent price for rent
+            switch (student.GetApartment())
+            {
+                case "Apartment1":
+                    if (student.GetRent() == false)
+                    {
+                        lblRentPayment.Text = ("Unpayed - You need to pay 300€");
+                    }
+                    else
+                    {
+                        lblRentPayment.Text = ("Payed - You have payed 300€");
+                    }
+                    break;
+                case "Apartment2":
+                    if (student.GetRent() == false)
+                    {
+                        lblRentPayment.Text = ("Unpayed - You need to pay 350€");
+                    }
+                    else
+                    {
+                        lblRentPayment.Text = ("Payed - You have payed 350€");
+                    }
+                    break;
+
+                case "Apartment3":
+                    if (student.GetRent() == false)
+                    {
+                        lblRentPayment.Text = ("Unpayed - You need to pay 400€");
+                    }
+                    else
+                    {
+                        lblRentPayment.Text = ("Payed - You have payed 400€");
+                    }
+                    break;
+
+                case "Apartment4":
+                    if (student.GetRent() == false)
+                    {
+                        lblRentPayment.Text = ("Unpayed - You need to pay 450€");
+                    }
+                    else
+                    {
+                        lblRentPayment.Text = ("Payed - You have payed 450€");
+                    }
+                    break;
+
+                case "Apartment5":
+                    if (student.GetRent() == false)
+                    {
+                        lblRentPayment.Text = ("Unpayed - You need to pay 500€");
+                    }
+                    else
+                    {
+                        lblRentPayment.Text = ("Payed - You have payed 500€");
+                    }
+                    break;
+                default:
+                    break;
+            }
+           
+
+
         }
-
-
-
-
-        
-
-        
 
         private void btnShowA_Click(object sender, EventArgs e)
         {
@@ -310,12 +365,6 @@ namespace Group_project_semester_1
                 
         }
 
-        
-
-      
-        
-
-       
 
         private void btnShowB_Click(object sender, EventArgs e)
         {
@@ -334,15 +383,6 @@ namespace Group_project_semester_1
             }
         }
 
-        private void lbStudentRoommates_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StudentHomePage_Click(object sender, EventArgs e)
-        {
-
-        }
         public void RefreshCleaningTasks()
         {
             Apartaments apartamentToAddTaskTo = chosenBuilding.ReturnsChosenApartament(loggedUser);
@@ -720,6 +760,303 @@ namespace Group_project_semester_1
         }
 
         //END OF COMPLAINTS
+
+
+        //RENT 
+        //ADMIN
+
+
+        //updating the list of the admin - seeing every single student in the selected apartment of the selected building
+        private void UpdateStudentListRent(string selectedBuilding, string selectedApartament)
+        {
+            lbStudentsRent.Items.Clear();
+            switch (selectedBuilding)
+            {
+
+                //Each builidng has a diffrent list
+                case "BuildingA":
+                    foreach (Student student in buildingA.ReturnStudentsByChosenApartament(selectedApartament))
+                    {
+                        lbStudentsRent.Items.Add(student);
+                    }
+                    break;
+                case "BuildingB":
+                    foreach (Student student in buildingB.ReturnStudentsByChosenApartament(selectedApartament))
+                    {
+                        lbStudentsRent.Items.Add(student);
+                    }
+                    break;
+                case "BuildingC":
+                    foreach (Student student in buildingC.ReturnStudentsByChosenApartament(selectedApartament))
+                    {
+                        lbStudentsRent.Items.Add(student);
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        //Changing the rent of the student from unpayed to payed
+        private void ChangeStudentRentToPayed(string selectedBuilding, string selectedApartament, string username)
+        {
+            switch (selectedBuilding)
+            {
+                //Each building has a diffrent list
+                case "BuildingA":
+                    foreach (Student student in buildingA.GetAllStudents())
+                    {
+                        //getting the student we need - we are using username, because each username is diffrent are there can not be two identical usernames
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(true);
+                        }
+
+                        //Updating the list so we can see the changes we have made
+                        UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    }
+
+                    break;
+                case "BuildingB":
+                    foreach (Student student in buildingB.GetAllStudents())
+                    {
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(true);
+                        }
+                    }
+                    //Updating the list so we can see the changes we have made
+                    UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    break;
+
+                case "BuildingC":
+                    foreach (Student student in buildingC.GetAllStudents())
+                    {
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(true);
+                        }
+                    }
+                    //Updating the list so we can see the changes we have made
+                    UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    break;
+                default:
+
+                    break;
+
+            }
+        }
+
+
+        //Changing the rent from payed to unpayed for the selected student
+        private void ChangeStudentRentToUnpayed(string selectedBuilding, string selectedApartament, string username)
+        {
+            switch (selectedBuilding)
+            {
+                case "BuildingA":
+                    foreach (Student student in buildingA.GetAllStudents())
+                    {
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(false);
+                        }
+                        //Updating the list so we can see the changes we have made
+                        UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    }
+
+                    break;
+                case "BuildingB":
+                    foreach (Student student in buildingB.GetAllStudents())
+                    {
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(false);
+                        }
+                    }
+                    //Updating the list so we can see the changes we have made
+                    UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    break;
+
+                case "BuildingC":
+                    foreach (Student student in buildingC.GetAllStudents())
+                    {
+                        if (student.GetUsername() == username)
+                        {
+                            student.SetRent(false);
+                        }
+                    }
+                    //Updating the list so we can see the changes we have made
+                    UpdateStudentListRent(selectedBuilding, selectedApartament);
+                    break;
+                default:
+
+                    break;
+
+            }
+        }
+
+        //button to show us all the registered students in this particular building and apartment
+        private void btnShowStudents_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedBuilding = cbSelectedBuilding.Text;
+                string selectedApartament = cbSelectedApartament.Text;
+                UpdateStudentListRent(selectedBuilding, selectedApartament);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            cbSelectedBuilding.Text = "";
+            cbSelectedApartament.Text = "";
+
+        }
+
+        //button changing the the rent of the student to payed
+        private void btnAlreadyPaidAdmin_Click(object sender, EventArgs e)
+        {
+            //Check if there is a selected item in the list
+            if (lbStudentsRent.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a student for which you want to change the rent");
+            }
+            else
+            {
+                //taking the selected item
+                string ChosenStudentToChangeRent = lbStudentsRent.SelectedItem.ToString();
+
+                //split the string into an array
+                string[] splitTheString = ChosenStudentToChangeRent.Split().ToArray();
+
+
+                //taking the info we need - username, building and apartment
+                string username = splitTheString[0];
+                string selectedBuilding = splitTheString[2];
+                string selectedApartament = splitTheString[4];
+                //Make the rent payed
+                ChangeStudentRentToPayed(selectedBuilding, selectedApartament, username);
+            }
+
+        }
+
+        private void btnRequestPaymentAdmin_Click(object sender, EventArgs e)
+        {
+            //Check if there is a selected item in the list
+            if (lbStudentsRent.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a student for which you want to change the rent");
+            }
+            else
+            {
+                //Taking the selected item making it a string
+                string ChosenStudentToChangeRent = lbStudentsRent.SelectedItem.ToString();
+                //split the string into an array
+                string[] splitTheString = ChosenStudentToChangeRent.Split().ToArray();
+
+                //taking the info we need - username, building and apartment
+                string username = splitTheString[0];
+                string selectedBuilding = splitTheString[2];
+                string selectedApartament = splitTheString[4];
+                //Make the rent unpayed
+                ChangeStudentRentToUnpayed(selectedBuilding, selectedApartament, username);
+            }
+
+        }
+
+        //STUDENT
+        //Student paying his rent
+        private void btnPayYourRent_Click(object sender, EventArgs e)
+        {
+            if (cbSelectCardType.Text == "" || tbCardNumber.Text == "" || tbNameOnCard.Text == "" || tbExpiryDate.Text == "" || tbCVV.Text == "")
+            {
+                MessageBox.Show("You have missed a component!");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to pay your rent?",
+             "Pay rent?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    loggedUser.SetRent(true);
+                    LoadText(loggedUser.GetBuilding(), loggedUser);
+
+                    MessageBox.Show("Rent payed!");
+                    tabControl.SelectTab("StudentRent");
+
+                    cbSelectCardType.Text = "";
+                    tbCardNumber.Text = "";
+                    tbNameOnCard.Text = "";
+                    tbExpiryDate.Text = "";
+                    tbCVV.Text = "";
+                }
+
+            }
+
+        }
+
+        //END RENT
+
+
+        //Checking and giving the list of the students living at this address - ADMIN MAIN PAGE
+        private void btnCheckTenants_Click(object sender, EventArgs e)
+        {
+
+            string selectedBuilding = cbBuildingAdminMainPage.Text;
+            string selectedApartament = cbApartmentAdminMainPage.Text;
+
+            if (cbApartmentAdminMainPage.Text == "" || cbBuildingAdminMainPage.Text == "")
+            {
+                MessageBox.Show("You have missed a component!");
+            }
+            else
+            {
+                lbTenantsAdmin.Items.Clear();
+                switch (selectedBuilding)
+                {
+
+                    //Each builidng has a diffrent list
+                    case "BuildingA":
+                        foreach (Student student in buildingA.ReturnStudentsByChosenApartament(selectedApartament))
+                        {
+                            lbTenantsAdmin.Items.Add(student.AdminInfo());
+                        }
+                        break;
+                    case "BuildingB":
+                        foreach (Student student in buildingB.ReturnStudentsByChosenApartament(selectedApartament))
+                        {
+                            lbTenantsAdmin.Items.Add(student.AdminInfo());
+                        }
+                        break;
+                    case "BuildingC":
+                        foreach (Student student in buildingC.ReturnStudentsByChosenApartament(selectedApartament))
+                        {
+                            lbTenantsAdmin.Items.Add(student.AdminInfo());
+                        }
+                        break;
+                    default:
+                        break;
+
+                        if (lbTenantsAdmin.Items.Count > -1)
+                        {
+                         
+                        }
+                        else
+                        {
+                            MessageBox.Show("There are no registrated students at this address!");
+                        }
+                }
+
+                cbApartmentAdminMainPage.Text = "";
+                cbBuildingAdminMainPage.Text = "";
+            }
+            
+        }
+
+
+
 
         //ALL THE TAB CONTROL BUTTONS !!!
 
@@ -1269,6 +1606,12 @@ namespace Group_project_semester_1
             tabControl.SelectTab("PayRent");
         }
 
+        private void btnBackFromRentPayment_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("StudentRent");
+        }
+
+
 
         private void btnLogOutAdmin_Click(object sender, EventArgs e)
         {
@@ -1288,47 +1631,8 @@ namespace Group_project_semester_1
             loggedUser = null;
         }
 
-        private void btnShowStudents_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string selectedBuilding = cbSelectedBuilding.Text;
-                string selectedApartament = cbSelectedApartament.Text;
-                switch (selectedBuilding)
-                {
-                    case "BuildingA":
-                        foreach (Student student in buildingA.ReturnStudentsByChosenApartament(selectedApartament))
-                        {
-                            lbStudentsRent.Items.Add(student);
-                        }  
-                        break;
-                    case "BuildingB":
-                        foreach (Student student in buildingB.ReturnStudentsByChosenApartament(selectedApartament))
-                        {
-                            lbStudentsRent.Items.Add(student);
-                        }
-                        break;
-                    case "BuildingC":
-                        foreach (Student student in buildingC.ReturnStudentsByChosenApartament(selectedApartament))
-                        {
-                            lbStudentsRent.Items.Add(student);
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
-        }
 
-        
-
-
-
+   
 
         //END OF BUTTONS
         ////////////////////////////////////////////////////////////////////////////////////
