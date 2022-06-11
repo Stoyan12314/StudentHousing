@@ -50,6 +50,7 @@ namespace Group_project_semester_1
         }
 
 
+
         //Returning the list of the students in each apartment
         public List<Student> ShowAllStudents()
         {
@@ -86,21 +87,24 @@ namespace Group_project_semester_1
         //return apartament by selected user
         public Apartaments ReturnsChosenApartament(Student studentApartament)
         {
+            Apartaments returnApartament = default;
+
             foreach (Apartaments apartament in apartamentsInBuilding)
             {
                 foreach (Student student in apartament.GetAllStudents())
                 {
                     if (student == studentApartament)
                     {
-                        return apartament;
+                        returnApartament = apartament;
                     }  
                 } 
             }
-            return null;
+            return returnApartament;
         }
 
 
-
+        //return Count of students in apartament
+        
         //Return logged user
         //public bool CheckUserNameAndPassword(string username, string password)
         //{

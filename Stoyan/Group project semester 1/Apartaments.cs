@@ -97,6 +97,11 @@ namespace Group_project_semester_1
         {
             return this.listOfStudents;
         }
+        //return count of Occupants in the apartament
+        public string CountOccupants()
+        {
+            return this.ocupants.ToString();
+        }
         //returns the groceries list
         public List<Groceries> GetGroceries()
         {

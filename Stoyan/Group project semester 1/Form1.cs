@@ -124,6 +124,31 @@ namespace Group_project_semester_1
                 if (IsApartamentFull)
                 {
                     MessageBox.Show("Registered sucessfully");
+                    if (apartment == "Apartment1")
+                    {
+                        rbApartment1.Text = $"Apartment 1 - {chosenBuilding.ReturnsChosenApartament(loggedUser).CountOccupants()}/6 people - 300 €";
+
+                    }
+                    else if (apartment == "Apartament2")
+                    {
+                        rbApartment2.Text = $"Apartment 2 - {chosenBuilding.ReturnsChosenApartament(loggedUser).CountOccupants()}/5 people - 350 €";
+                    }
+                    else if (apartment == "Apartament3")
+                    {
+                        rbApartment3.Text = $"Apartment 3 - {chosenBuilding.ReturnsChosenApartament(loggedUser).CountOccupants()}/4 people - 400 €";
+
+                    }
+                    else if (apartment == "Apartament4")
+                    {
+                       rbApartment4.Text = $"Apartment 4 - {chosenBuilding.ReturnsChosenApartament(loggedUser).CountOccupants()}/3 people - 450 €";
+
+                    }
+                    else if (apartment == "Apartament5")
+                    {
+                        rbApartment5.Text = $"Apartment 5 - {chosenBuilding.ReturnsChosenApartament(loggedUser).CountOccupants()}/2 people - 500 €";
+
+                    }
+
                 }
                 else
                 {
