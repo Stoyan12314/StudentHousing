@@ -115,7 +115,16 @@ namespace Group_project_semester_1
             Garbage garbage = new Garbage(newGarbage, date, thrower);
             listOfGarbage.Add(garbage);
         }
-
+        public void RemoveStudent(Student student)
+        {
+            foreach (Student std in listOfStudents.ToList())
+            {
+                if (student == std)
+                {
+                    listOfStudents.Remove(std);
+                }
+            }
+        }
 
         //Removing garbage
         public void RemoveGarbage(string selectedTask, string user)

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building.cs" />
+    <Compile Include="BuildingsManager.cs" />
     <Compile Include="CleaningSchedule.cs" />
     <Compile Include="Garbage.cs" />
     <Compile Include="Apartaments.cs" />

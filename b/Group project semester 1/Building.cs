@@ -36,7 +36,10 @@ namespace Group_project_semester_1
    
             //To create the apartments in the building
         public string BuildingName { get; }
-        
+        public List<Apartaments> apartaments()
+        {
+            return this.apartamentsInBuilding;
+        }
         public void AddToListWithUserNames(string username)
         {
             usernamesList.Add(username);

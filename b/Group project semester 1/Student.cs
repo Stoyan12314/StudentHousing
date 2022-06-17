@@ -31,6 +31,7 @@ namespace Group_project_semester_1
         }
 
         public Building Building { get; set; }
+
         public override string ToString()
         {
 

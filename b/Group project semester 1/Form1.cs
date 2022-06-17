@@ -7,24 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Group_project_semester_1
 {
     public partial class Form1 : Form
     {
-        
+        BuildingsManager buildingsManager= new BuildingsManager();
         public Form1()
         {
             InitializeComponent();
-            
-    }
+            Size = new Size(934, 766);
+            tabControl.Location = new Point(-5, -18);
+        }
         //Creating each building
-        public List<Building> buildings = new List<Building>()
-        {
-            new Building("BuildingA"),
-            new Building("BuildingB"),
-            new Building("BuildingC")
-        };
+        //public List<Building> buildings = new List<Building>()
+        //{
+        //    new Building("BuildingA"),
+        //    new Building("BuildingB"),
+        //    new Building("BuildingC")
+        //};
         Apartaments currentApartment;
         Building chosenBuilding = default;
         Student loggedUser = default;
@@ -86,15 +88,15 @@ namespace Group_project_semester_1
                 bool rent = false;
                 if (rbBuildingA.Checked)
                 {
-                    chosenBuilding = buildings[0];
+                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingA");
                 }
                 else if (rbBuildingB.Checked)
                 {
-                    chosenBuilding = buildings[1];
+                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingB");
                 }
                 else if (rbBuildingC.Checked)
                 {
-                    chosenBuilding = buildings[2];
+                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingC");
                 }
 
 
@@ -135,6 +137,7 @@ namespace Group_project_semester_1
                 {
                     MessageBox.Show("Registered sucessfully");
                     chosenBuilding.AddToListWithUserNames(username);
+                    tabControl.SelectTab("LoginStudent");
                 }
                 else if (check == true)
                 {
@@ -179,6 +182,11 @@ namespace Group_project_semester_1
                 tabControl.SelectTab("AdminPage");
                 tbAdminLoginPassword.Text = "";
                 tbAdminLoginUsername.Text = "";
+
+                panelNavMenuAdmin.Visible = true;
+                panelNavMenuAdmin.Location = new Point(0, 0);
+                tabControl.Location = new Point(213, -18);
+                Size = new Size(1155, 768);
             }
         }
 
@@ -207,12 +215,14 @@ namespace Group_project_semester_1
         //Login Student
         private void btnStudentLogin_Click(object sender, EventArgs e)
         {
-    
+
+            
+
             string username = tbStudentLoginUsername.Text;
             string password = tbStudentLoginPassword.Text;
             string building = cbBuilding.Text;
             
-            foreach(Building buildingObj in buildings)
+            foreach(Building buildingObj in buildingsManager.Buildings())
             {
                 if (building == buildingObj.BuildingName)
                 {
@@ -230,8 +240,17 @@ namespace Group_project_semester_1
             {
                 tabControl.SelectTab("StudentHomePage");
                 LoadText(chosenBuilding, loggedUser);
-
+                lbUsernameTenant.Text = loggedUser.GetUsername();
+                lbNamesTenant.Text = $"{loggedUser.GetName()} {loggedUser.GetLastName()}";
                 ShowRoommates(username, chosenBuilding, loggedUser);
+                panelNavMenu.Visible = true;
+                panelNavMenu.Location = new Point(0, 0);
+                tabControl.Location = new Point(213, -18);
+                Size = new Size(1155, 768);
+                gbWanted.Visible = false;
+                gbOrder.Visible = false;
+                gbAdd.Visible = false;
+                gbRent.Visible = false;
             }
             else
             {
@@ -256,17 +275,17 @@ namespace Group_project_semester_1
         public Student CheckLogin(Building building, string username, string password)
         {
             Student check = null;
-            if (building.BuildingName == buildings[0].BuildingName)
+            if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingA").BuildingName)
             {
-                check = buildings[0].CheckUserNameAndPassword(username, password);
+                check = buildingsManager.ReturnBuildingByName("BuildingA").CheckUserNameAndPassword(username, password);
             }
-            else if (building.BuildingName == buildings[1].BuildingName)
+            else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingB").BuildingName)
             {
-                check = buildings[1].CheckUserNameAndPassword(username, password);
+                check = buildingsManager.ReturnBuildingByName("BuildingB").CheckUserNameAndPassword(username, password);
             }
-            else if (building.BuildingName == buildings[2].BuildingName)
+            else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingC").BuildingName)
             {
-                check = buildings[2].CheckUserNameAndPassword(username, password);
+                check = buildingsManager.ReturnBuildingByName("BuildingC").CheckUserNameAndPassword(username, password);
             }
             return check;
         }
@@ -275,41 +294,39 @@ namespace Group_project_semester_1
             Building selectedBuilding = default;
             if (buildingName == "BuildingA")
             {
-                selectedBuilding = buildings[0];
+                selectedBuilding = buildingsManager.ReturnBuildingByName("BuildingA");
             }
             else if (buildingName == "BuildingB")
             {
-                selectedBuilding = buildings[1];
+                selectedBuilding = buildingsManager.ReturnBuildingByName("BuildingB");
 
             }
             else if (buildingName == "BuildingC")
             {
-                selectedBuilding = buildings[2];
+                selectedBuilding = buildingsManager.ReturnBuildingByName("BuildingC");
             }
             return selectedBuilding;
+        }
+        public void ChangeBtColor(Button button)
+        {
+            var list = new List<Button>()
+            {
+                btHomePanel, btCleaningSPanel, btGroceryPanel, btGarbagePanel, btRulesPanel,btAnouncmentsPanel,btRentPanel,btComplaintsPanel,btHomeAdmin,btAccountsAdmin,btAnnouncementsAdmin,btRentAdmin,btRulesAdmin,btComplainsAdmin
+            };
+            foreach(var item in list)
+            {
+                if(item != button)
+                {
+                    item.BackColor = Color.FromArgb(37, 60, 124);
+                }
+            }
         }
 
         public void LoadText(Building building, Student student)
         {
-            //Loading the top text of each STUDENT PAGE
-            var list = new List<Label>()
-            {
-                 label19,label22,label25,label28,label31,label34,label37,label30
-            };
-            foreach (var item in list)
-            {
-                item.Text = $"Hello, {student.GetName()} {student.GetLastName()} ";
-            }
 
-            //Loading the bottom text of each STUDENT PAGE
-            var list2 = new List<Label>()
-            {
-                lbLivingIn,label23,label26,label29,label32,label35,label38,label39
-            };
-            foreach(var item in list2)
-            {
-                item.Text = $"You are currently living in: {building.BuildingName}, {student.GetApartment()}";
-            }
+           lbLivingIn.Text = $"You are currently living in: \n{chosenBuilding.BuildingName}, {student.GetApartment()}";
+
 
 
 
@@ -380,7 +397,7 @@ namespace Group_project_semester_1
 
         private void btnShowA_Click(object sender, EventArgs e)
         {
-            foreach (Student student in buildings[0].ShowAllStudents(loggedUser))
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").ShowAllStudents(loggedUser))
             {
                 lbInfo.Items.Add(student.GetInfo());
             }
@@ -390,7 +407,7 @@ namespace Group_project_semester_1
 
         private void btnShowB_Click(object sender, EventArgs e)
         {
-            foreach (Student student in buildings[1].ShowAllStudents(loggedUser))
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").ShowAllStudents(loggedUser))
             {
                 lbInfo.Items.Add(student.GetInfo());
             }
@@ -399,7 +416,7 @@ namespace Group_project_semester_1
 
         private void btnShowC_Click(object sender, EventArgs e)
         {
-            foreach (Student student in buildings[2].ShowAllStudents(loggedUser))
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").ShowAllStudents(loggedUser))
             {
                 lbInfo.Items.Add(student.GetInfo());
             }
@@ -777,19 +794,19 @@ namespace Group_project_semester_1
 
                 //Each builidng has a diffrent list
                 case "BuildingA":
-                    foreach (Student student in buildings[0].ReturnStudentsByChosenApartament(selectedApartament))
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").ReturnStudentsByChosenApartament(selectedApartament))
                     {
                         lbStudentsRent.Items.Add(student);
                     }
                     break;
                 case "BuildingB":
-                    foreach (Student student in buildings[1].ReturnStudentsByChosenApartament(selectedApartament))
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").ReturnStudentsByChosenApartament(selectedApartament))
                     {
                         lbStudentsRent.Items.Add(student);
                     }
                     break;
                 case "BuildingC":
-                    foreach (Student student in buildings[2].ReturnStudentsByChosenApartament(selectedApartament))
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").ReturnStudentsByChosenApartament(selectedApartament))
                     {
                         lbStudentsRent.Items.Add(student);
                     }
@@ -807,7 +824,7 @@ namespace Group_project_semester_1
             {
                 //Each building has a diffrent list
                 case "BuildingA":
-                    foreach (Student student in buildings[0].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").GetAllStudents())
                     {
                         //getting the student we need - we are using username, because each username is diffrent are there can not be two identical usernames
                         if (student.GetUsername() == username)
@@ -821,7 +838,7 @@ namespace Group_project_semester_1
 
                     break;
                 case "BuildingB":
-                    foreach (Student student in buildings[1].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").GetAllStudents())
                     {
                         if (student.GetUsername() == username)
                         {
@@ -833,7 +850,7 @@ namespace Group_project_semester_1
                     break;
 
                 case "BuildingC":
-                    foreach (Student student in buildings[2].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").GetAllStudents())
                     {
                         if (student.GetUsername() == username)
                         {
@@ -857,7 +874,7 @@ namespace Group_project_semester_1
             switch (selectedBuilding)
             {
                 case "BuildingA":
-                    foreach (Student student in buildings[0].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").GetAllStudents())
                     {
                         if (student.GetUsername() == username)
                         {
@@ -869,7 +886,7 @@ namespace Group_project_semester_1
 
                     break;
                 case "BuildingB":
-                    foreach (Student student in buildings[1].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").GetAllStudents())
                     {
                         if (student.GetUsername() == username)
                         {
@@ -881,7 +898,7 @@ namespace Group_project_semester_1
                     break;
 
                 case "BuildingC":
-                    foreach (Student student in buildings[2].GetAllStudents())
+                    foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").GetAllStudents())
                     {
                         if (student.GetUsername() == username)
                         {
@@ -1021,19 +1038,19 @@ namespace Group_project_semester_1
 
                     //Each builidng has a diffrent list
                     case "BuildingA":
-                        foreach (Student student in buildings[0].ReturnStudentsByChosenApartament(selectedApartament))
+                        foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").ReturnStudentsByChosenApartament(selectedApartament))
                         {
                             lbTenantsAdmin.Items.Add(student.AdminInfo());
                         }
                         break;
                     case "BuildingB":
-                        foreach (Student student in buildings[1].ReturnStudentsByChosenApartament(selectedApartament))
+                        foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").ReturnStudentsByChosenApartament(selectedApartament))
                         {
                             lbTenantsAdmin.Items.Add(student.AdminInfo());
                         }
                         break;
                     case "BuildingC":
-                        foreach (Student student in buildings[2].ReturnStudentsByChosenApartament(selectedApartament))
+                        foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").ReturnStudentsByChosenApartament(selectedApartament))
                         {
                             lbTenantsAdmin.Items.Add(student.AdminInfo());
                         }
@@ -1041,14 +1058,14 @@ namespace Group_project_semester_1
                     default:
                         break;
 
-                        if (lbTenantsAdmin.Items.Count > -1)
-                        {
+                        //if (lbTenantsAdmin.Items.Count > -1)
+                        //{
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("There are no registrated students at this address!");
-                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("There are no registrated students at this address!");
+                        //}
                 }
 
                 cbApartmentAdminMainPage.Text = "";
@@ -1102,527 +1119,90 @@ namespace Group_project_semester_1
             tabControl.SelectTab("LoginAs");
         }
 
+
         private void button9_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentHomePage");
+            panelNavBar.Top = btHomePanel.Top;
+            btHomePanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btHomePanel);
+
         }
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button25_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button41_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button49_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button57_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
 
         private void button8_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentCleaning");
+            panelNavBar.Top = btCleaningSPanel.Top;
+            btCleaningSPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btCleaningSPanel);
         }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button32_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button40_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button48_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button56_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
 
         private void button7_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentGrocerie");
+            panelNavBar.Top = btGroceryPanel.Top;
+            btGroceryPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btGroceryPanel);
         }
 
-        private void button15_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button31_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button39_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button47_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button55_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button30_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button38_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button46_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button54_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
+            panelNavBar.Top = btGarbagePanel.Top;
+            btGarbagePanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btGarbagePanel);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentRules");
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button29_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button37_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button53_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
+            panelNavBar.Top = btRulesPanel.Top;
+            btRulesPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btRulesPanel);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button36_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button44_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button52_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
+            panelNavBar.Top = btAnouncmentsPanel.Top;
+            btAnouncmentsPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btAnouncmentsPanel);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentRent");
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
-        }
-
-        private void button27_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
-        }
-
-        private void button35_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
-        }
-
-        private void button43_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
-        }
-
-        private void button51_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
+            panelNavBar.Top = btRentPanel.Top;
+            btRentPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btRentPanel);
         }
 
         private void button60_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button59_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button61_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button62_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button63_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button64_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button65_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button66_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentComplaints");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button77_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button83_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button89_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button95_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button101_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminPage");
-        }
-
-        private void button67_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button76_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button82_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button88_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button94_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button100_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAccount");
-        }
-
-        private void button68_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button75_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button81_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button87_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button93_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button99_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminAnouncments");
-        }
-
-        private void button69_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button74_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button80_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button86_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button92_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button98_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRules");
-        }
-
-        private void button70_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button73_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button79_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button85_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button91_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button97_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminComplaints");
-        }
-
-        private void button71_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-        private void button72_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-        private void button78_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-        private void button84_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-        private void button90_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-        private void button96_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("AdminRent");
-        }
-
-
-        private void button58_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentHomePage");
-        }
-
-        private void button50_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentCleaning");
-        }
-
-        private void button42_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGrocerie");
-        }
-
-        private void button34_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentGarbage");
-        }
-
-        private void button26_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRules");
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentAnouncments");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab("StudentRent");
+            panelNavBar.Top = btComplaintsPanel.Top;
+            btComplaintsPanel.BackColor = Color.FromArgb(155, 216, 249);
+            ChangeBtColor(btComplaintsPanel);
         }
 
         private void btnPayRent_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab("PayRent");
+            gbRent.Visible = true;
         }
 
         private void btnBackFromRentPayment_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab("StudentRent");
+            cbSelectCardType.Text = "";
+            tbCardNumber.Text = "";
+            tbNameOnCard.Text = "";
+            tbExpiryDate.Text = "";
+            tbCVV.Text = "";
+            gbRent.Visible = false;
         }
 
-
-
-        private void btnLogOutAdmin_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
-             "Log out?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-                tabControl.SelectTab("HomePage");
-            loggedUser = null;
-        }
 
         private void button10_Click(object sender, EventArgs e)
         {
@@ -1630,9 +1210,19 @@ namespace Group_project_semester_1
              "Log out?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                tabControl.SelectTab("HomePage");
-                currentApartment.cartGroceries.Clear();
-                loggedUser = null;
+                try
+                {
+                    tabControl.SelectTab("HomePage");
+                    currentApartment.cartGroceries.Clear();
+                    loggedUser = null;
+                    panelNavMenu.Visible = false;
+                    Size = new Size(934, 766);
+                    tabControl.Location = new Point(-5, -18);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
         }
@@ -1729,12 +1319,226 @@ namespace Group_project_semester_1
             lboxGroceriesToBuy.Items.Add($"{currentApartment.totalPrice}$");
         }
 
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            string selectedAccount = lbInfo.SelectedItem.ToString();
+            foreach (Building building in buildingsManager.Buildings())
+            {
+                foreach (Apartaments apartament in building.apartaments())
+                {
+                    foreach (Student student in apartament.GetAllStudents().ToList())
+                    {
+                        if (student.GetInfo() == selectedAccount)
+                        {
+                            apartament.RemoveStudent(student);
+                            lbInfo.Items.Clear();   
+                        }
+                    }
+                }
+            }
+           // lbInfo.Items
+        }
 
+        private void btnShowA_Click_1(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingA").GetAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+        }
+
+
+        private void btnShowB_Click_1(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingB").GetAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+        }
+
+        private void btnShowC_Click_1(object sender, EventArgs e)
+        {
+            foreach (Student student in buildingsManager.ReturnBuildingByName("BuildingC").GetAllStudents())
+            {
+                lbInfo.Items.Add(student.GetInfo());
+            }
+        }
+
+
+        private void btShowList_Click(object sender, EventArgs e)
+        {
+            btShowList.BackColor = Color.White;
+            btShowOrder.BackColor = Color.Transparent;
+            btShowAdd.BackColor = Color.Transparent;
+            
+            gbWanted.Visible = true;
+            gbWanted.Size = new Size(899, 391);
+            gbWanted.Location = new Point(22, 304);
+
+            gbAdd.Visible = false;
+            gbOrder.Visible = false;
+        }
+
+        private void btShowOrder_Click(object sender, EventArgs e)
+        {
+            btShowOrder.BackColor = Color.White;
+            btShowList.BackColor = Color.Transparent;
+            btShowAdd.BackColor = Color.Transparent;
+
+            gbOrder.Visible = true;
+            gbOrder.Size = new Size(899, 391);
+            gbOrder.Location = new Point(22, 304);
+
+            gbAdd.Visible= false;
+            gbWanted.Visible= false;
+        }
+
+        private void btShowAdd_Click(object sender, EventArgs e)
+        {
+            btShowOrder.BackColor = Color.Transparent;
+            btShowList.BackColor = Color.Transparent;
+            btShowAdd.BackColor = Color.White;
+
+            gbAdd.Visible = true;
+            gbAdd.Size = new Size(899, 391);
+            gbAdd.Location = new Point(22, 304);
+
+            gbWanted.Visible = false;
+            gbOrder.Visible= false;
+        }
+
+
+        private void btElse_Click(object sender, EventArgs e)
+        {
+            btRoomate.BackColor = Color.Transparent;
+            btElse.BackColor = Color.White;
+            btBroken.BackColor = Color.Transparent;
+
+            gbElse.Visible = true;
+            gbElse.Size = new Size(899, 391);
+            gbElse.Location = new Point(22, 304);
+
+            gbBrokenShow.Visible = false;
+            gbShowRoomate.Visible = false;
+        }
+
+        private void btRoomate_Click(object sender, EventArgs e)
+        {
+            btRoomate.BackColor = Color.White;
+            btElse.BackColor = Color.Transparent;
+            btBroken.BackColor = Color.Transparent;
+
+            gbShowRoomate.Visible = true;
+            gbShowRoomate.Size = new Size(899, 391);
+            gbShowRoomate.Location = new Point(22, 304);
+
+            gbElse.Visible = false;
+            gbBrokenShow.Visible = false;
+        }
+
+        private void btBroken_Click(object sender, EventArgs e)
+        {
+            btRoomate.BackColor = Color.Transparent;
+            btElse.BackColor = Color.Transparent;
+            btBroken.BackColor = Color.White;
+
+            gbBrokenShow.Visible = true;
+            gbBrokenShow.Size = new Size(899, 391);
+            gbBrokenShow.Location = new Point(22, 304);
+
+            gbElse.Visible=false;
+            gbShowRoomate.Visible=false;
+        }
+
+        private void btLogOutAdmin_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to log out?",
+            "Log out?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                tabControl.SelectTab("HomePage");
+                loggedUser = null;
+                Size = new Size(934, 766);
+                tabControl.Location = new Point(-5, -18);
+                panelNavMenuAdmin.Visible = false;
+            }
+
+        }
+
+        private void btHomeAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminPage");
+            panel42.Top = btHomeAdmin.Top;
+            btHomeAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btHomeAdmin);
+        }
+
+        private void btAccountsAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAccount");
+            panel42.Top = btAccountsAdmin.Top;
+            btAccountsAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btAccountsAdmin);
+        }
+
+        private void btAnnouncementsAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminAnouncments");
+            panel42.Top = btAnnouncementsAdmin.Top;
+            btAnnouncementsAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btAnnouncementsAdmin);
+        }
+
+        private void btRentAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRent");
+            panel42.Top = btRentAdmin.Top;
+            btRentAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btRentAdmin);
+        }
+
+        private void btComplainsAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminComplaints");
+            panel42.Top = btComplainsAdmin.Top;
+            btComplainsAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btComplainsAdmin);
+        }
+
+        private void btRulesAdmin_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("AdminRules");
+            panel42.Top = btRulesAdmin.Top;
+            btRulesAdmin.BackColor = Color.Gray;
+            ChangeBtColor(btRulesAdmin);
+        }
+
+        private void btAdminRulesActive_Click(object sender, EventArgs e)
+        {
+            btAdminRulesActive.BackColor = Color.White;
+            btAdminRulesReq.BackColor = Color.Transparent;
+
+            gbAdminActive.Visible = true;
+            gbAdminRequested.Visible = false;
+
+            gbAdminActive.Location = new Point(153, 209);
+            gbAdminActive.Size = new Size(706, 507);
+        }
+
+        private void btAdminRulesReq_Click(object sender, EventArgs e)
+        {
+            btAdminRulesActive.BackColor = Color.Transparent;
+            btAdminRulesReq.BackColor = Color.White;
+
+            gbAdminActive.Visible = false;
+            gbAdminRequested.Visible = true;
+
+            gbAdminRequested.Location = new Point(153, 209);
+
+            gbAdminRequested.Size = new Size(706, 507);
+        }
 
         //END OF BUTTONS
         ////////////////////////////////////////////////////////////////////////////////////
-
-
-
     }
 }

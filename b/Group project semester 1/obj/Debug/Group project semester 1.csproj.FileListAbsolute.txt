@@ -83,3 +83,25 @@ C:\Users\Boris\student_housing_milan_stoyan_boris\b\Group project semester 1\obj
 C:\Users\Boris\student_housing_milan_stoyan_boris\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.CoreCompileInputs.cache
 C:\Users\Boris\student_housing_milan_stoyan_boris\b\Group project semester 1\obj\Debug\Group project semester 1.exe
 C:\Users\Boris\student_housing_milan_stoyan_boris\b\Group project semester 1\obj\Debug\Group project semester 1.pdb
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\bin\Debug\Group project semester 1.exe.config
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\bin\Debug\Group project semester 1.exe
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\bin\Debug\Group project semester 1.pdb
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.AssemblyReference.cache
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group_project_semester_1.Form1.resources
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group_project_semester_1.Properties.Resources.resources
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.GenerateResource.cache
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.CoreCompileInputs.cache
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.exe
+C:\Users\Stoyan\Desktop\mmmmmmmmmmmmmmmmmmm\b\Group project semester 1\obj\Debug\Group project semester 1.pdb
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\bin\Debug\Group project semester 1.exe.config
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\bin\Debug\Group project semester 1.exe
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\bin\Debug\Group project semester 1.pdb
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.AssemblyReference.cache
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group_project_semester_1.Form1.resources
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group_project_semester_1.Properties.Resources.resources
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.GenerateResource.cache
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.csproj.CoreCompileInputs.cache
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.exe
+C:\Users\Boris\student_housing_milan_stoyan_boris-branch\b\Group project semester 1\obj\Debug\Group project semester 1.pdb
