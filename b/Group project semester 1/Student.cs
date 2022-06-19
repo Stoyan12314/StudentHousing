@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class Student
     {
         private string firstName;
@@ -45,6 +46,8 @@ namespace Group_project_semester_1
             }
 
         }
+        public string AdminTable => $"{username}, {apartment}, {Building.BuildingName}";
+        
 
 
         //String which is returned fo the listbox on the Admin Home Page

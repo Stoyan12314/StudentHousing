@@ -8,27 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Group_project_semester_1
 {
     public partial class Form1 : Form
     {
-        BuildingsManager buildingsManager= new BuildingsManager();
+        //Fully working 
+        BuildingsManager buildingsManager;
+        List<Building> buildings;
+        List<Announcement> announcements;
+        List<Student> allStudents = new List<Student>();
+        List<Student> receivers = new List<Student>();
+
+        static string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
+        string filename = Path.Combine(path, "buildings_save_data.txt");
         public Form1()
         {
             InitializeComponent();
             Size = new Size(934, 766);
             tabControl.Location = new Point(-5, -18);
+            buildingsManager = new BuildingsManager();
         }
-        //Creating each building
-        //public List<Building> buildings = new List<Building>()
-        //{
-        //    new Building("BuildingA"),
-        //    new Building("BuildingB"),
-        //    new Building("BuildingC")
-        //};
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Read();
+        }
+
+
         Apartaments currentApartment;
-        Building chosenBuilding = default;
+        Building chosenBuilding;
         Student loggedUser = default;
 
 
@@ -36,6 +47,26 @@ namespace Group_project_semester_1
         const string adminUsername = "Admin123";
         const string adminPassword = "Admin123";
 
+        public void ListOfAllStudents()
+        {
+            allStudents.Clear();
+            lboxAllStudents.Items.Clear();
+            foreach (Student student in buildingsManager.buildings[0].GetAllStudents())
+            {
+                student.Building = buildingsManager.buildings[0];
+                allStudents.Add(student);
+            }
+            foreach (Student student in buildingsManager.buildings[1].GetAllStudents())
+            {
+                student.Building = buildingsManager.buildings[1];
+                allStudents.Add(student);
+            }
+            foreach (Student student in buildingsManager.buildings[2].GetAllStudents())
+            {
+                student.Building = buildingsManager.buildings[2];
+                allStudents.Add(student);
+            }
+        }
 
         //Method to clear the textboxes after registration
         public void RegistrationFailedOrDone()
@@ -75,7 +106,6 @@ namespace Group_project_semester_1
             {
 
                 //Check the current building
-                //Building chosenBuilding=default;
 
 
                 string firstName = tbFirstName.Text;
@@ -88,15 +118,15 @@ namespace Group_project_semester_1
                 bool rent = false;
                 if (rbBuildingA.Checked)
                 {
-                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingA");
+                    chosenBuilding = buildingsManager.buildings[0];
                 }
                 else if (rbBuildingB.Checked)
                 {
-                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingB");
+                    chosenBuilding = buildingsManager.buildings[1];
                 }
                 else if (rbBuildingC.Checked)
                 {
-                    chosenBuilding = buildingsManager.ReturnBuildingByName("BuildingC");
+                    chosenBuilding = buildingsManager.buildings[2];
                 }
 
 
@@ -149,14 +179,6 @@ namespace Group_project_semester_1
                 }
 
 
-
-
-                //foreach (Student student in buildingA.GetAllStudents())
-                //{
-                //    lbInfo.Items.Add(student.GetInfo());
-                //}
-
-
                 RegistrationFailedOrDone();
             }
 
@@ -170,7 +192,7 @@ namespace Group_project_semester_1
         {
             string username = tbAdminLoginUsername.Text;
             string password = tbAdminLoginPassword.Text;
-
+            ListOfAllStudents();
             if (username != adminUsername || password != adminPassword)
             {
                 MessageBox.Show("Username or password is incorrect! Please try again!");
@@ -188,6 +210,7 @@ namespace Group_project_semester_1
                 tabControl.Location = new Point(213, -18);
                 Size = new Size(1155, 768);
             }
+
         }
 
 
@@ -222,7 +245,7 @@ namespace Group_project_semester_1
             string password = tbStudentLoginPassword.Text;
             string building = cbBuilding.Text;
             
-            foreach(Building buildingObj in buildingsManager.Buildings())
+            foreach(Building buildingObj in buildingsManager.buildings)
             {
                 if (building == buildingObj.BuildingName)
                 {
@@ -231,11 +254,7 @@ namespace Group_project_semester_1
             }
             loggedUser = CheckLogin(chosenBuilding, username, password);
 
-            //if (loggedUser.Building == chosenBuilding)
-            //{
-            //    chosenBuilding = loggedUser.Building;
-            //}
-            //label19
+
             if (loggedUser != null)
             {
                 tabControl.SelectTab("StudentHomePage");
@@ -243,6 +262,19 @@ namespace Group_project_semester_1
                 lbUsernameTenant.Text = loggedUser.GetUsername();
                 lbNamesTenant.Text = $"{loggedUser.GetName()} {loggedUser.GetLastName()}";
                 ShowRoommates(username, chosenBuilding, loggedUser);
+                currentApartment = chosenBuilding.ReturnsChosenApartament(loggedUser);
+                foreach(Announcement announcement in Announcement.Announcements)
+                {
+                    foreach(Student student in announcement.Recevers)
+                    {
+                        if (student == loggedUser)
+                        {
+                            lbAnouncments.Items.Add(announcement.Message);
+                        }
+                    }
+                }
+                RefreshBoxes();
+
                 panelNavMenu.Visible = true;
                 panelNavMenu.Location = new Point(0, 0);
                 tabControl.Location = new Point(213, -18);
@@ -251,43 +283,41 @@ namespace Group_project_semester_1
                 gbOrder.Visible = false;
                 gbAdd.Visible = false;
                 gbRent.Visible = false;
+
+                tbStudentLoginUsername.Text = "";
+                tbStudentLoginPassword.Text = "";
+                cbBuilding.Text = "";
             }
             else
             {
                 MessageBox.Show("Account not found");
             }
-
-
-            tbStudentLoginUsername.Text = "";
-            tbStudentLoginPassword.Text = "";
-            cbBuilding.Text = "";
-
-            currentApartment = chosenBuilding.ReturnsChosenApartament(loggedUser);
-
-            //
-            //
-            // ADD CHECHER FOR GROCERIE BOXES
-            RefreshBoxes();
-            //
-            //
         }
-
+ 
         public Student CheckLogin(Building building, string username, string password)
         {
             Student check = null;
-            if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingA").BuildingName)
+            if(cbBuilding.Text == "BuildingA" || cbBuilding.Text == "BuildingB" || cbBuilding.Text == "BuildingC")
             {
-                check = buildingsManager.ReturnBuildingByName("BuildingA").CheckUserNameAndPassword(username, password);
+                if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingA").BuildingName)
+                {
+                    check = buildingsManager.ReturnBuildingByName("BuildingA").CheckUserNameAndPassword(username, password);
+                }
+                else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingB").BuildingName)
+                {
+                    check = buildingsManager.ReturnBuildingByName("BuildingB").CheckUserNameAndPassword(username, password);
+                }
+                else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingC").BuildingName)
+                {
+                    check = buildingsManager.ReturnBuildingByName("BuildingC").CheckUserNameAndPassword(username, password);
+                }
+                return check;
             }
-            else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingB").BuildingName)
+            else
             {
-                check = buildingsManager.ReturnBuildingByName("BuildingB").CheckUserNameAndPassword(username, password);
+                MessageBox.Show("Building name not correct");
+                return check;
             }
-            else if (building.BuildingName == buildingsManager.ReturnBuildingByName("BuildingC").BuildingName)
-            {
-                check = buildingsManager.ReturnBuildingByName("BuildingC").CheckUserNameAndPassword(username, password);
-            }
-            return check;
         }
         public Building selectedBuilding(string buildingName)
         {
@@ -1078,6 +1108,8 @@ namespace Group_project_semester_1
 
 
         //ALL THE TAB CONTROL BUTTONS !!!
+        #region Navigation buttons
+
 
         private void btnHomePageRegister_Click(object sender, EventArgs e)
         {
@@ -1187,6 +1219,7 @@ namespace Group_project_semester_1
             btComplaintsPanel.BackColor = Color.FromArgb(155, 216, 249);
             ChangeBtColor(btComplaintsPanel);
         }
+        #endregion
 
         private void btnPayRent_Click(object sender, EventArgs e)
         {
@@ -1213,7 +1246,10 @@ namespace Group_project_semester_1
                 try
                 {
                     tabControl.SelectTab("HomePage");
-                    currentApartment.cartGroceries.Clear();
+                    if (currentApartment.cartGroceries != null)
+                    {
+                        currentApartment.cartGroceries.Clear();
+                    }
                     loggedUser = null;
                     panelNavMenu.Visible = false;
                     Size = new Size(934, 766);
@@ -1229,12 +1265,37 @@ namespace Group_project_semester_1
 
         public void RefreshBoxes()
         {
-            lboxGroceriesALL.Items.Clear();
+            //lboxGroceriesALL.Items.Clear();
             cbGrocerie.Items.Clear();
-            foreach (Grocery grocery in currentApartment.Groceries)
+            lbGarbage.Items.Clear();
+            if (currentApartment.Groceries != null)
             {
-                lboxGroceriesALL.Items.Add(grocery);
-                cbGrocerie.Items.Add(grocery.GrocerieName);
+                foreach (Grocery grocery in currentApartment.Groceries)
+                {
+                    lboxGroceriesALL.Items.Add(grocery);
+                    cbGrocerie.Items.Add(grocery.GrocerieName);
+                }
+            }
+            if(currentApartment.finalListGroceries != null)
+            { 
+                foreach (Grocery grocery in currentApartment.finalListGroceries)
+                {
+                    lboxGroceriesToBuy.Items.Add(grocery.ToString());
+                }
+            }
+            if (currentApartment.GetGarbages() != null)
+            { 
+                foreach (Garbage garbage in currentApartment.GetGarbages())
+                {
+                    lbGarbage.Items.Add(garbage.Info());
+                }
+            }
+            if (currentApartment.GetListCleaningSchedule() != null)
+            {
+                foreach (CleaningSchedule cleaningSchedule in currentApartment.GetListCleaningSchedule())
+                {
+                    lbCleaningSchedule.Items.Add(cleaningSchedule.GetInfo());
+                }
             }
         }
 
@@ -1283,7 +1344,7 @@ namespace Group_project_semester_1
 
                 foreach (Grocery grocery1 in currentApartment.cartGroceries)
                 {
-                    lboxGrocerieCart.Items.Add(grocery1);
+                    lboxGrocerieCart.Items.Add(grocery1.Info());
                 }
             }
             else MessageBox.Show($"Select grocery/amount");
@@ -1317,6 +1378,8 @@ namespace Group_project_semester_1
             }
             lboxGroceriesToBuy.Items.Add($"on { boughtOn }");
             lboxGroceriesToBuy.Items.Add($"{currentApartment.totalPrice}$");
+            currentApartment.finalListGroceries.Clear();
+            currentApartment.totalPrice = 0;
         }
 
         private void btnDeleteAccount_Click(object sender, EventArgs e)
@@ -1331,6 +1394,7 @@ namespace Group_project_semester_1
                         if (student.GetInfo() == selectedAccount)
                         {
                             apartament.RemoveStudent(student);
+                            allStudents.Remove(student);
                             lbInfo.Items.Clear();   
                         }
                     }
@@ -1362,6 +1426,10 @@ namespace Group_project_semester_1
             {
                 lbInfo.Items.Add(student.GetInfo());
             }
+        }
+        private void lbInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var student = currentApartment.Groceries.SingleOrDefault(x => x.ToString() == lboxGroceriesALL.SelectedItem.ToString());
         }
 
 
@@ -1483,6 +1551,12 @@ namespace Group_project_semester_1
 
         private void btAnnouncementsAdmin_Click(object sender, EventArgs e)
         {
+            ListOfAllStudents();
+            foreach(Student student in allStudents)
+            {
+                lboxAllStudents.Items.Add(student);
+                lboxAllStudents.DisplayMember = "AdminTable";
+            }
             tabControl.SelectTab("AdminAnouncments");
             panel42.Top = btAnnouncementsAdmin.Top;
             btAnnouncementsAdmin.BackColor = Color.Gray;
@@ -1537,6 +1611,149 @@ namespace Group_project_semester_1
 
             gbAdminRequested.Size = new Size(706, 507);
         }
+
+        public void Read()
+        {
+
+
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.Read);
+                bf = new BinaryFormatter();
+                buildings = (List<Building>)bf.Deserialize(fs);
+                announcements = (List<Announcement>)bf.Deserialize(fs);
+
+                buildingsManager.buildings.Clear();
+                foreach (Building building in buildings)
+                {
+                    buildingsManager.buildings.Add(building);
+                }
+                Announcement.Announcements.Clear();
+                foreach(Announcement announcement in announcements)
+                {
+                    Announcement.Announcements.Add(announcement);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("File is empty");
+            }
+            finally
+            {
+                if (fs != null) fs.Close();
+            }
+        }
+        public void Write()
+        {
+
+            FileStream fs = null;
+            BinaryFormatter bf = null;
+            try
+            {
+                fs = new FileStream(filename, FileMode.OpenOrCreate, FileAccess.Write);
+                bf = new BinaryFormatter();
+                buildings = buildingsManager.buildings.ToList();
+                announcements = Announcement.Announcements.ToList();
+                bf.Serialize(fs, buildings);
+                bf.Serialize(fs, announcements);
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (fs != null) fs.Close();
+            }
+        }
+
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Write();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Grocery grocery = cbGrocerie.SelectedItem as Grocery;
+            if (grocery != null)
+            {
+                currentApartment.Groceries.Remove(grocery);
+                RefreshBoxes();
+            }
+        }
+
+        private void lboxGroceriesALL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var grocery = currentApartment.Groceries.SingleOrDefault(x => x.ToString() == lboxGroceriesALL.SelectedItem.ToString());
+            if (grocery != null)
+            {
+                cbGrocerie.Text = grocery.GrocerieName;
+            }
+        }
+
+        private void lboxAllStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var student = allStudents.SingleOrDefault(x => x.ToString() == lboxAllStudents.SelectedItem.ToString());
+                if (student != null)
+                {
+                    receivers.Add(student);
+                    lboxReceivers.Items.Add(student.AdminTable);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Nothing was selected");
+            }
+ 
+        }
+
+        private void btClearReceivers_Click(object sender, EventArgs e)
+        {
+            receivers.Clear();
+            lboxReceivers.Items.Clear();
+        }
+
+        private void btSendA_Click(object sender, EventArgs e)
+        {
+            if (tbMessage.Text != "")
+            {
+                Announcement announcement = new Announcement(tbMessage.Text);
+                foreach(var item in receivers)
+                {
+                    announcement.Recevers.Add(item);
+                }
+                Announcement.Announcements.Add(announcement);
+                receivers.Clear();
+                lboxReceivers.Items.Clear();
+                tbMessage.Text = "";
+            }
+            else { MessageBox.Show("No message"); }
+        }
+
+        private void lbAnouncments_DoubleClick(object sender, EventArgs e)
+        {
+            if(lbAnouncments.Items.Count > 0)
+            {
+                MessageBox.Show(lbAnouncments.SelectedItem.ToString());
+
+            }
+        }
+
+        private void lbAnouncments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
         //END OF BUTTONS
         ////////////////////////////////////////////////////////////////////////////////////

@@ -46,6 +46,9 @@ namespace Group_project_semester_1
             this.lbUsernameTenant = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AdminRent = new System.Windows.Forms.TabPage();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label41 = new System.Windows.Forms.Label();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.btnAlreadyPaidAdmin = new System.Windows.Forms.Button();
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
@@ -55,22 +58,47 @@ namespace Group_project_semester_1
             this.cbSelectedApartament = new System.Windows.Forms.ComboBox();
             this.cbSelectedBuilding = new System.Windows.Forms.ComboBox();
             this.AdminComplaints = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.btnComplaintFixed = new System.Windows.Forms.Button();
             this.btnHighlightComplaint = new System.Windows.Forms.Button();
             this.lbAdminComplaints = new System.Windows.Forms.ListBox();
             this.AdminRules = new System.Windows.Forms.TabPage();
-            this.btnRemoveRequestedRuleAdmin = new System.Windows.Forms.Button();
-            this.label46 = new System.Windows.Forms.Label();
-            this.btnAddRule = new System.Windows.Forms.Button();
-            this.tbAddRule = new System.Windows.Forms.TextBox();
-            this.btnRemoveRule = new System.Windows.Forms.Button();
-            this.btnAddRequestedRule = new System.Windows.Forms.Button();
-            this.label45 = new System.Windows.Forms.Label();
-            this.lbRequestedRules = new System.Windows.Forms.ListBox();
+            this.gbAdminActive = new System.Windows.Forms.GroupBox();
             this.label44 = new System.Windows.Forms.Label();
             this.lbCurrentRulesAdmin = new System.Windows.Forms.ListBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.btnRemoveRule = new System.Windows.Forms.Button();
+            this.btnAddRule = new System.Windows.Forms.Button();
+            this.tbAddRule = new System.Windows.Forms.TextBox();
+            this.gbAdminRequested = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.lbRequestedRules = new System.Windows.Forms.ListBox();
+            this.btnAddRequestedRule = new System.Windows.Forms.Button();
+            this.btnRemoveRequestedRuleAdmin = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.btAdminRulesActive = new System.Windows.Forms.Button();
+            this.btAdminRulesReq = new System.Windows.Forms.Button();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.AdminAnouncments = new System.Windows.Forms.TabPage();
+            this.label65 = new System.Windows.Forms.Label();
+            this.tbMessage = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lboxReceivers = new System.Windows.Forms.ListBox();
+            this.btClearReceivers = new System.Windows.Forms.Button();
+            this.btSendA = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.lboxAllStudents = new System.Windows.Forms.ListBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.AdminAccount = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.lbAllAvailableAccounts = new System.Windows.Forms.Label();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnShowC = new System.Windows.Forms.Button();
@@ -176,23 +204,8 @@ namespace Group_project_semester_1
             this.btnAddTaskGarbage = new System.Windows.Forms.Button();
             this.lbGarbage = new System.Windows.Forms.ListBox();
             this.StudentGrocerie = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btShowAdd = new System.Windows.Forms.Button();
-            this.btShowOrder = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btShowList = new System.Windows.Forms.Button();
-            this.gbAdd = new System.Windows.Forms.GroupBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.nudNewGroceriePrice = new System.Windows.Forms.NumericUpDown();
-            this.tbNewGrocerieName = new System.Windows.Forms.TextBox();
-            this.btAddNewGrocerie = new System.Windows.Forms.Button();
             this.gbOrder = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -210,6 +223,22 @@ namespace Group_project_semester_1
             this.dtpBuyGrocery = new System.Windows.Forms.DateTimePicker();
             this.btBuyAllGroceries = new System.Windows.Forms.Button();
             this.lboxGroceriesToBuy = new System.Windows.Forms.ListBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btShowAdd = new System.Windows.Forms.Button();
+            this.btShowOrder = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btShowList = new System.Windows.Forms.Button();
+            this.gbAdd = new System.Windows.Forms.GroupBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.nudNewGroceriePrice = new System.Windows.Forms.NumericUpDown();
+            this.tbNewGrocerieName = new System.Windows.Forms.TextBox();
+            this.btAddNewGrocerie = new System.Windows.Forms.Button();
             this.StudentCleaning = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -301,34 +330,27 @@ namespace Group_project_semester_1
             this.label37 = new System.Windows.Forms.Label();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.btRulesAdmin = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label35 = new System.Windows.Forms.Label();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.gbAdminRequested = new System.Windows.Forms.GroupBox();
-            this.gbAdminActive = new System.Windows.Forms.GroupBox();
-            this.btAdminRulesActive = new System.Windows.Forms.Button();
-            this.btAdminRulesReq = new System.Windows.Forms.Button();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label41 = new System.Windows.Forms.Label();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.label66 = new System.Windows.Forms.Label();
             this.panelNavMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.AdminRent.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.AdminComplaints.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.AdminRules.SuspendLayout();
+            this.gbAdminActive.SuspendLayout();
+            this.gbAdminRequested.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.AdminAnouncments.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.AdminAccount.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.AdminPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.StudentComplaints.SuspendLayout();
@@ -357,13 +379,13 @@ namespace Group_project_semester_1
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.StudentGrocerie.SuspendLayout();
+            this.gbOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountGrocery)).BeginInit();
+            this.gbWanted.SuspendLayout();
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.gbAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNewGroceriePrice)).BeginInit();
-            this.gbOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAmountGrocery)).BeginInit();
-            this.gbWanted.SuspendLayout();
             this.StudentCleaning.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -384,18 +406,6 @@ namespace Group_project_semester_1
             this.panelNavMenuAdmin.SuspendLayout();
             this.panel43.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            this.gbAdminRequested.SuspendLayout();
-            this.gbAdminActive.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.SuspendLayout();
             // 
             // btLogOutPanel
@@ -618,7 +628,7 @@ namespace Group_project_semester_1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(58, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(55, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -642,9 +652,41 @@ namespace Group_project_semester_1
             this.AdminRent.Margin = new System.Windows.Forms.Padding(2);
             this.AdminRent.Name = "AdminRent";
             this.AdminRent.Padding = new System.Windows.Forms.Padding(2);
-            this.AdminRent.Size = new System.Drawing.Size(926, 728);
+            this.AdminRent.Size = new System.Drawing.Size(921, 728);
             this.AdminRent.TabIndex = 21;
             this.AdminRent.Text = "Admin Rent";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label41);
+            this.panel13.Controls.Add(this.pictureBox21);
+            this.panel13.Location = new System.Drawing.Point(1, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(921, 201);
+            this.panel13.TabIndex = 60;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.BackColor = System.Drawing.Color.Transparent;
+            this.label41.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label41.Location = new System.Drawing.Point(238, 101);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(333, 77);
+            this.label41.TabIndex = 24;
+            this.label41.Text = "Rent manager";
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
+            this.pictureBox21.Location = new System.Drawing.Point(27, 19);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(371, 158);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 52;
+            this.pictureBox21.TabStop = false;
             // 
             // btnAlreadyPaidAdmin
             // 
@@ -771,9 +813,41 @@ namespace Group_project_semester_1
             this.AdminComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.AdminComplaints.Name = "AdminComplaints";
             this.AdminComplaints.Padding = new System.Windows.Forms.Padding(2);
-            this.AdminComplaints.Size = new System.Drawing.Size(926, 728);
+            this.AdminComplaints.Size = new System.Drawing.Size(921, 728);
             this.AdminComplaints.TabIndex = 20;
             this.AdminComplaints.Text = "Admin Complaints";
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label40);
+            this.panel12.Controls.Add(this.pictureBox20);
+            this.panel12.Location = new System.Drawing.Point(0, 2);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(921, 201);
+            this.panel12.TabIndex = 59;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label40.Location = new System.Drawing.Point(238, 101);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(271, 77);
+            this.label40.TabIndex = 24;
+            this.label40.Text = "Complaints";
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
+            this.pictureBox20.Location = new System.Drawing.Point(27, 19);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(371, 158);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 52;
+            this.pictureBox20.TabStop = false;
             // 
             // btnComplaintFixed
             // 
@@ -830,126 +904,24 @@ namespace Group_project_semester_1
             this.AdminRules.Margin = new System.Windows.Forms.Padding(2);
             this.AdminRules.Name = "AdminRules";
             this.AdminRules.Padding = new System.Windows.Forms.Padding(2);
-            this.AdminRules.Size = new System.Drawing.Size(926, 728);
+            this.AdminRules.Size = new System.Drawing.Size(921, 728);
             this.AdminRules.TabIndex = 19;
             this.AdminRules.Text = "Admin Rules";
             // 
-            // btnRemoveRequestedRuleAdmin
+            // gbAdminActive
             // 
-            this.btnRemoveRequestedRuleAdmin.FlatAppearance.BorderSize = 0;
-            this.btnRemoveRequestedRuleAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveRequestedRuleAdmin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveRequestedRuleAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btnRemoveRequestedRuleAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveRequestedRuleAdmin.Image")));
-            this.btnRemoveRequestedRuleAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemoveRequestedRuleAdmin.Location = new System.Drawing.Point(343, 383);
-            this.btnRemoveRequestedRuleAdmin.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoveRequestedRuleAdmin.Name = "btnRemoveRequestedRuleAdmin";
-            this.btnRemoveRequestedRuleAdmin.Size = new System.Drawing.Size(141, 50);
-            this.btnRemoveRequestedRuleAdmin.TabIndex = 46;
-            this.btnRemoveRequestedRuleAdmin.Text = "Remove";
-            this.btnRemoveRequestedRuleAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnRemoveRequestedRuleAdmin.UseVisualStyleBackColor = true;
-            this.btnRemoveRequestedRuleAdmin.Click += new System.EventHandler(this.btnRemoveRequestedRuleAdmin_Click);
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label46.Location = new System.Drawing.Point(19, 383);
-            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(213, 33);
-            this.label46.TabIndex = 45;
-            this.label46.Text = "Write and add rule:";
-            // 
-            // btnAddRule
-            // 
-            this.btnAddRule.FlatAppearance.BorderSize = 0;
-            this.btnAddRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btnAddRule.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRule.Image")));
-            this.btnAddRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRule.Location = new System.Drawing.Point(415, 151);
-            this.btnAddRule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddRule.Name = "btnAddRule";
-            this.btnAddRule.Size = new System.Drawing.Size(142, 50);
-            this.btnAddRule.TabIndex = 44;
-            this.btnAddRule.Text = "Add";
-            this.btnAddRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddRule.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnAddRule.UseVisualStyleBackColor = true;
-            this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
-            // 
-            // tbAddRule
-            // 
-            this.tbAddRule.Location = new System.Drawing.Point(49, 418);
-            this.tbAddRule.Margin = new System.Windows.Forms.Padding(2);
-            this.tbAddRule.Multiline = true;
-            this.tbAddRule.Name = "tbAddRule";
-            this.tbAddRule.Size = new System.Drawing.Size(449, 63);
-            this.tbAddRule.TabIndex = 43;
-            // 
-            // btnRemoveRule
-            // 
-            this.btnRemoveRule.FlatAppearance.BorderSize = 0;
-            this.btnRemoveRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btnRemoveRule.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveRule.Image")));
-            this.btnRemoveRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemoveRule.Location = new System.Drawing.Point(415, 213);
-            this.btnRemoveRule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoveRule.Name = "btnRemoveRule";
-            this.btnRemoveRule.Size = new System.Drawing.Size(142, 50);
-            this.btnRemoveRule.TabIndex = 42;
-            this.btnRemoveRule.Text = "Remove";
-            this.btnRemoveRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveRule.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnRemoveRule.UseVisualStyleBackColor = true;
-            this.btnRemoveRule.Click += new System.EventHandler(this.btnRemoveRule_Click);
-            // 
-            // btnAddRequestedRule
-            // 
-            this.btnAddRequestedRule.FlatAppearance.BorderSize = 0;
-            this.btnAddRequestedRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddRequestedRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btnAddRequestedRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btnAddRequestedRule.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRequestedRule.Image")));
-            this.btnAddRequestedRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddRequestedRule.Location = new System.Drawing.Point(154, 383);
-            this.btnAddRequestedRule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddRequestedRule.Name = "btnAddRequestedRule";
-            this.btnAddRequestedRule.Size = new System.Drawing.Size(115, 50);
-            this.btnAddRequestedRule.TabIndex = 41;
-            this.btnAddRequestedRule.Text = "Add";
-            this.btnAddRequestedRule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddRequestedRule.UseVisualStyleBackColor = true;
-            this.btnAddRequestedRule.Click += new System.EventHandler(this.btnAddRequestedRule_Click);
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label45.Location = new System.Drawing.Point(148, 40);
-            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(346, 33);
-            this.label45.TabIndex = 40;
-            this.label45.Text = "Requested rules from students:";
-            // 
-            // lbRequestedRules
-            // 
-            this.lbRequestedRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbRequestedRules.FormattingEnabled = true;
-            this.lbRequestedRules.ItemHeight = 20;
-            this.lbRequestedRules.Location = new System.Drawing.Point(154, 75);
-            this.lbRequestedRules.Margin = new System.Windows.Forms.Padding(2);
-            this.lbRequestedRules.Name = "lbRequestedRules";
-            this.lbRequestedRules.Size = new System.Drawing.Size(330, 304);
-            this.lbRequestedRules.TabIndex = 39;
+            this.gbAdminActive.Controls.Add(this.label44);
+            this.gbAdminActive.Controls.Add(this.lbCurrentRulesAdmin);
+            this.gbAdminActive.Controls.Add(this.label46);
+            this.gbAdminActive.Controls.Add(this.btnRemoveRule);
+            this.gbAdminActive.Controls.Add(this.btnAddRule);
+            this.gbAdminActive.Controls.Add(this.tbAddRule);
+            this.gbAdminActive.Location = new System.Drawing.Point(389, 209);
+            this.gbAdminActive.Name = "gbAdminActive";
+            this.gbAdminActive.Size = new System.Drawing.Size(391, 549);
+            this.gbAdminActive.TabIndex = 62;
+            this.gbAdminActive.TabStop = false;
+            this.gbAdminActive.Visible = false;
             // 
             // label44
             // 
@@ -980,9 +952,211 @@ namespace Group_project_semester_1
             this.lbCurrentRulesAdmin.Size = new System.Drawing.Size(330, 304);
             this.lbCurrentRulesAdmin.TabIndex = 37;
             // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label46.Location = new System.Drawing.Point(19, 383);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(213, 33);
+            this.label46.TabIndex = 45;
+            this.label46.Text = "Write and add rule:";
+            // 
+            // btnRemoveRule
+            // 
+            this.btnRemoveRule.FlatAppearance.BorderSize = 0;
+            this.btnRemoveRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnRemoveRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btnRemoveRule.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveRule.Image")));
+            this.btnRemoveRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemoveRule.Location = new System.Drawing.Point(415, 213);
+            this.btnRemoveRule.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveRule.Name = "btnRemoveRule";
+            this.btnRemoveRule.Size = new System.Drawing.Size(142, 50);
+            this.btnRemoveRule.TabIndex = 42;
+            this.btnRemoveRule.Text = "Remove";
+            this.btnRemoveRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveRule.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRemoveRule.UseVisualStyleBackColor = true;
+            this.btnRemoveRule.Click += new System.EventHandler(this.btnRemoveRule_Click);
+            // 
+            // btnAddRule
+            // 
+            this.btnAddRule.FlatAppearance.BorderSize = 0;
+            this.btnAddRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnAddRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btnAddRule.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRule.Image")));
+            this.btnAddRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRule.Location = new System.Drawing.Point(415, 151);
+            this.btnAddRule.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddRule.Name = "btnAddRule";
+            this.btnAddRule.Size = new System.Drawing.Size(142, 50);
+            this.btnAddRule.TabIndex = 44;
+            this.btnAddRule.Text = "Add";
+            this.btnAddRule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddRule.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAddRule.UseVisualStyleBackColor = true;
+            this.btnAddRule.Click += new System.EventHandler(this.btnAddRule_Click);
+            // 
+            // tbAddRule
+            // 
+            this.tbAddRule.Location = new System.Drawing.Point(49, 418);
+            this.tbAddRule.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAddRule.Multiline = true;
+            this.tbAddRule.Name = "tbAddRule";
+            this.tbAddRule.Size = new System.Drawing.Size(449, 63);
+            this.tbAddRule.TabIndex = 43;
+            // 
+            // gbAdminRequested
+            // 
+            this.gbAdminRequested.Controls.Add(this.label45);
+            this.gbAdminRequested.Controls.Add(this.lbRequestedRules);
+            this.gbAdminRequested.Controls.Add(this.btnAddRequestedRule);
+            this.gbAdminRequested.Controls.Add(this.btnRemoveRequestedRuleAdmin);
+            this.gbAdminRequested.Location = new System.Drawing.Point(84, 247);
+            this.gbAdminRequested.Name = "gbAdminRequested";
+            this.gbAdminRequested.Size = new System.Drawing.Size(82, 477);
+            this.gbAdminRequested.TabIndex = 61;
+            this.gbAdminRequested.TabStop = false;
+            this.gbAdminRequested.Visible = false;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label45.Location = new System.Drawing.Point(148, 40);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(346, 33);
+            this.label45.TabIndex = 40;
+            this.label45.Text = "Requested rules from students:";
+            // 
+            // lbRequestedRules
+            // 
+            this.lbRequestedRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbRequestedRules.FormattingEnabled = true;
+            this.lbRequestedRules.ItemHeight = 20;
+            this.lbRequestedRules.Location = new System.Drawing.Point(154, 75);
+            this.lbRequestedRules.Margin = new System.Windows.Forms.Padding(2);
+            this.lbRequestedRules.Name = "lbRequestedRules";
+            this.lbRequestedRules.Size = new System.Drawing.Size(330, 304);
+            this.lbRequestedRules.TabIndex = 39;
+            // 
+            // btnAddRequestedRule
+            // 
+            this.btnAddRequestedRule.FlatAppearance.BorderSize = 0;
+            this.btnAddRequestedRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRequestedRule.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnAddRequestedRule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btnAddRequestedRule.Image = ((System.Drawing.Image)(resources.GetObject("btnAddRequestedRule.Image")));
+            this.btnAddRequestedRule.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddRequestedRule.Location = new System.Drawing.Point(154, 383);
+            this.btnAddRequestedRule.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddRequestedRule.Name = "btnAddRequestedRule";
+            this.btnAddRequestedRule.Size = new System.Drawing.Size(115, 50);
+            this.btnAddRequestedRule.TabIndex = 41;
+            this.btnAddRequestedRule.Text = "Add";
+            this.btnAddRequestedRule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRequestedRule.UseVisualStyleBackColor = true;
+            this.btnAddRequestedRule.Click += new System.EventHandler(this.btnAddRequestedRule_Click);
+            // 
+            // btnRemoveRequestedRuleAdmin
+            // 
+            this.btnRemoveRequestedRuleAdmin.FlatAppearance.BorderSize = 0;
+            this.btnRemoveRequestedRuleAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveRequestedRuleAdmin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btnRemoveRequestedRuleAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btnRemoveRequestedRuleAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveRequestedRuleAdmin.Image")));
+            this.btnRemoveRequestedRuleAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemoveRequestedRuleAdmin.Location = new System.Drawing.Point(343, 383);
+            this.btnRemoveRequestedRuleAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveRequestedRuleAdmin.Name = "btnRemoveRequestedRuleAdmin";
+            this.btnRemoveRequestedRuleAdmin.Size = new System.Drawing.Size(141, 50);
+            this.btnRemoveRequestedRuleAdmin.TabIndex = 46;
+            this.btnRemoveRequestedRuleAdmin.Text = "Remove";
+            this.btnRemoveRequestedRuleAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnRemoveRequestedRuleAdmin.UseVisualStyleBackColor = true;
+            this.btnRemoveRequestedRuleAdmin.Click += new System.EventHandler(this.btnRemoveRequestedRuleAdmin_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label38);
+            this.panel11.Controls.Add(this.btAdminRulesActive);
+            this.panel11.Controls.Add(this.btAdminRulesReq);
+            this.panel11.Controls.Add(this.pictureBox19);
+            this.panel11.Location = new System.Drawing.Point(2, 3);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(921, 201);
+            this.panel11.TabIndex = 60;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
+            this.label38.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label38.Location = new System.Drawing.Point(238, 101);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(150, 77);
+            this.label38.TabIndex = 24;
+            this.label38.Text = "Rules";
+            // 
+            // btAdminRulesActive
+            // 
+            this.btAdminRulesActive.FlatAppearance.BorderSize = 0;
+            this.btAdminRulesActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdminRulesActive.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btAdminRulesActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btAdminRulesActive.Location = new System.Drawing.Point(650, 146);
+            this.btAdminRulesActive.Margin = new System.Windows.Forms.Padding(2);
+            this.btAdminRulesActive.Name = "btAdminRulesActive";
+            this.btAdminRulesActive.Size = new System.Drawing.Size(97, 50);
+            this.btAdminRulesActive.TabIndex = 47;
+            this.btAdminRulesActive.Text = "Active";
+            this.btAdminRulesActive.UseVisualStyleBackColor = true;
+            this.btAdminRulesActive.Click += new System.EventHandler(this.btAdminRulesActive_Click);
+            // 
+            // btAdminRulesReq
+            // 
+            this.btAdminRulesReq.FlatAppearance.BorderSize = 0;
+            this.btAdminRulesReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdminRulesReq.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btAdminRulesReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btAdminRulesReq.Location = new System.Drawing.Point(751, 146);
+            this.btAdminRulesReq.Margin = new System.Windows.Forms.Padding(2);
+            this.btAdminRulesReq.Name = "btAdminRulesReq";
+            this.btAdminRulesReq.Size = new System.Drawing.Size(138, 50);
+            this.btAdminRulesReq.TabIndex = 48;
+            this.btAdminRulesReq.Text = "Requested";
+            this.btAdminRulesReq.UseVisualStyleBackColor = true;
+            this.btAdminRulesReq.Click += new System.EventHandler(this.btAdminRulesReq_Click);
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
+            this.pictureBox19.Location = new System.Drawing.Point(27, 19);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(371, 158);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 52;
+            this.pictureBox19.TabStop = false;
+            // 
             // AdminAnouncments
             // 
             this.AdminAnouncments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(60)))), ((int)(((byte)(124)))));
+            this.AdminAnouncments.Controls.Add(this.label65);
+            this.AdminAnouncments.Controls.Add(this.tbMessage);
+            this.AdminAnouncments.Controls.Add(this.label43);
+            this.AdminAnouncments.Controls.Add(this.lboxReceivers);
+            this.AdminAnouncments.Controls.Add(this.btClearReceivers);
+            this.AdminAnouncments.Controls.Add(this.btSendA);
+            this.AdminAnouncments.Controls.Add(this.label42);
+            this.AdminAnouncments.Controls.Add(this.lboxAllStudents);
             this.AdminAnouncments.Controls.Add(this.panel10);
             this.AdminAnouncments.Location = new System.Drawing.Point(4, 18);
             this.AdminAnouncments.Margin = new System.Windows.Forms.Padding(2);
@@ -991,6 +1165,145 @@ namespace Group_project_semester_1
             this.AdminAnouncments.Size = new System.Drawing.Size(921, 728);
             this.AdminAnouncments.TabIndex = 18;
             this.AdminAnouncments.Text = "Admin Anouncments";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label65.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label65.Location = new System.Drawing.Point(4, 555);
+            this.label65.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(109, 33);
+            this.label65.TabIndex = 67;
+            this.label65.Text = "Message";
+            // 
+            // tbMessage
+            // 
+            this.tbMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(75)))), ((int)(((byte)(154)))));
+            this.tbMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbMessage.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.tbMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.tbMessage.Location = new System.Drawing.Point(27, 591);
+            this.tbMessage.Multiline = true;
+            this.tbMessage.Name = "tbMessage";
+            this.tbMessage.Size = new System.Drawing.Size(454, 113);
+            this.tbMessage.TabIndex = 66;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label43.Location = new System.Drawing.Point(460, 266);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(120, 33);
+            this.label43.TabIndex = 65;
+            this.label43.Text = "Receivers";
+            // 
+            // lboxReceivers
+            // 
+            this.lboxReceivers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(75)))), ((int)(((byte)(154)))));
+            this.lboxReceivers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lboxReceivers.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lboxReceivers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.lboxReceivers.FormattingEnabled = true;
+            this.lboxReceivers.ItemHeight = 33;
+            this.lboxReceivers.Location = new System.Drawing.Point(465, 301);
+            this.lboxReceivers.Margin = new System.Windows.Forms.Padding(2);
+            this.lboxReceivers.Name = "lboxReceivers";
+            this.lboxReceivers.Size = new System.Drawing.Size(454, 231);
+            this.lboxReceivers.TabIndex = 64;
+            // 
+            // btClearReceivers
+            // 
+            this.btClearReceivers.FlatAppearance.BorderSize = 0;
+            this.btClearReceivers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClearReceivers.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btClearReceivers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btClearReceivers.Location = new System.Drawing.Point(650, 636);
+            this.btClearReceivers.Margin = new System.Windows.Forms.Padding(2);
+            this.btClearReceivers.Name = "btClearReceivers";
+            this.btClearReceivers.Size = new System.Drawing.Size(147, 41);
+            this.btClearReceivers.TabIndex = 63;
+            this.btClearReceivers.Text = "Clear";
+            this.btClearReceivers.UseVisualStyleBackColor = true;
+            this.btClearReceivers.Click += new System.EventHandler(this.btClearReceivers_Click);
+            // 
+            // btSendA
+            // 
+            this.btSendA.FlatAppearance.BorderSize = 0;
+            this.btSendA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSendA.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.btSendA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.btSendA.Location = new System.Drawing.Point(650, 591);
+            this.btSendA.Margin = new System.Windows.Forms.Padding(2);
+            this.btSendA.Name = "btSendA";
+            this.btSendA.Size = new System.Drawing.Size(147, 41);
+            this.btSendA.TabIndex = 62;
+            this.btSendA.Text = "Send";
+            this.btSendA.UseVisualStyleBackColor = true;
+            this.btSendA.Click += new System.EventHandler(this.btSendA_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label42.Location = new System.Drawing.Point(2, 266);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(144, 33);
+            this.label42.TabIndex = 61;
+            this.label42.Text = "All Students";
+            // 
+            // lboxAllStudents
+            // 
+            this.lboxAllStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(75)))), ((int)(((byte)(154)))));
+            this.lboxAllStudents.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lboxAllStudents.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lboxAllStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.lboxAllStudents.FormattingEnabled = true;
+            this.lboxAllStudents.ItemHeight = 33;
+            this.lboxAllStudents.Location = new System.Drawing.Point(6, 301);
+            this.lboxAllStudents.Margin = new System.Windows.Forms.Padding(2);
+            this.lboxAllStudents.Name = "lboxAllStudents";
+            this.lboxAllStudents.Size = new System.Drawing.Size(454, 231);
+            this.lboxAllStudents.TabIndex = 60;
+            this.lboxAllStudents.SelectedIndexChanged += new System.EventHandler(this.lboxAllStudents_SelectedIndexChanged);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label35);
+            this.panel10.Controls.Add(this.pictureBox18);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(921, 201);
+            this.panel10.TabIndex = 59;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.Transparent;
+            this.label35.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label35.Location = new System.Drawing.Point(238, 101);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(372, 77);
+            this.label35.TabIndex = 24;
+            this.label35.Text = "Announcements";
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
+            this.pictureBox18.Location = new System.Drawing.Point(27, 19);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(371, 158);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 52;
+            this.pictureBox18.TabStop = false;
             // 
             // AdminAccount
             // 
@@ -1011,12 +1324,56 @@ namespace Group_project_semester_1
             this.AdminAccount.TabIndex = 17;
             this.AdminAccount.Text = "Admin Accounts";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label27.Location = new System.Drawing.Point(213, 546);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(116, 33);
+            this.label27.TabIndex = 59;
+            this.label27.Text = "Show info";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label17);
+            this.panel9.Controls.Add(this.pictureBox17);
+            this.panel9.Location = new System.Drawing.Point(0, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(921, 201);
+            this.panel9.TabIndex = 58;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
+            this.label17.Location = new System.Drawing.Point(238, 101);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(225, 77);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Accounts";
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
+            this.pictureBox17.Location = new System.Drawing.Point(27, 19);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(371, 158);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 52;
+            this.pictureBox17.TabStop = false;
+            // 
             // lbAllAvailableAccounts
             // 
             this.lbAllAvailableAccounts.AutoSize = true;
             this.lbAllAvailableAccounts.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbAllAvailableAccounts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.lbAllAvailableAccounts.Location = new System.Drawing.Point(213, 269);
+            this.lbAllAvailableAccounts.Location = new System.Drawing.Point(213, 266);
             this.lbAllAvailableAccounts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAllAvailableAccounts.Name = "lbAllAvailableAccounts";
             this.lbAllAvailableAccounts.Size = new System.Drawing.Size(248, 33);
@@ -1085,7 +1442,8 @@ namespace Group_project_semester_1
             // 
             // lbInfo
             // 
-            this.lbInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(60)))), ((int)(((byte)(124)))));
+            this.lbInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(75)))), ((int)(((byte)(154)))));
+            this.lbInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbInfo.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
             this.lbInfo.FormattingEnabled = true;
@@ -1093,8 +1451,9 @@ namespace Group_project_semester_1
             this.lbInfo.Location = new System.Drawing.Point(251, 304);
             this.lbInfo.Margin = new System.Windows.Forms.Padding(2);
             this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(509, 235);
+            this.lbInfo.Size = new System.Drawing.Size(509, 231);
             this.lbInfo.TabIndex = 37;
+            this.lbInfo.SelectedIndexChanged += new System.EventHandler(this.lbInfo_SelectedIndexChanged);
             // 
             // AdminPage
             // 
@@ -1129,7 +1488,7 @@ namespace Group_project_semester_1
             // 
             // lbTenantsAdmin
             // 
-            this.lbTenantsAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(60)))), ((int)(((byte)(124)))));
+            this.lbTenantsAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(75)))), ((int)(((byte)(154)))));
             this.lbTenantsAdmin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbTenantsAdmin.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 14.25F, System.Drawing.FontStyle.Bold);
             this.lbTenantsAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
@@ -1138,7 +1497,7 @@ namespace Group_project_semester_1
             this.lbTenantsAdmin.Location = new System.Drawing.Point(417, 405);
             this.lbTenantsAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.lbTenantsAdmin.Name = "lbTenantsAdmin";
-            this.lbTenantsAdmin.Size = new System.Drawing.Size(382, 253);
+            this.lbTenantsAdmin.Size = new System.Drawing.Size(382, 230);
             this.lbTenantsAdmin.TabIndex = 38;
             // 
             // btnCheckTenants
@@ -1164,7 +1523,7 @@ namespace Group_project_semester_1
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
             this.label60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label60.Location = new System.Drawing.Point(173, 467);
+            this.label60.Location = new System.Drawing.Point(173, 465);
             this.label60.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(133, 33);
@@ -1931,6 +2290,7 @@ namespace Group_project_semester_1
             // StudentAnouncments
             // 
             this.StudentAnouncments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
+            this.StudentAnouncments.Controls.Add(this.label66);
             this.StudentAnouncments.Controls.Add(this.pictureBox13);
             this.StudentAnouncments.Controls.Add(this.panel7);
             this.StudentAnouncments.Controls.Add(this.label33);
@@ -2046,12 +2406,15 @@ namespace Group_project_semester_1
             this.lbAnouncments.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold);
             this.lbAnouncments.ForeColor = System.Drawing.Color.White;
             this.lbAnouncments.FormattingEnabled = true;
+            this.lbAnouncments.HorizontalScrollbar = true;
             this.lbAnouncments.ItemHeight = 29;
             this.lbAnouncments.Location = new System.Drawing.Point(133, 252);
             this.lbAnouncments.Margin = new System.Windows.Forms.Padding(2);
             this.lbAnouncments.Name = "lbAnouncments";
-            this.lbAnouncments.Size = new System.Drawing.Size(568, 207);
+            this.lbAnouncments.Size = new System.Drawing.Size(516, 294);
             this.lbAnouncments.TabIndex = 23;
+            this.lbAnouncments.SelectedIndexChanged += new System.EventHandler(this.lbAnouncments_SelectedIndexChanged);
+            this.lbAnouncments.DoubleClick += new System.EventHandler(this.lbAnouncments_DoubleClick);
             // 
             // StudentRules
             // 
@@ -2203,7 +2566,7 @@ namespace Group_project_semester_1
             this.StudentGarbage.Margin = new System.Windows.Forms.Padding(2);
             this.StudentGarbage.Name = "StudentGarbage";
             this.StudentGarbage.Padding = new System.Windows.Forms.Padding(2);
-            this.StudentGarbage.Size = new System.Drawing.Size(926, 728);
+            this.StudentGarbage.Size = new System.Drawing.Size(921, 728);
             this.StudentGarbage.TabIndex = 12;
             this.StudentGarbage.Text = "Student Garbage";
             // 
@@ -2353,6 +2716,8 @@ namespace Group_project_semester_1
             // StudentGrocerie
             // 
             this.StudentGrocerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
+            this.StudentGrocerie.Controls.Add(this.gbOrder);
+            this.StudentGrocerie.Controls.Add(this.gbWanted);
             this.StudentGrocerie.Controls.Add(this.label22);
             this.StudentGrocerie.Controls.Add(this.panel4);
             this.StudentGrocerie.Controls.Add(this.panel18);
@@ -2363,15 +2728,273 @@ namespace Group_project_semester_1
             this.StudentGrocerie.Controls.Add(this.label16);
             this.StudentGrocerie.Controls.Add(this.btShowList);
             this.StudentGrocerie.Controls.Add(this.gbAdd);
-            this.StudentGrocerie.Controls.Add(this.gbOrder);
-            this.StudentGrocerie.Controls.Add(this.gbWanted);
             this.StudentGrocerie.Location = new System.Drawing.Point(4, 18);
             this.StudentGrocerie.Margin = new System.Windows.Forms.Padding(2);
             this.StudentGrocerie.Name = "StudentGrocerie";
             this.StudentGrocerie.Padding = new System.Windows.Forms.Padding(2);
-            this.StudentGrocerie.Size = new System.Drawing.Size(926, 728);
+            this.StudentGrocerie.Size = new System.Drawing.Size(921, 728);
             this.StudentGrocerie.TabIndex = 11;
             this.StudentGrocerie.Text = "Student Grocery";
+            // 
+            // gbOrder
+            // 
+            this.gbOrder.Controls.Add(this.button1);
+            this.gbOrder.Controls.Add(this.label61);
+            this.gbOrder.Controls.Add(this.label26);
+            this.gbOrder.Controls.Add(this.label25);
+            this.gbOrder.Controls.Add(this.label23);
+            this.gbOrder.Controls.Add(this.btCancelGrocerie);
+            this.gbOrder.Controls.Add(this.btGrocerieAddToCart);
+            this.gbOrder.Controls.Add(this.lboxGroceriesALL);
+            this.gbOrder.Controls.Add(this.nudAmountGrocery);
+            this.gbOrder.Controls.Add(this.cbGrocerie);
+            this.gbOrder.Controls.Add(this.btOrderGrocerie);
+            this.gbOrder.Controls.Add(this.lboxGrocerieCart);
+            this.gbOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbOrder.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.gbOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.gbOrder.Location = new System.Drawing.Point(22, 317);
+            this.gbOrder.Name = "gbOrder";
+            this.gbOrder.Size = new System.Drawing.Size(899, 404);
+            this.gbOrder.TabIndex = 41;
+            this.gbOrder.TabStop = false;
+            this.gbOrder.Text = "Order";
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(682, 313);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 51);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Remmove";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.label61.Location = new System.Drawing.Point(458, 51);
+            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(84, 25);
+            this.label61.TabIndex = 47;
+            this.label61.Text = "Products";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.label26.Location = new System.Drawing.Point(13, 51);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 25);
+            this.label26.TabIndex = 46;
+            this.label26.Text = "Cart";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.label25.Location = new System.Drawing.Point(458, 277);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(75, 25);
+            this.label25.TabIndex = 45;
+            this.label25.Text = "Product";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.label23.Location = new System.Drawing.Point(458, 219);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 25);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "Select amount";
+            // 
+            // btCancelGrocerie
+            // 
+            this.btCancelGrocerie.FlatAppearance.BorderSize = 0;
+            this.btCancelGrocerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCancelGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btCancelGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.btCancelGrocerie.Image = ((System.Drawing.Image)(resources.GetObject("btCancelGrocerie.Image")));
+            this.btCancelGrocerie.Location = new System.Drawing.Point(217, 313);
+            this.btCancelGrocerie.Name = "btCancelGrocerie";
+            this.btCancelGrocerie.Size = new System.Drawing.Size(167, 51);
+            this.btCancelGrocerie.TabIndex = 43;
+            this.btCancelGrocerie.Text = "Cancel Order";
+            this.btCancelGrocerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btCancelGrocerie.UseVisualStyleBackColor = true;
+            this.btCancelGrocerie.Click += new System.EventHandler(this.btCancelGrocerie_Click);
+            // 
+            // btGrocerieAddToCart
+            // 
+            this.btGrocerieAddToCart.FlatAppearance.BorderSize = 0;
+            this.btGrocerieAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btGrocerieAddToCart.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btGrocerieAddToCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.btGrocerieAddToCart.Image = ((System.Drawing.Image)(resources.GetObject("btGrocerieAddToCart.Image")));
+            this.btGrocerieAddToCart.Location = new System.Drawing.Point(463, 313);
+            this.btGrocerieAddToCart.Name = "btGrocerieAddToCart";
+            this.btGrocerieAddToCart.Size = new System.Drawing.Size(159, 51);
+            this.btGrocerieAddToCart.TabIndex = 42;
+            this.btGrocerieAddToCart.Text = "Add To Cart";
+            this.btGrocerieAddToCart.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btGrocerieAddToCart.UseVisualStyleBackColor = true;
+            this.btGrocerieAddToCart.Click += new System.EventHandler(this.btGrocerieAddToCart_Click);
+            // 
+            // lboxGroceriesALL
+            // 
+            this.lboxGroceriesALL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
+            this.lboxGroceriesALL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lboxGroceriesALL.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lboxGroceriesALL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.lboxGroceriesALL.FormattingEnabled = true;
+            this.lboxGroceriesALL.ItemHeight = 25;
+            this.lboxGroceriesALL.Location = new System.Drawing.Point(463, 89);
+            this.lboxGroceriesALL.Name = "lboxGroceriesALL";
+            this.lboxGroceriesALL.Size = new System.Drawing.Size(378, 102);
+            this.lboxGroceriesALL.TabIndex = 41;
+            this.lboxGroceriesALL.SelectedIndexChanged += new System.EventHandler(this.lboxGroceriesALL_SelectedIndexChanged);
+            // 
+            // nudAmountGrocery
+            // 
+            this.nudAmountGrocery.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.nudAmountGrocery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.nudAmountGrocery.Location = new System.Drawing.Point(746, 217);
+            this.nudAmountGrocery.Name = "nudAmountGrocery";
+            this.nudAmountGrocery.Size = new System.Drawing.Size(95, 33);
+            this.nudAmountGrocery.TabIndex = 39;
+            this.nudAmountGrocery.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbGrocerie
+            // 
+            this.cbGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cbGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.cbGrocerie.FormattingEnabled = true;
+            this.cbGrocerie.Location = new System.Drawing.Point(553, 274);
+            this.cbGrocerie.Name = "cbGrocerie";
+            this.cbGrocerie.Size = new System.Drawing.Size(288, 33);
+            this.cbGrocerie.TabIndex = 38;
+            // 
+            // btOrderGrocerie
+            // 
+            this.btOrderGrocerie.FlatAppearance.BorderSize = 0;
+            this.btOrderGrocerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btOrderGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btOrderGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.btOrderGrocerie.Image = ((System.Drawing.Image)(resources.GetObject("btOrderGrocerie.Image")));
+            this.btOrderGrocerie.Location = new System.Drawing.Point(18, 313);
+            this.btOrderGrocerie.Name = "btOrderGrocerie";
+            this.btOrderGrocerie.Size = new System.Drawing.Size(118, 51);
+            this.btOrderGrocerie.TabIndex = 37;
+            this.btOrderGrocerie.Text = "Order";
+            this.btOrderGrocerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btOrderGrocerie.UseVisualStyleBackColor = true;
+            this.btOrderGrocerie.Click += new System.EventHandler(this.btOrderGrocerie_Click);
+            // 
+            // lboxGrocerieCart
+            // 
+            this.lboxGrocerieCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
+            this.lboxGrocerieCart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lboxGrocerieCart.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lboxGrocerieCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.lboxGrocerieCart.FormattingEnabled = true;
+            this.lboxGrocerieCart.ItemHeight = 25;
+            this.lboxGrocerieCart.Location = new System.Drawing.Point(18, 89);
+            this.lboxGrocerieCart.Name = "lboxGrocerieCart";
+            this.lboxGrocerieCart.Size = new System.Drawing.Size(383, 177);
+            this.lboxGrocerieCart.TabIndex = 36;
+            // 
+            // gbWanted
+            // 
+            this.gbWanted.Controls.Add(this.label62);
+            this.gbWanted.Controls.Add(this.label21);
+            this.gbWanted.Controls.Add(this.dtpBuyGrocery);
+            this.gbWanted.Controls.Add(this.btBuyAllGroceries);
+            this.gbWanted.Controls.Add(this.lboxGroceriesToBuy);
+            this.gbWanted.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
+            this.gbWanted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.gbWanted.Location = new System.Drawing.Point(22, 337);
+            this.gbWanted.Name = "gbWanted";
+            this.gbWanted.Size = new System.Drawing.Size(894, 243);
+            this.gbWanted.TabIndex = 37;
+            this.gbWanted.TabStop = false;
+            this.gbWanted.Text = "Wanted Groceries";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.label62.Location = new System.Drawing.Point(13, 56);
+            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(160, 25);
+            this.label62.TabIndex = 47;
+            this.label62.Text = "Group grocery list";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(527, 102);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(195, 25);
+            this.label21.TabIndex = 39;
+            this.label21.Text = "Coose date for buying:";
+            // 
+            // dtpBuyGrocery
+            // 
+            this.dtpBuyGrocery.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.dtpBuyGrocery.Location = new System.Drawing.Point(532, 130);
+            this.dtpBuyGrocery.Name = "dtpBuyGrocery";
+            this.dtpBuyGrocery.Size = new System.Drawing.Size(235, 33);
+            this.dtpBuyGrocery.TabIndex = 38;
+            // 
+            // btBuyAllGroceries
+            // 
+            this.btBuyAllGroceries.FlatAppearance.BorderSize = 0;
+            this.btBuyAllGroceries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBuyAllGroceries.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btBuyAllGroceries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.btBuyAllGroceries.Image = ((System.Drawing.Image)(resources.GetObject("btBuyAllGroceries.Image")));
+            this.btBuyAllGroceries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btBuyAllGroceries.Location = new System.Drawing.Point(532, 174);
+            this.btBuyAllGroceries.Name = "btBuyAllGroceries";
+            this.btBuyAllGroceries.Size = new System.Drawing.Size(235, 61);
+            this.btBuyAllGroceries.TabIndex = 37;
+            this.btBuyAllGroceries.Text = "Buy";
+            this.btBuyAllGroceries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btBuyAllGroceries.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btBuyAllGroceries.UseVisualStyleBackColor = true;
+            this.btBuyAllGroceries.Click += new System.EventHandler(this.btBuyAllGroceries_Click);
+            // 
+            // lboxGroceriesToBuy
+            // 
+            this.lboxGroceriesToBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
+            this.lboxGroceriesToBuy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lboxGroceriesToBuy.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lboxGroceriesToBuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.lboxGroceriesToBuy.FormattingEnabled = true;
+            this.lboxGroceriesToBuy.ItemHeight = 25;
+            this.lboxGroceriesToBuy.Location = new System.Drawing.Point(18, 102);
+            this.lboxGroceriesToBuy.Name = "lboxGroceriesToBuy";
+            this.lboxGroceriesToBuy.Size = new System.Drawing.Size(457, 202);
+            this.lboxGroceriesToBuy.TabIndex = 36;
             // 
             // label22
             // 
@@ -2499,9 +3122,9 @@ namespace Group_project_semester_1
             this.gbAdd.Controls.Add(this.btAddNewGrocerie);
             this.gbAdd.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
             this.gbAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.gbAdd.Location = new System.Drawing.Point(56, 523);
+            this.gbAdd.Location = new System.Drawing.Point(40, 520);
             this.gbAdd.Name = "gbAdd";
-            this.gbAdd.Size = new System.Drawing.Size(782, 260);
+            this.gbAdd.Size = new System.Drawing.Size(782, 184);
             this.gbAdd.TabIndex = 38;
             this.gbAdd.TabStop = false;
             this.gbAdd.Text = "Add New";
@@ -2577,247 +3200,6 @@ namespace Group_project_semester_1
             this.btAddNewGrocerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btAddNewGrocerie.UseVisualStyleBackColor = true;
             this.btAddNewGrocerie.Click += new System.EventHandler(this.btAddNewGrocerie_Click);
-            // 
-            // gbOrder
-            // 
-            this.gbOrder.Controls.Add(this.label61);
-            this.gbOrder.Controls.Add(this.label26);
-            this.gbOrder.Controls.Add(this.label25);
-            this.gbOrder.Controls.Add(this.label23);
-            this.gbOrder.Controls.Add(this.btCancelGrocerie);
-            this.gbOrder.Controls.Add(this.btGrocerieAddToCart);
-            this.gbOrder.Controls.Add(this.lboxGroceriesALL);
-            this.gbOrder.Controls.Add(this.nudAmountGrocery);
-            this.gbOrder.Controls.Add(this.cbGrocerie);
-            this.gbOrder.Controls.Add(this.btOrderGrocerie);
-            this.gbOrder.Controls.Add(this.lboxGrocerieCart);
-            this.gbOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbOrder.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.gbOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.gbOrder.Location = new System.Drawing.Point(22, 304);
-            this.gbOrder.Name = "gbOrder";
-            this.gbOrder.Size = new System.Drawing.Size(899, 27);
-            this.gbOrder.TabIndex = 41;
-            this.gbOrder.TabStop = false;
-            this.gbOrder.Text = "Order";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.label61.Location = new System.Drawing.Point(458, 51);
-            this.label61.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(84, 25);
-            this.label61.TabIndex = 47;
-            this.label61.Text = "Products";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.label26.Location = new System.Drawing.Point(13, 51);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(47, 25);
-            this.label26.TabIndex = 46;
-            this.label26.Text = "Cart";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.label25.Location = new System.Drawing.Point(458, 277);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(75, 25);
-            this.label25.TabIndex = 45;
-            this.label25.Text = "Product";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.label23.Location = new System.Drawing.Point(458, 219);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(130, 25);
-            this.label23.TabIndex = 44;
-            this.label23.Text = "Select amount";
-            // 
-            // btCancelGrocerie
-            // 
-            this.btCancelGrocerie.FlatAppearance.BorderSize = 0;
-            this.btCancelGrocerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancelGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btCancelGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.btCancelGrocerie.Image = ((System.Drawing.Image)(resources.GetObject("btCancelGrocerie.Image")));
-            this.btCancelGrocerie.Location = new System.Drawing.Point(217, 313);
-            this.btCancelGrocerie.Name = "btCancelGrocerie";
-            this.btCancelGrocerie.Size = new System.Drawing.Size(167, 51);
-            this.btCancelGrocerie.TabIndex = 43;
-            this.btCancelGrocerie.Text = "Cancel Order";
-            this.btCancelGrocerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btCancelGrocerie.UseVisualStyleBackColor = true;
-            this.btCancelGrocerie.Click += new System.EventHandler(this.btCancelGrocerie_Click);
-            // 
-            // btGrocerieAddToCart
-            // 
-            this.btGrocerieAddToCart.FlatAppearance.BorderSize = 0;
-            this.btGrocerieAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGrocerieAddToCart.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btGrocerieAddToCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.btGrocerieAddToCart.Image = ((System.Drawing.Image)(resources.GetObject("btGrocerieAddToCart.Image")));
-            this.btGrocerieAddToCart.Location = new System.Drawing.Point(603, 313);
-            this.btGrocerieAddToCart.Name = "btGrocerieAddToCart";
-            this.btGrocerieAddToCart.Size = new System.Drawing.Size(159, 51);
-            this.btGrocerieAddToCart.TabIndex = 42;
-            this.btGrocerieAddToCart.Text = "Add To Cart";
-            this.btGrocerieAddToCart.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btGrocerieAddToCart.UseVisualStyleBackColor = true;
-            this.btGrocerieAddToCart.Click += new System.EventHandler(this.btGrocerieAddToCart_Click);
-            // 
-            // lboxGroceriesALL
-            // 
-            this.lboxGroceriesALL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
-            this.lboxGroceriesALL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lboxGroceriesALL.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lboxGroceriesALL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.lboxGroceriesALL.FormattingEnabled = true;
-            this.lboxGroceriesALL.ItemHeight = 25;
-            this.lboxGroceriesALL.Location = new System.Drawing.Point(463, 89);
-            this.lboxGroceriesALL.Name = "lboxGroceriesALL";
-            this.lboxGroceriesALL.Size = new System.Drawing.Size(378, 125);
-            this.lboxGroceriesALL.TabIndex = 41;
-            // 
-            // nudAmountGrocery
-            // 
-            this.nudAmountGrocery.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.nudAmountGrocery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.nudAmountGrocery.Location = new System.Drawing.Point(746, 217);
-            this.nudAmountGrocery.Name = "nudAmountGrocery";
-            this.nudAmountGrocery.Size = new System.Drawing.Size(95, 33);
-            this.nudAmountGrocery.TabIndex = 39;
-            this.nudAmountGrocery.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // cbGrocerie
-            // 
-            this.cbGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cbGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.cbGrocerie.FormattingEnabled = true;
-            this.cbGrocerie.Location = new System.Drawing.Point(553, 274);
-            this.cbGrocerie.Name = "cbGrocerie";
-            this.cbGrocerie.Size = new System.Drawing.Size(288, 33);
-            this.cbGrocerie.TabIndex = 38;
-            // 
-            // btOrderGrocerie
-            // 
-            this.btOrderGrocerie.FlatAppearance.BorderSize = 0;
-            this.btOrderGrocerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btOrderGrocerie.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btOrderGrocerie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.btOrderGrocerie.Image = ((System.Drawing.Image)(resources.GetObject("btOrderGrocerie.Image")));
-            this.btOrderGrocerie.Location = new System.Drawing.Point(18, 313);
-            this.btOrderGrocerie.Name = "btOrderGrocerie";
-            this.btOrderGrocerie.Size = new System.Drawing.Size(118, 51);
-            this.btOrderGrocerie.TabIndex = 37;
-            this.btOrderGrocerie.Text = "Order";
-            this.btOrderGrocerie.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btOrderGrocerie.UseVisualStyleBackColor = true;
-            this.btOrderGrocerie.Click += new System.EventHandler(this.btOrderGrocerie_Click);
-            // 
-            // lboxGrocerieCart
-            // 
-            this.lboxGrocerieCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
-            this.lboxGrocerieCart.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lboxGrocerieCart.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lboxGrocerieCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.lboxGrocerieCart.FormattingEnabled = true;
-            this.lboxGrocerieCart.ItemHeight = 25;
-            this.lboxGrocerieCart.Location = new System.Drawing.Point(18, 89);
-            this.lboxGrocerieCart.Name = "lboxGrocerieCart";
-            this.lboxGrocerieCart.Size = new System.Drawing.Size(383, 200);
-            this.lboxGrocerieCart.TabIndex = 36;
-            // 
-            // gbWanted
-            // 
-            this.gbWanted.Controls.Add(this.label62);
-            this.gbWanted.Controls.Add(this.label21);
-            this.gbWanted.Controls.Add(this.dtpBuyGrocery);
-            this.gbWanted.Controls.Add(this.btBuyAllGroceries);
-            this.gbWanted.Controls.Add(this.lboxGroceriesToBuy);
-            this.gbWanted.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.gbWanted.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.gbWanted.Location = new System.Drawing.Point(22, 337);
-            this.gbWanted.Name = "gbWanted";
-            this.gbWanted.Size = new System.Drawing.Size(894, 43);
-            this.gbWanted.TabIndex = 37;
-            this.gbWanted.TabStop = false;
-            this.gbWanted.Text = "Wanted Groceries";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.label62.Location = new System.Drawing.Point(13, 56);
-            this.label62.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(160, 25);
-            this.label62.TabIndex = 47;
-            this.label62.Text = "Group grocery list";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(527, 102);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(195, 25);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "Coose date for buying:";
-            // 
-            // dtpBuyGrocery
-            // 
-            this.dtpBuyGrocery.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.dtpBuyGrocery.Location = new System.Drawing.Point(532, 130);
-            this.dtpBuyGrocery.Name = "dtpBuyGrocery";
-            this.dtpBuyGrocery.Size = new System.Drawing.Size(235, 33);
-            this.dtpBuyGrocery.TabIndex = 38;
-            // 
-            // btBuyAllGroceries
-            // 
-            this.btBuyAllGroceries.FlatAppearance.BorderSize = 0;
-            this.btBuyAllGroceries.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBuyAllGroceries.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btBuyAllGroceries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.btBuyAllGroceries.Image = ((System.Drawing.Image)(resources.GetObject("btBuyAllGroceries.Image")));
-            this.btBuyAllGroceries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btBuyAllGroceries.Location = new System.Drawing.Point(532, 174);
-            this.btBuyAllGroceries.Name = "btBuyAllGroceries";
-            this.btBuyAllGroceries.Size = new System.Drawing.Size(235, 61);
-            this.btBuyAllGroceries.TabIndex = 37;
-            this.btBuyAllGroceries.Text = "Buy";
-            this.btBuyAllGroceries.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btBuyAllGroceries.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btBuyAllGroceries.UseVisualStyleBackColor = true;
-            this.btBuyAllGroceries.Click += new System.EventHandler(this.btBuyAllGroceries_Click);
-            // 
-            // lboxGroceriesToBuy
-            // 
-            this.lboxGroceriesToBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
-            this.lboxGroceriesToBuy.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lboxGroceriesToBuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
-            this.lboxGroceriesToBuy.FormattingEnabled = true;
-            this.lboxGroceriesToBuy.ItemHeight = 25;
-            this.lboxGroceriesToBuy.Location = new System.Drawing.Point(18, 102);
-            this.lboxGroceriesToBuy.Name = "lboxGroceriesToBuy";
-            this.lboxGroceriesToBuy.Size = new System.Drawing.Size(457, 204);
-            this.lboxGroceriesToBuy.TabIndex = 36;
             // 
             // StudentCleaning
             // 
@@ -3066,14 +3448,14 @@ namespace Group_project_semester_1
             // lbStudentRoommates
             // 
             this.lbStudentRoommates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
-            this.lbStudentRoommates.Font = new System.Drawing.Font("Bahnschrift SemiBold SemiConden", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbStudentRoommates.Font = new System.Drawing.Font("Bahnschrift Condensed", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbStudentRoommates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
             this.lbStudentRoommates.FormattingEnabled = true;
-            this.lbStudentRoommates.ItemHeight = 25;
+            this.lbStudentRoommates.ItemHeight = 39;
             this.lbStudentRoommates.Location = new System.Drawing.Point(120, 468);
             this.lbStudentRoommates.Margin = new System.Windows.Forms.Padding(2);
             this.lbStudentRoommates.Name = "lbStudentRoommates";
-            this.lbStudentRoommates.Size = new System.Drawing.Size(702, 204);
+            this.lbStudentRoommates.Size = new System.Drawing.Size(702, 199);
             this.lbStudentRoommates.TabIndex = 23;
             // 
             // lbLivingIn
@@ -3605,7 +3987,7 @@ namespace Group_project_semester_1
             this.LoginStudent.Margin = new System.Windows.Forms.Padding(2);
             this.LoginStudent.Name = "LoginStudent";
             this.LoginStudent.Padding = new System.Windows.Forms.Padding(2);
-            this.LoginStudent.Size = new System.Drawing.Size(926, 728);
+            this.LoginStudent.Size = new System.Drawing.Size(921, 728);
             this.LoginStudent.TabIndex = 4;
             this.LoginStudent.Text = "Login Student";
             this.LoginStudent.UseVisualStyleBackColor = true;
@@ -3645,7 +4027,7 @@ namespace Group_project_semester_1
             this.cbBuilding.Margin = new System.Windows.Forms.Padding(2);
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(158, 33);
-            this.cbBuilding.TabIndex = 16;
+            this.cbBuilding.TabIndex = 7;
             // 
             // btnStudentLogin
             // 
@@ -3749,7 +4131,7 @@ namespace Group_project_semester_1
             this.LoginAs.Margin = new System.Windows.Forms.Padding(2);
             this.LoginAs.Name = "LoginAs";
             this.LoginAs.Padding = new System.Windows.Forms.Padding(2);
-            this.LoginAs.Size = new System.Drawing.Size(926, 728);
+            this.LoginAs.Size = new System.Drawing.Size(921, 728);
             this.LoginAs.TabIndex = 3;
             this.LoginAs.Text = "Login AS";
             // 
@@ -3885,7 +4267,7 @@ namespace Group_project_semester_1
             this.tabControl.Controls.Add(this.AdminComplaints);
             this.tabControl.Controls.Add(this.AdminRent);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(204)));
-            this.tabControl.Location = new System.Drawing.Point(219, 0);
+            this.tabControl.Location = new System.Drawing.Point(242, 3);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -4070,244 +4452,24 @@ namespace Group_project_semester_1
             this.btRulesAdmin.UseVisualStyleBackColor = true;
             this.btRulesAdmin.Click += new System.EventHandler(this.btRulesAdmin_Click);
             // 
-            // panel9
+            // label66
             // 
-            this.panel9.Controls.Add(this.label17);
-            this.panel9.Controls.Add(this.pictureBox17);
-            this.panel9.Location = new System.Drawing.Point(0, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(921, 201);
-            this.panel9.TabIndex = 58;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(27, 19);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(371, 158);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 52;
-            this.pictureBox17.TabStop = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label17.Location = new System.Drawing.Point(238, 101);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(225, 77);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Accounts";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label27.Location = new System.Drawing.Point(213, 546);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(116, 33);
-            this.label27.TabIndex = 59;
-            this.label27.Text = "Show info";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label35);
-            this.panel10.Controls.Add(this.pictureBox18);
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(921, 201);
-            this.panel10.TabIndex = 59;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.BackColor = System.Drawing.Color.Transparent;
-            this.label35.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
-            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label35.Location = new System.Drawing.Point(238, 101);
-            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(372, 77);
-            this.label35.TabIndex = 24;
-            this.label35.Text = "Announcements";
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(27, 19);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(371, 158);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 52;
-            this.pictureBox18.TabStop = false;
-            // 
-            // gbAdminRequested
-            // 
-            this.gbAdminRequested.Controls.Add(this.label45);
-            this.gbAdminRequested.Controls.Add(this.lbRequestedRules);
-            this.gbAdminRequested.Controls.Add(this.btnAddRequestedRule);
-            this.gbAdminRequested.Controls.Add(this.btnRemoveRequestedRuleAdmin);
-            this.gbAdminRequested.Location = new System.Drawing.Point(84, 247);
-            this.gbAdminRequested.Name = "gbAdminRequested";
-            this.gbAdminRequested.Size = new System.Drawing.Size(88, 477);
-            this.gbAdminRequested.TabIndex = 61;
-            this.gbAdminRequested.TabStop = false;
-            this.gbAdminRequested.Visible = false;
-            // 
-            // gbAdminActive
-            // 
-            this.gbAdminActive.Controls.Add(this.label44);
-            this.gbAdminActive.Controls.Add(this.lbCurrentRulesAdmin);
-            this.gbAdminActive.Controls.Add(this.label46);
-            this.gbAdminActive.Controls.Add(this.btnRemoveRule);
-            this.gbAdminActive.Controls.Add(this.btnAddRule);
-            this.gbAdminActive.Controls.Add(this.tbAddRule);
-            this.gbAdminActive.Location = new System.Drawing.Point(689, 209);
-            this.gbAdminActive.Name = "gbAdminActive";
-            this.gbAdminActive.Size = new System.Drawing.Size(91, 549);
-            this.gbAdminActive.TabIndex = 62;
-            this.gbAdminActive.TabStop = false;
-            this.gbAdminActive.Visible = false;
-            // 
-            // btAdminRulesActive
-            // 
-            this.btAdminRulesActive.FlatAppearance.BorderSize = 0;
-            this.btAdminRulesActive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdminRulesActive.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btAdminRulesActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btAdminRulesActive.Location = new System.Drawing.Point(650, 146);
-            this.btAdminRulesActive.Margin = new System.Windows.Forms.Padding(2);
-            this.btAdminRulesActive.Name = "btAdminRulesActive";
-            this.btAdminRulesActive.Size = new System.Drawing.Size(97, 50);
-            this.btAdminRulesActive.TabIndex = 47;
-            this.btAdminRulesActive.Text = "Active";
-            this.btAdminRulesActive.UseVisualStyleBackColor = true;
-            this.btAdminRulesActive.Click += new System.EventHandler(this.btAdminRulesActive_Click);
-            // 
-            // btAdminRulesReq
-            // 
-            this.btAdminRulesReq.FlatAppearance.BorderSize = 0;
-            this.btAdminRulesReq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdminRulesReq.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 20.25F, System.Drawing.FontStyle.Bold);
-            this.btAdminRulesReq.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.btAdminRulesReq.Location = new System.Drawing.Point(751, 146);
-            this.btAdminRulesReq.Margin = new System.Windows.Forms.Padding(2);
-            this.btAdminRulesReq.Name = "btAdminRulesReq";
-            this.btAdminRulesReq.Size = new System.Drawing.Size(138, 50);
-            this.btAdminRulesReq.TabIndex = 48;
-            this.btAdminRulesReq.Text = "Requested";
-            this.btAdminRulesReq.UseVisualStyleBackColor = true;
-            this.btAdminRulesReq.Click += new System.EventHandler(this.btAdminRulesReq_Click);
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(27, 19);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(371, 158);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 52;
-            this.pictureBox19.TabStop = false;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.Color.Transparent;
-            this.label38.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
-            this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label38.Location = new System.Drawing.Point(238, 101);
-            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(150, 77);
-            this.label38.TabIndex = 24;
-            this.label38.Text = "Rules";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label38);
-            this.panel11.Controls.Add(this.btAdminRulesActive);
-            this.panel11.Controls.Add(this.btAdminRulesReq);
-            this.panel11.Controls.Add(this.pictureBox19);
-            this.panel11.Location = new System.Drawing.Point(2, 3);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(921, 201);
-            this.panel11.TabIndex = 60;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label40);
-            this.panel12.Controls.Add(this.pictureBox20);
-            this.panel12.Location = new System.Drawing.Point(0, 2);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(921, 201);
-            this.panel12.TabIndex = 59;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.BackColor = System.Drawing.Color.Transparent;
-            this.label40.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
-            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label40.Location = new System.Drawing.Point(238, 101);
-            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(271, 77);
-            this.label40.TabIndex = 24;
-            this.label40.Text = "Complaints";
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(27, 19);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(371, 158);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 52;
-            this.pictureBox20.TabStop = false;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.label41);
-            this.panel13.Controls.Add(this.pictureBox21);
-            this.panel13.Location = new System.Drawing.Point(1, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(921, 201);
-            this.panel13.TabIndex = 60;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Bahnschrift Condensed", 48F, System.Drawing.FontStyle.Bold);
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(57)))));
-            this.label41.Location = new System.Drawing.Point(238, 101);
-            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(333, 77);
-            this.label41.TabIndex = 24;
-            this.label41.Text = "Rent manager";
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(27, 19);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(371, 158);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 52;
-            this.pictureBox21.TabStop = false;
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label66.ForeColor = System.Drawing.Color.White;
+            this.label66.Location = new System.Drawing.Point(91, 582);
+            this.label66.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(500, 29);
+            this.label66.TabIndex = 60;
+            this.label66.Text = "Note: You can see the whole message if you double click on it";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(216)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1451, 757);
+            this.ClientSize = new System.Drawing.Size(1451, 831);
             this.Controls.Add(this.panelNavMenuAdmin);
             this.Controls.Add(this.panelNavMenu);
             this.Controls.Add(this.tabControl);
@@ -4318,17 +4480,39 @@ namespace Group_project_semester_1
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelNavMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.AdminRent.ResumeLayout(false);
             this.AdminRent.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.AdminComplaints.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.AdminRules.ResumeLayout(false);
+            this.gbAdminActive.ResumeLayout(false);
+            this.gbAdminActive.PerformLayout();
+            this.gbAdminRequested.ResumeLayout(false);
+            this.gbAdminRequested.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.AdminAnouncments.ResumeLayout(false);
+            this.AdminAnouncments.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.AdminAccount.ResumeLayout(false);
             this.AdminAccount.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.AdminPage.ResumeLayout(false);
             this.AdminPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -4372,16 +4556,16 @@ namespace Group_project_semester_1
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.StudentGrocerie.ResumeLayout(false);
             this.StudentGrocerie.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.gbAdd.ResumeLayout(false);
-            this.gbAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNewGroceriePrice)).EndInit();
             this.gbOrder.ResumeLayout(false);
             this.gbOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountGrocery)).EndInit();
             this.gbWanted.ResumeLayout(false);
             this.gbWanted.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.gbAdd.ResumeLayout(false);
+            this.gbAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNewGroceriePrice)).EndInit();
             this.StudentCleaning.ResumeLayout(false);
             this.StudentCleaning.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -4410,25 +4594,6 @@ namespace Group_project_semester_1
             this.panel43.ResumeLayout(false);
             this.panel43.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            this.gbAdminRequested.ResumeLayout(false);
-            this.gbAdminRequested.PerformLayout();
-            this.gbAdminActive.ResumeLayout(false);
-            this.gbAdminActive.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4725,6 +4890,16 @@ namespace Group_project_semester_1
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lboxAllStudents;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ListBox lboxReceivers;
+        private System.Windows.Forms.Button btClearReceivers;
+        private System.Windows.Forms.Button btSendA;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox tbMessage;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label66;
     }
 }
 

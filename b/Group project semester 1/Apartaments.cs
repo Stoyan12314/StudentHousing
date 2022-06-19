@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class Apartaments
     {
         private string name;
@@ -23,17 +24,13 @@ namespace Group_project_semester_1
             this.name = name; 
             this.ocupants= numberOfOcupants;
 
-            cartGroceries = new List<Grocery>();
-            finalListGroceries = new List<Grocery>();
-            
-            listOfStudents = new List<Student>()
-            {
 
-            };
-            foreach(var student in listOfStudents)
+            listOfStudents = new List<Student>();
+
+
+            foreach (var student in listOfStudents)
                 listOfStudents.Add(student);
-            listOfGarbage = new List<Garbage>();
-            listCleaningSchedules = new List<CleaningSchedule>();
+
 
             //Hard coded grocerie objects
             Groceries = new List<Grocery>
@@ -44,7 +41,6 @@ namespace Group_project_semester_1
             };
 
         }
-        public List<Student> AllStudents { get; } = new List<Student>();
 
 
         public string GetApartamentName()
@@ -76,7 +72,7 @@ namespace Group_project_semester_1
 
         //creates a grocerie list
         //returns the Grocery list
-        public List<Grocery> Groceries { get; private set; }
+        public List<Grocery> Groceries { get; set; }
 
 
         public void AddCleaningTask(string cleaner, string date, string selectedRoom)

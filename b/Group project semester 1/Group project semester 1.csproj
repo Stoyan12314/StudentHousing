@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Announcement.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="BuildingsManager.cs" />
     <Compile Include="CleaningSchedule.cs" />

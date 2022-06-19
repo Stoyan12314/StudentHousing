@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class Building
     {
-        private string buildingName;
 
         //Each building has a list of apartments (5 apartments per Building)
         List<Apartaments> apartamentsInBuilding;
@@ -150,24 +150,5 @@ namespace Group_project_semester_1
             }
             return students;
         }
-
-        //Return logged user
-        //public bool CheckUserNameAndPassword(string username, string password)
-        //{
-        //    foreach (Apartaments apartament in apartamentsInBuilding)
-        //    {
-        //        foreach (Student student in apartament.GetAllStudents())
-        //        {
-        //            if (student.GetUsername() == username && student.GetPassword() == password)
-        //            {
-        //                return true;
-        //            }
-        //        }
-
-        //    }
-        //    return false;
-        //}
-
-
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class CleaningSchedule
     {
         private string cleaner;

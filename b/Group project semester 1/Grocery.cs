@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class Grocery
     {
         public Grocery(string grocerieName, double price)
@@ -25,11 +26,11 @@ namespace Group_project_semester_1
 
         public override string ToString()
         {
-            return $"{GrocerieName}-{Amount} Piece/s, Each: {Price}€ ";
+            return $"{GrocerieName}, Each: {Price}€ ";
         }
-        //public string Info()
-        //{
-        //    return $"{buyer}-{date}-{grocerie}";
-        //}
+        public string Info()
+        {
+            return $"{GrocerieName} - {Amount}CU - {Price}$";
+        }
     }
 }

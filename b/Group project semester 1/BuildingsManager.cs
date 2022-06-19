@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Group_project_semester_1
 {
+    [Serializable()]
     public class BuildingsManager
     {
-        List<Building> buildings = new List<Building>();
+        public List<Building> buildings { get; set; }
         public BuildingsManager()
         {
-            buildings.Add(new Building("BuildingA"));
-            buildings.Add(new Building("BuildingB"));
-            buildings.Add(new Building("BuildingC"));      
+            buildings = new List<Building>()
+            {
+                new Building("BuildingA"),
+                new Building("BuildingB"),
+                new Building("BuildingC")
+            };
         }
         public Building ReturnBuildingByName(string name)
         {
