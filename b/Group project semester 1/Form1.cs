@@ -267,7 +267,7 @@ namespace Group_project_semester_1
                 {
                     foreach(Student student in announcement.Recevers)
                     {
-                        if (student == loggedUser)
+                        if (student.GetUsername() == loggedUser.GetUsername())
                         {
                             lbAnouncments.Items.Add(announcement.Message);
                         }
